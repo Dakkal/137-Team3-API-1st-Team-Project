@@ -9,14 +9,14 @@ public:
 	virtual ~CObj();
 
 public:
-	virtual void	Initialize(void)  PURE;
-	virtual int		Update(void)	  PURE;
-	virtual void	Late_Update(void) PURE;
+	virtual void	Initialize()      PURE;
+	virtual int		Update()	      PURE;
+	virtual void	Late_Update()	  PURE;
 	virtual void	Render(HDC hDC)	  PURE;
-	virtual void	Release(void)	  PURE;
+	virtual void	Release()		  PURE;
 
 protected:
-	void		Update_Rect(void);
+	void		Update_Rect();
 
 protected:
 	INFO		m_tInfo;

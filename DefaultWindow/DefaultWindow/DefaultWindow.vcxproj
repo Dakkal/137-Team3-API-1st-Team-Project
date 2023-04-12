@@ -145,25 +145,48 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Bullet.h" />
     <ClInclude Include="DefaultWindow.h" />
     <ClInclude Include="Define.h" />
+    <ClInclude Include="Enemy.h" />
     <ClInclude Include="Enum.h" />
     <ClInclude Include="Enum_String.h" />
     <ClInclude Include="GameCore.h" />
+    <ClInclude Include="Item.h" />
     <ClInclude Include="MainGame.h" />
     <ClInclude Include="Obj.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="Scene.h" />
+    <ClInclude Include="SceneMgr.h" />
+    <ClInclude Include="Scene_Clear.h" />
+    <ClInclude Include="Scene_Exit.h" />
+    <ClInclude Include="Scene_GameOver.h" />
+    <ClInclude Include="Scene_Stage1.h" />
+    <ClInclude Include="Scene_Stage2.h" />
+    <ClInclude Include="Scene_Start.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Struct.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="Template.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="DefaultWindow.cpp" />
+    <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="GameCore.cpp" />
+    <ClCompile Include="Item.cpp" />
     <ClCompile Include="MainGame.cpp" />
     <ClCompile Include="Obj.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="SceneMgr.cpp" />
+    <ClCompile Include="Scene_Clear.cpp" />
+    <ClCompile Include="Scene_Exit.cpp" />
+    <ClCompile Include="Scene_GameOver.cpp" />
+    <ClCompile Include="Scene_Stage1.cpp" />
+    <ClCompile Include="Scene_Stage2.cpp" />
+    <ClCompile Include="Scene_Start.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

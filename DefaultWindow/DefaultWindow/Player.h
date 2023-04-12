@@ -3,17 +3,18 @@
 class CPlayer :	public CObj
 {
 public:
-	CPlayer();
+	explicit CPlayer();
 	virtual ~CPlayer();
+
 public:
 	// CObj을(를) 통해 상속됨
-	virtual void	Initialize(void) override;
-	virtual int		Update(void) override;
-	virtual void	Late_Update(void) override;
+	virtual void	Initialize()	override;
+	virtual int		Update()		override;
+	virtual void	Late_Update()	override;
 	virtual void	Render(HDC hDC) override;
-	virtual void	Release(void) override;
+	virtual void	Release()		override;
 
 private:
-	void			Key_Input(void);
+	void			Key_Input();
 };
 

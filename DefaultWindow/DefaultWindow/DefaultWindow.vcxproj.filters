@@ -37,17 +37,35 @@
     <Filter Include="01. Manager">
       <UniqueIdentifier>{efab443a-7186-45b0-a9cc-95d1097a325d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="01. Manager\00. Scene">
+    <Filter Include="01. Manager\Scene">
       <UniqueIdentifier>{c39d6305-c1b7-415b-88cf-5c63e8a7d0ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Manager\Scene\00. Scene_Start">
+      <UniqueIdentifier>{38c2de28-1af7-4231-a18b-28e1dd814688}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Manager\Scene\02. Scene_Stage2">
+      <UniqueIdentifier>{739c2dcc-5df5-41d7-845f-29124cc54f90}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Manager\Scene\01. Scene_Stage1">
+      <UniqueIdentifier>{1873fbd1-c20f-4c27-b85a-38d5ce9b91be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Manager\Scene\04. Scene_Clear">
+      <UniqueIdentifier>{1ad118bc-a5df-4f56-9bf8-3079f9b67b08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Manager\Scene\05. Scene_Exit">
+      <UniqueIdentifier>{04d76f2e-9bae-4a1f-8013-9cfdcc0622f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Manager\Scene\03. Scene_GameOver">
+      <UniqueIdentifier>{d6b44d28-96d2-4ea5-a28c-54b3768bd51e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 모음집">
+      <UniqueIdentifier>{f85cc603-b8b4-4822-8b98-c2bb5ffc1553}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stdafx.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="targetver.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
@@ -60,26 +78,65 @@
     <ClInclude Include="MainGame.h">
       <Filter>00. MainGame</Filter>
     </ClInclude>
-    <ClInclude Include="Define.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="Obj.h">
       <Filter>02. Obj</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
       <Filter>02. Obj\00. Player</Filter>
     </ClInclude>
-    <ClInclude Include="Enum.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Enum_String.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Struct.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="GameCore.h">
       <Filter>00. GameCore</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneMgr.h">
+      <Filter>01. Manager\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>02. Obj\01. Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Item.h">
+      <Filter>02. Obj\02. Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>02. Obj\03. Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>01. Manager\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene_Start.h">
+      <Filter>01. Manager\Scene\00. Scene_Start</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene_Stage1.h">
+      <Filter>01. Manager\Scene\01. Scene_Stage1</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene_Clear.h">
+      <Filter>01. Manager\Scene\04. Scene_Clear</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene_Stage2.h">
+      <Filter>01. Manager\Scene\02. Scene_Stage2</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene_Exit.h">
+      <Filter>01. Manager\Scene\05. Scene_Exit</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene_GameOver.h">
+      <Filter>01. Manager\Scene\03. Scene_GameOver</Filter>
+    </ClInclude>
+    <ClInclude Include="Define.h">
+      <Filter>헤더 모음집</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>헤더 모음집</Filter>
+    </ClInclude>
+    <ClInclude Include="Enum_String.h">
+      <Filter>헤더 모음집</Filter>
+    </ClInclude>
+    <ClInclude Include="Enum.h">
+      <Filter>헤더 모음집</Filter>
+    </ClInclude>
+    <ClInclude Include="Template.h">
+      <Filter>헤더 모음집</Filter>
+    </ClInclude>
+    <ClInclude Include="Struct.h">
+      <Filter>헤더 모음집</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -100,6 +157,39 @@
     </ClCompile>
     <ClCompile Include="GameCore.cpp">
       <Filter>00. GameCore</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneMgr.cpp">
+      <Filter>01. Manager\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>02. Obj\01. Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Item.cpp">
+      <Filter>02. Obj\02. Item</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>02. Obj\03. Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>01. Manager\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene_Start.cpp">
+      <Filter>01. Manager\Scene\00. Scene_Start</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene_Stage1.cpp">
+      <Filter>01. Manager\Scene\01. Scene_Stage1</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene_Clear.cpp">
+      <Filter>01. Manager\Scene\04. Scene_Clear</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene_Stage2.cpp">
+      <Filter>01. Manager\Scene\02. Scene_Stage2</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene_Exit.cpp">
+      <Filter>01. Manager\Scene\05. Scene_Exit</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene_GameOver.cpp">
+      <Filter>01. Manager\Scene\03. Scene_GameOver</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

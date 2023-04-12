@@ -5,6 +5,10 @@
 
 #define			PURE		= 0
 
+#define			OBJ_NOEVENT  0
+#define			OBJ_EVENT	 1
+
+
 #pragma region Singleton
 #define SINGLETON(type)\
 public:\

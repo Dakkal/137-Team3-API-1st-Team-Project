@@ -12,6 +12,8 @@
 #include <windows.h>
 
 // C 런타임 헤더 파일입니다.
+
+
 #include <stdlib.h>
 #include <malloc.h>
 #include <memory.h>
@@ -20,6 +22,8 @@
 
 
 // TODO: 프로그램에 필요한 추가 헤더는 여기에서 참조합니다.
+using namespace std;
+
 #include <iostream>
 #include <string>
 #include <stdio.h>
@@ -28,6 +32,7 @@
 #include <algorithm>
 #include <stack>
 #include <list>
+#include <vector>
 
 #include <ctime>
 #include <cmath>
@@ -36,6 +41,7 @@
 #include "Enum.h"
 #include "Enum_String.h"
 #include "Struct.h"
+#include "Template.h"
 
 #ifdef _DEBUG
 
@@ -50,5 +56,3 @@
 
 #endif
 #endif
-
-using namespace std;

@@ -1,1 +1,7 @@
 #pragma once
+
+enum class SCENE_TYPE { START, STAGE1, STAGE2, GAMEOVER, CLEAR, EXIT, END };
+
+enum class MONSTER_TYPE { NORMAL, BOSS, END };
+
+enum class ITEM_TYPE { EQUIPMENT, CONSUMPTION, END };

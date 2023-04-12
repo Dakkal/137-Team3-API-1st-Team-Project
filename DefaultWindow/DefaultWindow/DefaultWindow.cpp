@@ -3,7 +3,7 @@
 
 #include "stdafx.h"
 #include "DefaultWindow.h"
-#include "MainGame.h"
+#include "GameCore.h"
 
 #define MAX_LOADSTRING 100
 
@@ -45,10 +45,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
     HACCEL hAccelTable = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_DEFAULTWINDOW));
 
-	CMainGame		MainGame;
-
-	MainGame.Initialize();
-
+	CGameCore::GetInst()->Initialize();
 
     MSG msg;
 	msg.message = WM_NULL;
@@ -83,9 +80,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 		{
 			if (dwTime + 10 < GetTickCount())
 			{
-				MainGame.Update();
-				MainGame.Late_Update();
-				MainGame.Render();
+				CGameCore::GetInst()->Tick();
 
 				dwTime = GetTickCount();
 			}			
