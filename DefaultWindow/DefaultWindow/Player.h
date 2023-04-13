@@ -14,9 +14,15 @@ public:
 	virtual void	Render(HDC hDC) override;
 	virtual void	Release()		override;
 
+public:
 	virtual void	OnCollision()	override;
 
 private:
 	void			Key_Input();
+
+
+private:
+	float			m_fAngle;
+	POINT			m_ptShotPoint;
 };
 
