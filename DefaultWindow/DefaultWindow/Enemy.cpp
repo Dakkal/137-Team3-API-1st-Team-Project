@@ -3,7 +3,9 @@
 
 
 CEnemy::CEnemy()
+	:CObj(OBJECT_TYPE::MONSTER)
 {
+
 }
 
 
@@ -30,5 +32,9 @@ void CEnemy::Render(HDC hDC)
 }
 
 void CEnemy::Release()
+{
+}
+
+void CEnemy::OnCollision()
 {
 }

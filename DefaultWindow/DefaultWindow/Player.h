@@ -14,6 +14,8 @@ public:
 	virtual void	Render(HDC hDC) override;
 	virtual void	Release()		override;
 
+	virtual void	OnCollision()	override;
+
 private:
 	void			Key_Input();
 };

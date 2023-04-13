@@ -3,6 +3,7 @@
 
 
 CBullet::CBullet()
+	:CObj(OBJECT_TYPE::PLAYER_BULLET)
 {
 }
 
@@ -30,5 +31,9 @@ void CBullet::Render(HDC hDC)
 }
 
 void CBullet::Release()
+{
+}
+
+void CBullet::OnCollision()
 {
 }
