@@ -3,6 +3,7 @@
 #include "SceneMgr.h"
 #include "Player.h"
 #include "SelectGDI.h"
+#include "EventMgr.h"
 
 
 CGameCore::CGameCore()
@@ -51,6 +52,8 @@ void CGameCore::Tick()
 	// Cursor Render
 	Graphics g(m_hDC);
 	g.DrawImage(m_pImgCursor, m_ptMousePos.x, m_ptMousePos.y, 32, 32);
+
+	CEventMgr::GetInst()->Update();
 }
 
 void CGameCore::Release()

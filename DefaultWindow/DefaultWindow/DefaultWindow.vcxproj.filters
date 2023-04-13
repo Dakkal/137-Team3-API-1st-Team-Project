@@ -65,6 +65,12 @@
     <Filter Include="01. Manager\AbstractFactory">
       <UniqueIdentifier>{80d9cdd4-ea9e-4962-a224-1fdeddb64010}</UniqueIdentifier>
     </Filter>
+    <Filter Include="01. Manager\Event">
+      <UniqueIdentifier>{39b72884-2e4c-4985-b420-45e72ef7be0e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05. EventFunc">
+      <UniqueIdentifier>{853209e9-5a50-4366-b863-f887bf2c9608}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Obj.h">
@@ -142,6 +148,9 @@
     <ClInclude Include="Scene_Test.h">
       <Filter>02. Scene\99. Scene_Test</Filter>
     </ClInclude>
+    <ClInclude Include="EventMgr.h">
+      <Filter>01. Manager\Event</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Obj.cpp">
@@ -195,6 +204,12 @@
     </ClCompile>
     <ClCompile Include="Scene_Test.cpp">
       <Filter>02. Scene\99. Scene_Test</Filter>
+    </ClCompile>
+    <ClCompile Include="EventMgr.cpp">
+      <Filter>01. Manager\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="EvenetFunc.cpp">
+      <Filter>05. EventFunc</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

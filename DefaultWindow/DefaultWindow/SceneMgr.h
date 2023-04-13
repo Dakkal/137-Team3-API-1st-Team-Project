@@ -11,14 +11,20 @@ private:
 	CScene*				m_pCurrScene;
 
 public:
-	void ChangeScene(SCENE_TYPE _eType);
+	CScene*		GetCurrScene() { return m_pCurrScene; }
+
 
 public:
-	void Initialize();
-	void Update();
-	void Late_Update();
-	void Render(HDC hDC);
-	void Release();
+	void		Initialize();
+	void		Update();
+	void		Late_Update();
+	void		Render(HDC hDC);
+	void		Release();
+
+private:
+	void		ChangeScene(SCENE_TYPE _eType);
+
+	friend class CEventMgr;
 
 };
 

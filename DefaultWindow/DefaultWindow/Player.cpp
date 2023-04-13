@@ -45,7 +45,6 @@ void CPlayer::Late_Update(void)
 void CPlayer::Render(HDC hDC)
 {
 	Ellipse(hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom);
-	
 	MoveToEx(hDC, m_tInfo.fX, m_tInfo.fY, nullptr);
 	LineTo(hDC, m_ptShotPoint.x, m_ptShotPoint.y);
 	
@@ -56,7 +55,7 @@ void CPlayer::Release(void)
 }
 
 void CPlayer::OnCollision()
-{\
+{
 }
 
 void CPlayer::Key_Input(void)
@@ -73,9 +72,5 @@ void CPlayer::Key_Input(void)
 
 	if (GetAsyncKeyState('D'))
 		m_tInfo.fX += m_fSpeed;
-
-	
-
-	
 
 }
