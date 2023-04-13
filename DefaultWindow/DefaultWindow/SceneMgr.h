@@ -7,19 +7,17 @@ class CSceneMgr
 	SINGLETON(CSceneMgr);
 
 private:
-	vector<CScene*>		m_vecScene;
-	vector<CScene*>		m_vecBackScene;
+	CScene*				m_arrScene[(int)SCENE_TYPE::END];
 	CScene*				m_pCurrScene;
 
 public:
 	void ChangeScene(SCENE_TYPE _eType);
-	void BackScene();
 
 public:
 	void Initialize();
 	void Update();
 	void Late_Update();
-	void Render();
+	void Render(HDC hDC);
 	void Release();
 
 };

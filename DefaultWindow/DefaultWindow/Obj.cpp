@@ -2,12 +2,13 @@
 #include "Obj.h"
 
 
-CObj::CObj() : m_fSpeed(0.f)
+CObj::CObj(OBJECT_TYPE _eType) 
+	: m_fSpeed(0.f)
+	, m_eObjType(_eType)
 {
 	ZeroMemory(&m_tInfo, sizeof(INFO));
 	ZeroMemory(&m_tRect, sizeof(RECT));
 }
-
 
 CObj::~CObj()
 {

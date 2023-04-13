@@ -45,7 +45,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
     HACCEL hAccelTable = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_DEFAULTWINDOW));
 
-	CGameCore::GetInst()->Initialize();
+	CGameCore::GetInst()->Initialize(g_hWnd);
 
     MSG msg;
 	msg.message = WM_NULL;
@@ -81,13 +81,13 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 			if (dwTime + 10 < GetTickCount())
 			{
 				CGameCore::GetInst()->Tick();
-
 				dwTime = GetTickCount();
 			}			
 		}
        
     }
 
+	CGameCore::GetInst()->Release();
     return (int) msg.wParam;
 }
 

@@ -23,54 +23,28 @@ CSceneMgr::~CSceneMgr()
 
 void CSceneMgr::ChangeScene(SCENE_TYPE _eType)
 {
-	auto findLambda = [_eType](CScene* _pScene) -> 
-		const bool { if (_eType == _pScene->GetSceneType()) return true; else return false; };
-
-	vector<CScene*>::iterator findIt = find_if(m_vecScene.begin(), m_vecScene.end(), findLambda);
-
-	if (findIt == m_vecScene.end()) return;
-
-	m_vecBackScene.push_back(m_pCurrScene);
+	if (_eType == m_pCurrScene->GetSceneType())
+		return;
 
 	m_pCurrScene->Exit();
-	m_pCurrScene = *findIt;
+	m_pCurrScene = m_arrScene[(int)_eType];
 	m_pCurrScene->Enter();
+	
 }
 
-void CSceneMgr::BackScene()
-{
-	if (m_vecBackScene.empty()) return;
-
-	m_pCurrScene->Exit();
-	m_pCurrScene = m_vecBackScene.back();
-	m_vecBackScene.pop_back();
-	m_pCurrScene->Enter();
-}
 
 void CSceneMgr::Initialize()
 {
-	m_vecScene.reserve((size_t)SCENE_TYPE::END);
+	m_arrScene[(int)SCENE_TYPE::START]		= new CScene_Start;
+	m_arrScene[(int)SCENE_TYPE::STAGE1]		= new CScene_Stage1;
+	m_arrScene[(int)SCENE_TYPE::STAGE2]		= new CScene_Stage2;
+	m_arrScene[(int)SCENE_TYPE::GAMEOVER]	= new CScene_GameOver;
+	m_arrScene[(int)SCENE_TYPE::CLEAR]		= new CScene_Clear;
+	m_arrScene[(int)SCENE_TYPE::EXIT]		= new CScene_Exit;
 
-	CScene* pTemp = new CScene_Start;
-	if (pTemp != nullptr) m_vecScene.push_back(pTemp);
-
-	pTemp = new CScene_Stage1;
-	if (pTemp != nullptr) m_vecScene.push_back(pTemp);
-
-	pTemp = new CScene_Stage2;
-	if (pTemp != nullptr) m_vecScene.push_back(pTemp);
-
-	pTemp = new CScene_GameOver;
-	if (pTemp != nullptr) m_vecScene.push_back(pTemp);
-
-	pTemp = new CScene_Clear;
-	if (pTemp != nullptr) m_vecScene.push_back(pTemp);
-
-	pTemp = new CScene_Exit;
-	if (pTemp != nullptr) m_vecScene.push_back(pTemp);
-
-	m_pCurrScene = m_vecScene.front();
+	m_pCurrScene = m_arrScene[(int)SCENE_TYPE::START];
 	m_pCurrScene->Enter();
+
 }
 
 void CSceneMgr::Update()
@@ -83,17 +57,13 @@ void CSceneMgr::Late_Update()
 	m_pCurrScene->Late_Update();
 }
 
-void CSceneMgr::Render()
+void CSceneMgr::Render(HDC hDC)
 {
-	m_pCurrScene->Render();
+	m_pCurrScene->Render(hDC);
 }
 
 void CSceneMgr::Release()
 {
-	for_each(m_vecScene.begin(), m_vecScene.end(), Safe_Delete<CScene*>);
-
-	m_vecScene.clear();
-	m_vecBackScene.clear();
-	m_vecScene.shrink_to_fit();
-	m_vecBackScene.shrink_to_fit();
+	for (int i = 0; i < (int)SCENE_TYPE::END; ++i)
+		Safe_Delete<CScene*>(m_arrScene[i]);
 }

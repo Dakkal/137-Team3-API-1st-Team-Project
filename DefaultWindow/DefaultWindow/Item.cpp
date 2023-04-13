@@ -3,6 +3,7 @@
 
 
 CItem::CItem()
+	:CObj(OBJECT_TYPE::ITEM)
 {
 }
 
@@ -58,5 +59,9 @@ void CItem::Render(HDC hDC)
 }
 
 void CItem::Release()
+{
+}
+
+void CItem::OnCollision()
 {
 }
