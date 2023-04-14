@@ -160,15 +160,12 @@
     <ClInclude Include="EventFunc.h">
       <Filter>01. Manager\Event</Filter>
     </ClInclude>
-    <ClInclude Include="Cunsumption.h">
-      <Filter>03. Obj\02. Item</Filter>
-    </ClInclude>
-    <ClInclude Include="Equip.h">
-      <Filter>03. Obj\02. Item</Filter>
-    </ClInclude>
     <ClInclude Include="ASCII.h">
       <Filter>99.Define</Filter>
     </ClInclude>
+    <ClInclude Include="AbstractFactory.h" />
+    <ClInclude Include="BulletTypeChange.h" />
+    <ClInclude Include="LifeUp.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Obj.cpp">
@@ -232,12 +229,9 @@
     <ClCompile Include="EventFunc.cpp">
       <Filter>01. Manager\Event</Filter>
     </ClCompile>
-    <ClCompile Include="Cunsumption.cpp">
-      <Filter>03. Obj\02. Item</Filter>
-    </ClCompile>
-    <ClCompile Include="Equip.cpp">
-      <Filter>03. Obj\02. Item</Filter>
-    </ClCompile>
+    <ClCompile Include="BulletTypeChange.cpp" />
+    <ClCompile Include="EvenetFunc.cpp" />
+    <ClCompile Include="LifeUp.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="DefaultWindow.rc">
