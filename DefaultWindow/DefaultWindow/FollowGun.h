@@ -1,11 +1,11 @@
 #pragma once
 #include "Gun.h"
-class CFollwGun :
+class CFollowGun :
 	public CGun
 {
 public:
-	explicit CFollwGun();
-	virtual ~CFollwGun();
+	explicit CFollowGun();
+	virtual ~CFollowGun();
 
 	// Inherited via CBullet
 	virtual void Initialize() override;

@@ -156,7 +156,7 @@
     <ClInclude Include="Equip.h" />
     <ClInclude Include="EventFunc.h" />
     <ClInclude Include="EventMgr.h" />
-    <ClInclude Include="FollwGun.h" />
+    <ClInclude Include="FollowGun.h" />
     <ClInclude Include="GameCore.h" />
     <ClInclude Include="Gun.h" />
     <ClInclude Include="Item.h" />
@@ -191,7 +191,7 @@
     <ClCompile Include="Equip.cpp" />
     <ClCompile Include="EventFunc.cpp" />
     <ClCompile Include="EventMgr.cpp" />
-    <ClCompile Include="FollwGun.cpp" />
+    <ClCompile Include="FollowGun.cpp" />
     <ClCompile Include="GameCore.cpp" />
     <ClCompile Include="Gun.cpp" />
     <ClCompile Include="Item.cpp" />

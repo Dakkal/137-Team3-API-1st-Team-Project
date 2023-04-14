@@ -16,6 +16,8 @@ CNormalGun::~CNormalGun()
 void CNormalGun::Initialize()
 {
 	m_eGunType = GUN_TYPE::NORMALGUN;
+	m_iBulletSize = 30;
+
 
 	m_fDistance = 30.f;
 }

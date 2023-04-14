@@ -28,18 +28,25 @@ public:
 	void		ShotGun_Pattern();
 	void		MachineGun_Pattern();
 	void		ScrewGun_Pattern();
-	void		FolloewGun_Pattern();
+	void		FollowGun_Pattern();
 
+	void		Find_Follow_Distance(CObj* _pObj);
 
 protected:
 	GUN_TYPE		m_eGunType;
 	DIR_TYPE		m_eDirType;
 
+	// È¸¿À¸®ÅºÀ» À§ÇÑ ¸â¹öº¯¼ö
 	POINT			m_tCenter;
 	float			m_fBullRotAngle;
 	float			m_fBullRotSpeed;
-
 	bool			m_bStart;
+
+	// À¯µµÅºÀ» À§ÇÑ ¸â¹öº¯¼ö
+	float			m_fMin;
+	float			m_fDiagonal;
+	float			m_fWidth;
+	float			m_fHeigth;
 
 };
 

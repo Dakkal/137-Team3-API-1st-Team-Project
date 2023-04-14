@@ -1,25 +1,25 @@
 #include "stdafx.h"
-#include "FollwGun.h"
+#include "FollowGun.h"
 
 
-CFollwGun::CFollwGun()
+CFollowGun::CFollowGun()
 {
 }
 
 
-CFollwGun::~CFollwGun()
+CFollowGun::~CFollowGun()
 {
 	Release();
 }
 
-void CFollwGun::Initialize()
+void CFollowGun::Initialize()
 {
 	m_eGunType = GUN_TYPE::FOLLOWGUN;
 
 	m_fDistance = 30.f;
 }
 
-int CFollwGun::Update()
+int CFollowGun::Update()
 {
 	if (m_bEvent == true)
 		return OBJ_EVENT;
@@ -32,21 +32,21 @@ int CFollwGun::Update()
 	return OBJ_NOEVENT;
 }
 
-void CFollwGun::Late_Update()
+void CFollowGun::Late_Update()
 {
 }
 
-void CFollwGun::Render(HDC hDC)
+void CFollowGun::Render(HDC hDC)
 {
 	MoveToEx(hDC, m_tInfo.fX, m_tInfo.fY, nullptr);
 	LineTo(hDC, m_tPosin.x, m_tPosin.y);
 }
 
-void CFollwGun::Release()
+void CFollowGun::Release()
 {
 
 }
 
-void CFollwGun::OnCollision(CObj * _pObj)
+void CFollowGun::OnCollision(CObj * _pObj)
 {
 }

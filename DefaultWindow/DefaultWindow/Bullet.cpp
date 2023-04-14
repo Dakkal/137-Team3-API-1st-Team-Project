@@ -1,11 +1,11 @@
 #include "stdafx.h"
 #include "Bullet.h"
-
+#include "Scene.h"
+#include "SceneMgr.h"
 
 CBullet::CBullet()
-	:CObj(OBJECT_TYPE::PLAYER_PROJECTILE), m_fBullRotAngle(0.f), m_fBullRotSpeed(0.f)
+	:CObj(OBJECT_TYPE::PLAYER_PROJECTILE)
 {
-	ZeroMemory(&m_tCenter, sizeof(POINT));
 }
 
 CBullet::~CBullet()
@@ -22,7 +22,18 @@ void CBullet::Initialize()
 
 	m_fSpeed = 5.f;
 	m_fDistance = 30.f;
+	
+	//스크류
 	m_bStart = true;
+	m_fBullRotAngle = 0.f;
+	m_fBullRotSpeed = 30.f;
+	ZeroMemory(&m_tCenter, sizeof(POINT));
+
+	// 유도
+	m_fMin = 600.f;
+	m_fDiagonal = 0.f;
+	m_fWidth = 0.f;
+	m_fHeigth = 0.f;
 }
 
 int CBullet::Update()
@@ -30,11 +41,20 @@ int CBullet::Update()
 	if (m_bEvent == true)
 		return OBJ_EVENT;
 
+	CScene* pScene = CSceneMgr::GetInst()->GetCurrScene();
+	list<CObj*>& copyList = pScene->GetObjTypeList(OBJECT_TYPE::MONSTER);
+
 	if (GUN_TYPE::NORMALGUN == m_eGunType) { Normal_Pattern(); }
 	if (GUN_TYPE::SHOTGUN == m_eGunType) { ShotGun_Pattern(); }
 	if (GUN_TYPE::MACHINEGUN == m_eGunType) { MachineGun_Pattern(); }
 	if (GUN_TYPE::SCRWGUN == m_eGunType) { ScrewGun_Pattern(); }
-	if (GUN_TYPE::FOLLOWGUN == m_eGunType) { FolloewGun_Pattern(); }
+	if (GUN_TYPE::FOLLOWGUN == m_eGunType) 
+	{ 
+		for (auto iter : copyList)
+			Find_Follow_Distance(iter);
+
+		FollowGun_Pattern(); 
+	}
 
 
 	__super::Update_Rect();
@@ -119,18 +139,13 @@ void CBullet::ScrewGun_Pattern()
 
 }
 
-void CBullet::FolloewGun_Pattern()
+void CBullet::FollowGun_Pattern()
 {
-	float	fWidth = 0.f, fHeight = 0.f, fDiagonal = 0.f;
 	float	fRadian = 0.f;
 
-	fWidth = m_pTarget->Get_Info().fX - m_tInfo.fX;
-	fHeight = m_pTarget->Get_Info().fY - m_tInfo.fY;
+	fRadian = acosf(m_fWidth / m_fDiagonal);
 
-	fDiagonal = sqrtf(fWidth * fWidth + fHeight * fHeight);
-	fRadian = acosf(fWidth / fDiagonal);
-
-	if (m_pTarget->Get_Info().fY > m_tInfo.fY)
+	if ((m_fHeigth - m_tInfo.fY) > m_tInfo.fY)
 		fRadian *= -1.f;
 
 	m_tInfo.fX += m_fSpeed * cosf(fRadian);
@@ -138,3 +153,25 @@ void CBullet::FolloewGun_Pattern()
 
 }
 
+void CBullet::Find_Follow_Distance(CObj * _pObj)
+{
+	float f_Diagonal = 0.f;
+	float fWidth = 0.f;
+	float fHeigth = 0.f;
+
+	if (_pObj->GetObjType() == OBJECT_TYPE::MONSTER)
+	{
+		fWidth = _pObj->Get_Info().fX - m_tInfo.fX;
+		fHeigth = _pObj->Get_Info().fY - m_tInfo.fY;
+		f_Diagonal = sqrtf(fWidth * fWidth + fHeigth * fHeigth);
+
+		if (f_Diagonal <= m_fMin)
+		{
+			m_fDiagonal = f_Diagonal;
+			m_fWidth = fWidth;
+			m_fHeigth = fHeigth;
+			m_fMin = m_fDiagonal;
+		}
+	}
+	
+}
