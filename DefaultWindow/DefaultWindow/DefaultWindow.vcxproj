@@ -179,7 +179,7 @@
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Struct.h" />
     <ClInclude Include="targetver.h" />
-    <ClInclude Include="Temp.h" />
+    <ClInclude Include="ASCII.h" />
     <ClInclude Include="Template.h" />
   </ItemGroup>
   <ItemGroup>

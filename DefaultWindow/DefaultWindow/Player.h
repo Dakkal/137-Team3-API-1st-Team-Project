@@ -23,6 +23,8 @@ private:
 
 private:
 	float			m_fAngle;
+	float			m_fAccTime;			// 흐른시간
+	float			m_fInvinTime;		// 무적시간
 	POINT			m_ptShotPoint;
 };
 
