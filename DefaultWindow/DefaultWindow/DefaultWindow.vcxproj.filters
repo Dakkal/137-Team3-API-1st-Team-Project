@@ -232,9 +232,13 @@
       <Filter>01. Manager\Event</Filter>
     </ClCompile>
     <ClCompile Include="BulletTypeChange.cpp" />
+<<<<<<< HEAD
     <ClCompile Include="LifeUp.cpp">
       <Filter>03. Obj\02. Item</Filter>
     </ClCompile>
+=======
+    <ClCompile Include="LifeUp.cpp" />
+>>>>>>> 5003dfa (no message)
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="DefaultWindow.rc">
