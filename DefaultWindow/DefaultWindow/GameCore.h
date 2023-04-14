@@ -2,20 +2,20 @@
 #include "stdafx.h"
 
 class CPlayer;
-
 class CGameCore
 {
 	SINGLETON(CGameCore);
 
 public:
-	void Initialize(HWND _hWnd);
-	void Tick();
-	void Stop() { m_bPlaying = false; }
-	void Release();
+	void		Initialize(HWND _hWnd);
+	void		Tick();
+	void		Stop() { m_bPlaying = false; }
+	void		Release();
 
 public:
 	CPlayer*	GetPlayer() { return m_pPlayer; }
 	bool		IsPlaying() { return m_bPlaying; }
+	POINT		GetMousePos() { return m_ptMousePos; }
 
 public:
 	//액세스 메서드
@@ -29,6 +29,7 @@ public:
 
 private:
 	void		ClearScreen() { Rectangle(m_hDC, -1, -1, WINCX + 1, WINCY + 1); }
+
 private:
 	CPlayer*	m_pPlayer;
 	bool		m_bPlaying;
@@ -39,6 +40,8 @@ private:
 	HWND		m_hWnd;
 	HDC			m_hDC;
 
+	POINT		m_ptMousePos;
+	Image*		m_pImgCursor;
 
 };
 

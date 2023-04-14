@@ -3,7 +3,7 @@
 
 
 CBullet::CBullet()
-	:CObj(OBJECT_TYPE::PLAYER_BULLET)
+	:CObj(OBJECT_TYPE::PLAYER_PROJECTILE)
 {
 }
 
@@ -74,6 +74,7 @@ void CBullet::Release()
 {
 }
 
-void CBullet::OnCollision()
+void CBullet::OnCollision(CObj * _pObj)
 {
 }
+

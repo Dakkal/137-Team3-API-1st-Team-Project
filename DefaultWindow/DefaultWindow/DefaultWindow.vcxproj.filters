@@ -13,6 +13,21 @@
     <Filter Include="000.Defualt">
       <UniqueIdentifier>{93573de6-355b-4dc8-89c9-231a3f83e25d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03. Obj">
+      <UniqueIdentifier>{34ea21b2-7929-44bb-ad75-74ee86870eba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Obj\00. Player">
+      <UniqueIdentifier>{9bf70e91-be93-40ad-a3c9-dce4e8e025cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Obj\01. Enemy">
+      <UniqueIdentifier>{380a5656-9d2f-4d37-accf-b0b2146c80c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Obj\02. Item">
+      <UniqueIdentifier>{4321067a-6e89-41df-85cf-97937ed73824}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Obj\03. Bullet">
+      <UniqueIdentifier>{b58bae56-36c2-4c71-95dc-727ff3e41324}</UniqueIdentifier>
+    </Filter>
     <Filter Include="02. Scene">
       <UniqueIdentifier>{e4d60e2f-3303-41c4-b0ef-d9a4621febb1}</UniqueIdentifier>
     </Filter>
@@ -44,29 +59,17 @@
     <Filter Include="04. PenBrushTool">
       <UniqueIdentifier>{f6dd02ea-1bc8-4d04-ab3e-8c463721d971}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Obj">
-      <UniqueIdentifier>{34ea21b2-7929-44bb-ad75-74ee86870eba}</UniqueIdentifier>
+    <Filter Include="02. Scene\99. Scene_Test">
+      <UniqueIdentifier>{dfe70ba0-5fb0-4fe5-9ced-2e16364c431b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Obj\00. Player">
-      <UniqueIdentifier>{9bf70e91-be93-40ad-a3c9-dce4e8e025cf}</UniqueIdentifier>
+    <Filter Include="01. Manager\AbstractFactory">
+      <UniqueIdentifier>{80d9cdd4-ea9e-4962-a224-1fdeddb64010}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Obj\01. Enemy">
-      <UniqueIdentifier>{380a5656-9d2f-4d37-accf-b0b2146c80c1}</UniqueIdentifier>
+    <Filter Include="01. Manager\Event">
+      <UniqueIdentifier>{39b72884-2e4c-4985-b420-45e72ef7be0e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Obj\02. Item">
-      <UniqueIdentifier>{4321067a-6e89-41df-85cf-97937ed73824}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Obj\02. Item\00.Equip">
-      <UniqueIdentifier>{08e1e355-96a2-431b-bd4c-7ceb5a4b8009}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Obj\02. Item\01.Consumption">
-      <UniqueIdentifier>{f2349e97-cbd7-424c-ae9b-0cbdb43dd6f2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Obj\03. Bullet">
-      <UniqueIdentifier>{b58bae56-36c2-4c71-95dc-727ff3e41324}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="01. Manager\Collision">
-      <UniqueIdentifier>{53edcbc7-d146-4228-b1bb-eccfda844f28}</UniqueIdentifier>
+    <Filter Include="05. EventFunc">
+      <UniqueIdentifier>{853209e9-5a50-4366-b863-f887bf2c9608}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -142,14 +145,11 @@
     <ClInclude Include="SelectGDI.h">
       <Filter>04. PenBrushTool</Filter>
     </ClInclude>
-    <ClInclude Include="Cunsumption.h">
-      <Filter>03. Obj\02. Item\01.Consumption</Filter>
+    <ClInclude Include="Scene_Test.h">
+      <Filter>02. Scene\99. Scene_Test</Filter>
     </ClInclude>
-    <ClInclude Include="Equip.h">
-      <Filter>03. Obj\02. Item\00.Equip</Filter>
-    </ClInclude>
-    <ClInclude Include="CollisionMgr.h">
-      <Filter>01. Manager\Collision</Filter>
+    <ClInclude Include="EventMgr.h">
+      <Filter>01. Manager\Event</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -202,14 +202,14 @@
     <ClCompile Include="SelectGDI.cpp">
       <Filter>04. PenBrushTool</Filter>
     </ClCompile>
-    <ClCompile Include="Cunsumption.cpp">
-      <Filter>03. Obj\02. Item\01.Consumption</Filter>
+    <ClCompile Include="Scene_Test.cpp">
+      <Filter>02. Scene\99. Scene_Test</Filter>
     </ClCompile>
-    <ClCompile Include="Equip.cpp">
-      <Filter>03. Obj\02. Item\00.Equip</Filter>
+    <ClCompile Include="EventMgr.cpp">
+      <Filter>01. Manager\Event</Filter>
     </ClCompile>
-    <ClCompile Include="CollisonMgr.cpp">
-      <Filter>01. Manager\Collision</Filter>
+    <ClCompile Include="EvenetFunc.cpp">
+      <Filter>05. EventFunc</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

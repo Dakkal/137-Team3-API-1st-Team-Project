@@ -15,10 +15,6 @@ public:
 	virtual void	Render(HDC hDC) override;
 	virtual void	Release()		override;
 
-	virtual void	OnCollision()	override;
-
-private:
-	float		m_fDownSpeed;
-
+	virtual void	OnCollision(CObj* _pObj)	override;
 };
 

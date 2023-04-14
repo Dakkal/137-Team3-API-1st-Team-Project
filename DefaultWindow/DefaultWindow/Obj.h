@@ -9,12 +9,14 @@ public:
 	virtual ~CObj();
 
 public:
-	virtual void	Initialize()		PURE;
-	virtual int		Update()			PURE;
-	virtual void	Late_Update()		PURE;
-	virtual void	Render(HDC hDC)		PURE;
-	virtual void	Release()			PURE;
-	virtual void	OnCollision()		PURE;
+	virtual void	Initialize()					PURE;
+	virtual int		Update()						PURE;
+	virtual void	Late_Update()					PURE;
+	virtual void	Render(HDC hDC)					PURE;
+	virtual void	Release()						PURE;
+
+
+	virtual void	OnCollision(CObj* _pObj)		PURE;
 
 public:
 	OBJECT_TYPE GetObjType() { return m_eObjType; }

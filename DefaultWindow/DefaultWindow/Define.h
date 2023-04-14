@@ -7,6 +7,7 @@
 
 #define			OBJ_NOEVENT  0
 #define			OBJ_EVENT	 1
+#define			PI			 3.141592f
 
 
 #pragma region Singleton

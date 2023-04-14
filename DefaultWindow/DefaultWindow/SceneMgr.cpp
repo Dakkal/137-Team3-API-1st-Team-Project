@@ -8,6 +8,7 @@
 #include "Scene_Clear.h"
 #include "Scene_Exit.h"
 #include "GameCore.h"
+#include "Scene_Test.h"
 
 
 
@@ -41,8 +42,9 @@ void CSceneMgr::Initialize()
 	m_arrScene[(int)SCENE_TYPE::GAMEOVER]	= new CScene_GameOver;
 	m_arrScene[(int)SCENE_TYPE::CLEAR]		= new CScene_Clear;
 	m_arrScene[(int)SCENE_TYPE::EXIT]		= new CScene_Exit;
+	m_arrScene[(int)SCENE_TYPE::TEST]		= new CScene_Test;
 
-	m_pCurrScene = m_arrScene[(int)SCENE_TYPE::START];
+	m_pCurrScene = m_arrScene[(int)SCENE_TYPE::TEST];
 	m_pCurrScene->Enter();
 
 }

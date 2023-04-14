@@ -11,6 +11,10 @@
 // Windows 헤더 파일:
 #include <windows.h>
 
+#include <Ole2.h>
+#include <gdiplus.h>
+#pragma comment(lib, "gdiplus")
+using namespace Gdiplus;
 // C 런타임 헤더 파일입니다.
 
 

@@ -46,6 +46,7 @@ void CEnemy::Release()
 {
 }
 
-void CEnemy::OnCollision()
+void CEnemy::OnCollision(CObj * _pObj)
 {
 }
+
