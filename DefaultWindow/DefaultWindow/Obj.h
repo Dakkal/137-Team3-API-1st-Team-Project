@@ -30,6 +30,9 @@ public:
 	void Set_Target(CObj* _pTarget) { m_pTarget = _pTarget; }
 	void Set_ObjType(OBJECT_TYPE _eObjType) { m_eObjType = _eObjType; }
 
+	float		GetAngleDegree() { return m_fAngle; }
+	float		GetAngleRadian() { return m_fAngle * (PI / 180); }
+	void		SetAngle(float _fDegree) { m_fAngle = _fDegree; }
 
 protected:
 	void		Update_Rect();
@@ -47,6 +50,7 @@ protected:
 	float			m_fAngle;
 	float			m_fDistance;
 
-	bool			m_bEvent;
+	float			m_fAngle;
+	bool			m_bCollision;				// 충돌 가능한지.
 };
 

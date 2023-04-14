@@ -30,6 +30,7 @@ void CGameCore::Initialize(HWND _hWnd)
 	m_pPlayer->Initialize();
 
 	m_pImgCursor = Image::FromFile(L"../Output/Resource/Cursor/0.png");
+	CreateBrusnAndPen();
 
 	CSceneMgr::GetInst()->Initialize();
 	ShowCursor(false);
@@ -66,3 +67,28 @@ void CGameCore::Release()
 
 	ReleaseDC(m_hWnd, m_hDC);
 }
+
+void CGameCore::CreateBrusnAndPen()
+{
+	//CreateSolidBrush(RGB(255, 0, 0));
+	m_arrBrush[(UINT)BRUSH_TYPE::HOLLOW]	= (HBRUSH)GetStockObject(HOLLOW_BRUSH);
+	m_arrBrush[(UINT)BRUSH_TYPE::BLACK]		= (HBRUSH)GetStockObject(BLACK_BRUSH);
+	m_arrBrush[(UINT)BRUSH_TYPE::WHITE]		= (HBRUSH)GetStockObject(WHITE_BRUSH);
+
+	m_arrBrush[(UINT)BRUSH_TYPE::RED]		= CreateSolidBrush(RGB(255, 0, 0));
+	m_arrBrush[(UINT)BRUSH_TYPE::GREEN]		= CreateSolidBrush(RGB(0, 255, 0));
+	m_arrBrush[(UINT)BRUSH_TYPE::BLUE]		= CreateSolidBrush(RGB(0, 0, 255));
+
+	//HPEN CreatePen(
+	//	[in] int      iStyle,
+	//	[in] int      cWidth,
+	//	[in] COLORREF color
+	//);
+
+	m_arrPen[(UINT)PEN_TYPE::RED]			= CreatePen(PS_SOLID, 1, RGB(255, 0, 0));
+	m_arrPen[(UINT)PEN_TYPE::GREEN]			= CreatePen(PS_SOLID, 1, RGB(0, 255, 0));
+	m_arrPen[(UINT)PEN_TYPE::BLUE]			= CreatePen(PS_SOLID, 1, RGB(0, 0, 255));;
+	
+	
+}
+

@@ -21,11 +21,6 @@ void CLifeUp::Initialize()
 
 int CLifeUp::Update()
 {
-	if (m_bEvent)
-		return OBJ_EVENT;
-
-
-
 	__super::Update_Rect();
 
 	return OBJ_NOEVENT;

@@ -29,7 +29,7 @@ public:
 
 private:
 	void		ClearScreen() { Rectangle(m_hDC, -1, -1, WINCX + 1, WINCY + 1); }
-
+	void		CreateBrusnAndPen();
 private:
 	CPlayer*	m_pPlayer;
 	bool		m_bPlaying;
