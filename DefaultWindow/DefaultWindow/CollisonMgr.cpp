@@ -20,8 +20,8 @@ void CCollisonMgr::Collision_Rect(list<CObj*> Dst, list<CObj*> Src)
 		{
 			if (IntersectRect(&rc, &Dest->Get_Rect(), &Sour->Get_Rect()))
 			{
-				Dest->OnCollision();
-				Sour->OnCollision();
+				Dest->OnCollision(Sour);
+				Sour->OnCollision(Dest);
 			}
 		}
 	}
@@ -35,8 +35,8 @@ void CCollisonMgr::Collision_Sphere(list<CObj*> Dst, list<CObj*> Src)
 		{
 			if (Check_Sphere(Dest, Sour))
 			{
-				Dest->OnCollision();
-				Sour->OnCollision();
+				Dest->OnCollision(Sour);
+				Sour->OnCollision(Dest);
 			}
 		}
 	}

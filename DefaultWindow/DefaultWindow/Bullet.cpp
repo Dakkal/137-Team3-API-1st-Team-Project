@@ -27,7 +27,7 @@ int CBullet::Update()
 	if (m_bEvent)
 		return OBJ_EVENT;
 
-	switch (m_eBullType)
+	/*switch (m_eBullType)
 	{
 	case BULLET_TYPE::NORMAL:
 		m_tInfo.iAttack = 10;
@@ -46,7 +46,7 @@ int CBullet::Update()
 		m_fSpeed = 9.f;
 		m_tInfo.fX -= m_fSpeed;
 		break;
-	}
+	}*/
 
 	__super::Update_Rect();
 

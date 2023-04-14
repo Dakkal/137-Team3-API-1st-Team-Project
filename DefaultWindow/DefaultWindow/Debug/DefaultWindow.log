@@ -1,22 +1,3 @@
-﻿  stdafx.cpp
-  SelectGDI.cpp
-  Scene_Start.cpp
-  Scene_Stage2.cpp
-  Scene_Stage1.cpp
-  Scene_GameOver.cpp
-  Scene_Exit.cpp
-  Scene_Clear.cpp
-  SceneMgr.cpp
-  Scene.cpp
-  Player.cpp
-  Obj.cpp
-  Item.cpp
-  GameCore.cpp
-  Equip.cpp
-  Enemy.cpp
-  DefaultWindow.cpp
-  Cunsumption.cpp
-  Bullet.cpp
-  코드를 생성하고 있습니다...
+﻿  CollisonMgr.cpp
   DefaultWindow.vcxproj -> C:\Users\bjohn\Desktop\팀폴더\DefaultWindow\Debug\DefaultWindow.exe
   DefaultWindow.vcxproj -> C:\Users\bjohn\Desktop\팀폴더\DefaultWindow\Debug\DefaultWindow.pdb (Full PDB)

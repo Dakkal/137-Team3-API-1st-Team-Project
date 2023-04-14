@@ -23,8 +23,8 @@ void CScene_Start::Enter()
 
 void CScene_Start::Update()
 {
-	if(Input_Space())
-		CSceneMgr::GetInst()->ChangeScene(SCENE_TYPE::STAGE1);
+	/*if(Input_Space())
+		CSceneMgr::GetInst()->ChangeScene(SCENE_TYPE::STAGE1);*/
 }
 
 void CScene_Start::Late_Update()
