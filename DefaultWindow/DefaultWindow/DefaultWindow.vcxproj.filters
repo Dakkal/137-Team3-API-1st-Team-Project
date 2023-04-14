@@ -72,35 +72,7 @@
       <UniqueIdentifier>{853209e9-5a50-4366-b863-f887bf2c9608}</UniqueIdentifier>
     </Filter>
     <Filter Include="01. Manager\Collision">
-<<<<<<< HEAD
       <UniqueIdentifier>{da74a70e-f614-42e0-ab5c-5fa5faa84cdd}</UniqueIdentifier>
-=======
-      <UniqueIdentifier>{295d5abe-164b-4d28-ab01-df5b623cf50a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Obj\02. Item\00. Consumption">
-      <UniqueIdentifier>{13c9d407-4be3-46fb-9130-e3970e819e5a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Obj\02. Item\01. Equip">
-      <UniqueIdentifier>{e66b4202-9e89-4476-a949-7bd649392e2a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Obj\04. Gun">
-      <UniqueIdentifier>{6a3c3b80-2006-45f3-9e99-36cc6f002a25}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Obj\04. Gun\04. FollowGun">
-      <UniqueIdentifier>{559320d6-3127-4af7-a13f-8f9013ddcc5d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Obj\04. Gun\02. MachineGun">
-      <UniqueIdentifier>{269f08ae-d194-4a64-b35f-a1bd3d44404e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Obj\04. Gun\03. ScrewGun">
-      <UniqueIdentifier>{8a06bdc6-8d2a-42c3-b4a5-3e93476e81ad}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Obj\04. Gun\01. ShotGun">
-      <UniqueIdentifier>{5155dc4f-e971-4759-be40-f6fbcb0d9071}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Obj\04. Gun\00. NormalGun">
-      <UniqueIdentifier>{2cdc60f3-628c-4281-bb0e-00b1e60d06c3}</UniqueIdentifier>
->>>>>>> feature/Jun
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -155,6 +127,9 @@
     <ClInclude Include="Template.h">
       <Filter>99.Define</Filter>
     </ClInclude>
+    <ClInclude Include="Struct.h">
+      <Filter>99.Define</Filter>
+    </ClInclude>
     <ClInclude Include="DefaultWindow.h">
       <Filter>000.Defualt</Filter>
     </ClInclude>
@@ -179,7 +154,6 @@
     <ClInclude Include="EventMgr.h">
       <Filter>01. Manager\Event</Filter>
     </ClInclude>
-<<<<<<< HEAD
     <ClInclude Include="CollisionMgr.h">
       <Filter>01. Manager\Collision</Filter>
     </ClInclude>
@@ -187,39 +161,6 @@
       <Filter>01. Manager\Event</Filter>
     </ClInclude>
     <ClInclude Include="ASCII.h">
-=======
-    <ClInclude Include="EventFunc.h">
-      <Filter>05. EventFunc</Filter>
-    </ClInclude>
-    <ClInclude Include="MachineGun.h">
-      <Filter>03. Obj\04. Gun\02. MachineGun</Filter>
-    </ClInclude>
-    <ClInclude Include="ScrewGun.h">
-      <Filter>03. Obj\04. Gun\03. ScrewGun</Filter>
-    </ClInclude>
-    <ClInclude Include="ShotGun.h">
-      <Filter>03. Obj\04. Gun\01. ShotGun</Filter>
-    </ClInclude>
-    <ClInclude Include="NormalGun.h">
-      <Filter>03. Obj\04. Gun\00. NormalGun</Filter>
-    </ClInclude>
-    <ClInclude Include="FollwGun.h">
-      <Filter>03. Obj\04. Gun\04. FollowGun</Filter>
-    </ClInclude>
-    <ClInclude Include="CollisionMgr.h">
-      <Filter>01. Manager\Collision</Filter>
-    </ClInclude>
-    <ClInclude Include="Cunsumption.h">
-      <Filter>03. Obj\02. Item\00. Consumption</Filter>
-    </ClInclude>
-    <ClInclude Include="Equip.h">
-      <Filter>03. Obj\02. Item\01. Equip</Filter>
-    </ClInclude>
-    <ClInclude Include="Gun.h">
-      <Filter>03. Obj\04. Gun</Filter>
-    </ClInclude>
-    <ClInclude Include="Struct.h">
->>>>>>> feature/Jun
       <Filter>99.Define</Filter>
     </ClInclude>
     <ClInclude Include="AbstractFactory.h" />
@@ -229,6 +170,9 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Obj.cpp">
+      <Filter>03. Obj</Filter>
+    </ClCompile>
     <ClCompile Include="Player.cpp">
       <Filter>03. Obj\00. Player</Filter>
     </ClCompile>
@@ -262,6 +206,7 @@
     <ClCompile Include="Scene_GameOver.cpp">
       <Filter>02. Scene\03. Scene_GameOver</Filter>
     </ClCompile>
+    <ClCompile Include="DefaultWindow.cpp" />
     <ClCompile Include="stdafx.cpp">
       <Filter>000.Defualt</Filter>
     </ClCompile>
@@ -280,7 +225,6 @@
     <ClCompile Include="EventMgr.cpp">
       <Filter>01. Manager\Event</Filter>
     </ClCompile>
-<<<<<<< HEAD
     <ClCompile Include="CollisonMgr.cpp">
       <Filter>01. Manager\Collision</Filter>
     </ClCompile>
@@ -290,43 +234,6 @@
     <ClCompile Include="BulletTypeChange.cpp" />
     <ClCompile Include="LifeUp.cpp">
       <Filter>03. Obj\02. Item</Filter>
-=======
-    <ClCompile Include="EventFunc.cpp">
-      <Filter>05. EventFunc</Filter>
-    </ClCompile>
-    <ClCompile Include="ShotGun.cpp">
-      <Filter>03. Obj\04. Gun\01. ShotGun</Filter>
-    </ClCompile>
-    <ClCompile Include="MachineGun.cpp">
-      <Filter>03. Obj\04. Gun\02. MachineGun</Filter>
-    </ClCompile>
-    <ClCompile Include="ScrewGun.cpp">
-      <Filter>03. Obj\04. Gun\03. ScrewGun</Filter>
-    </ClCompile>
-    <ClCompile Include="NormalGun.cpp">
-      <Filter>03. Obj\04. Gun\00. NormalGun</Filter>
-    </ClCompile>
-    <ClCompile Include="FollwGun.cpp">
-      <Filter>03. Obj\04. Gun\04. FollowGun</Filter>
-    </ClCompile>
-    <ClCompile Include="Obj.cpp">
-      <Filter>03. Obj</Filter>
-    </ClCompile>
-    <ClCompile Include="CollisonMgr.cpp">
-      <Filter>01. Manager\Collision</Filter>
-    </ClCompile>
-    <ClCompile Include="Cunsumption.cpp">
-      <Filter>03. Obj\02. Item\00. Consumption</Filter>
-    </ClCompile>
-    <ClCompile Include="DefaultWindow.cpp">
-      <Filter>000.Defualt</Filter>
-    </ClCompile>
-    <ClCompile Include="Equip.cpp">
-      <Filter>03. Obj\02. Item\01. Equip</Filter>
-    </ClCompile>
-    <ClCompile Include="Gun.cpp">
-      <Filter>03. Obj\04. Gun</Filter>
->>>>>>> feature/Jun
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

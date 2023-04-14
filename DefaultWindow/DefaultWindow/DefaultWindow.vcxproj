@@ -147,13 +147,11 @@
   <ItemGroup>
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="CollisionMgr.h" />
-    <ClInclude Include="Cunsumption.h" />
     <ClInclude Include="DefaultWindow.h" />
     <ClInclude Include="Define.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Enum.h" />
     <ClInclude Include="Enum_String.h" />
-    <ClInclude Include="Equip.h" />
     <ClInclude Include="EventFunc.h" />
     <ClInclude Include="EventMgr.h" />
     <ClInclude Include="FollowGun.h" />
@@ -185,10 +183,8 @@
   <ItemGroup>
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="CollisonMgr.cpp" />
-    <ClCompile Include="Cunsumption.cpp" />
     <ClCompile Include="DefaultWindow.cpp" />
     <ClCompile Include="Enemy.cpp" />
-    <ClCompile Include="Equip.cpp" />
     <ClCompile Include="EventFunc.cpp" />
     <ClCompile Include="EventMgr.cpp" />
     <ClCompile Include="FollowGun.cpp" />

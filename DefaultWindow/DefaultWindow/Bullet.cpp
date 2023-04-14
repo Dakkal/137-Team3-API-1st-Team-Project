@@ -41,28 +41,6 @@ int CBullet::Update()
 	if (m_bEvent == true)
 		return OBJ_EVENT;
 
-<<<<<<< HEAD
-	/*switch (m_eBullType)
-	{
-	case BULLET_TYPE::NORMAL:
-		m_tInfo.iAttack = 10;
-		m_fSpeed = 5.f;
-		m_tInfo.fX -= m_fSpeed;
-		break;
-
-	case BULLET_TYPE::EPIC:
-		m_tInfo.iAttack = 15;
-		m_fSpeed = 7.f;
-		m_tInfo.fX -= m_fSpeed;
-		break;
-
-	case BULLET_TYPE::LEGEND:
-		m_tInfo.iAttack = 20;
-		m_fSpeed = 9.f;
-		m_tInfo.fX -= m_fSpeed;
-		break;
-	}*/
-=======
 	CScene* pScene = CSceneMgr::GetInst()->GetCurrScene();
 	list<CObj*>& copyList = pScene->GetObjTypeList(OBJECT_TYPE::MONSTER);
 
@@ -78,7 +56,6 @@ int CBullet::Update()
 		FollowGun_Pattern(); 
 	}
 
->>>>>>> feature/Jun
 
 	__super::Update_Rect();
 
