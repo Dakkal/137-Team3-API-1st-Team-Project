@@ -15,7 +15,7 @@ public:
 	virtual void	Release()		override;
 
 public:
-	virtual void	OnCollision()	override;
+	virtual void	OnCollision(CObj* _pObj)	override;
 
 private:
 	void			Key_Input();

@@ -37,10 +37,12 @@ void CEventMgr::ExcuteEvent(tagEvent _eve)
 		// lParam : CObj*
 		CSceneMgr::GetInst()->GetCurrScene()->AddObj((CObj*)_eve.lParam);
 		break;
+
 	case EVENT_TYPE::CHANGE_SCENE :
-		// lParam : SCENE_TYPE
+		// lParam : SCENE_TYPE(ENUM)
 		CSceneMgr::GetInst()->ChangeScene((SCENE_TYPE)_eve.evtType);
 		break;
+
 	case EVENT_TYPE::DELETE_OBJ :
 		// lParam : CObj*
 		m_vecDeleteObj.push_back((CObj*)_eve.lParam);

@@ -54,9 +54,11 @@ void CPlayer::Release(void)
 {
 }
 
-void CPlayer::OnCollision()
+void CPlayer::OnCollision(CObj * _pObj)
 {
+	
 }
+
 
 void CPlayer::Key_Input(void)
 {

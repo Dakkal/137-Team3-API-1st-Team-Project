@@ -1,6 +1,7 @@
 #pragma once
 #include "stdafx.h"
 class CObj;
+
 struct tagEvent
 {
 	DWORD_PTR	lParam;

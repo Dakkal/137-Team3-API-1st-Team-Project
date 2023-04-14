@@ -2,6 +2,7 @@
 #include "Obj.h"
 #include "EventMgr.h"
 
+
 void AddObjEvt(CObj* _pObj)
 {
 	tagEvent eve;

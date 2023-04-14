@@ -62,6 +62,7 @@ void CItem::Release()
 {
 }
 
-void CItem::OnCollision()
+void CItem::OnCollision(CObj * _pObj)
 {
 }
+
