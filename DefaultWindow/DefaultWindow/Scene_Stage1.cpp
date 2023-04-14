@@ -16,8 +16,7 @@ CScene_Stage1::~CScene_Stage1()
 void CScene_Stage1::Enter()
 {
 	if (GetObjTypeList(OBJECT_TYPE::PLAYER).size() <= 0)
-		GetObjTypeList(OBJECT_TYPE::PLAYER).push_back(CGameCore::GetInst()->GetPlayer());
-	
+		GetObjTypeList(OBJECT_TYPE::PLAYER).push_back(CGameCore::GetInst()->GetPlayer());	
 }
 
 void CScene_Stage1::Update()
@@ -28,7 +27,6 @@ void CScene_Stage1::Update()
 void CScene_Stage1::Late_Update()
 {
 	CScene::Late_Update();
-
 }
 
 void CScene_Stage1::Render(HDC hDC)

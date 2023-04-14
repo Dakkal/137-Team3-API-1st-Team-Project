@@ -18,7 +18,7 @@ void Ccunsumption::Initialize()
 
 int Ccunsumption::Update()
 {
-	m_tInfo.fX += m_fSpeed;
+	//m_tInfo.fX += m_fSpeed;
 
 	//switch (m_eDir)
 	//{
@@ -41,33 +41,33 @@ int Ccunsumption::Update()
 
 void Ccunsumption::Late_Update()
 {
-	//if (100 >= m_tRect.left || WINCX - 100 <= m_tRect.right)
-	//{
-	//	m_fSpeed *= -1.f;
+	/*if (100 >= m_tRect.left || WINCX - 100 <= m_tRect.right)
+	{
+		m_fSpeed *= -1.f;
 
-	//	if (DIR_TYPE::UP == m_eDir)
-	//	{
-	//		m_eDir = DIR_TYPE::DOWN;
-	//	}
+		if (DIR_TYPE::UP == m_eDir)
+		{
+			m_eDir = DIR_TYPE::DOWN;
+		}
 
-	//	else
-	//	{
-	//		m_eDir = DIR_TYPE::UP;
-	//	}
-	//}
+		else
+		{
+			m_eDir = DIR_TYPE::UP;
+		}
+	}
 
-	//if (100 >= m_tRect.top || WINCY - 100 <= m_tRect.bottom)
-	//{
-	//	if (DIR_TYPE::UP == m_eDir)
-	//	{
-	//		m_eDir = DIR_TYPE::DOWN;
-	//	}
+	if (100 >= m_tRect.top || WINCY - 100 <= m_tRect.bottom)
+	{
+		if (DIR_TYPE::UP == m_eDir)
+		{
+			m_eDir = DIR_TYPE::DOWN;
+		}
 
-	//	else
-	//	{
-	//		m_eDir = DIR_TYPE::UP;
-	//	}
-	//}
+		else
+		{
+			m_eDir = DIR_TYPE::UP;
+		}
+	}*/
 }
 
 void Ccunsumption::Render(HDC hDC)

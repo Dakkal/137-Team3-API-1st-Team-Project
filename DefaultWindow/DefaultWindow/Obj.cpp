@@ -2,10 +2,13 @@
 #include "Obj.h"
 
 
-CObj::CObj(OBJECT_TYPE _eType) 
+CObj::CObj(OBJECT_TYPE _eType)
 	: m_fSpeed(0.f)
+	, m_fAngle(0.f)
+	, m_fDistance(0.f)
 	, m_eObjType(_eType)
 	, m_bEvent(false)
+	, m_dwTime(GetTickCount())
 {
 	ZeroMemory(&m_tInfo, sizeof(INFO));
 	ZeroMemory(&m_tRect, sizeof(RECT));

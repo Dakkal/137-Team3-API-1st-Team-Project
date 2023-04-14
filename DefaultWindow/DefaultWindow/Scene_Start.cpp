@@ -1,9 +1,8 @@
 #include "stdafx.h"
-#include "EventFunc.h"
 #include "Scene_Start.h"
 #include "SceneMgr.h"
 #include "GameCore.h"
-#include "Player.h"
+#include "EventFunc.h"
 
 
 CScene_Start::CScene_Start()
@@ -11,8 +10,6 @@ CScene_Start::CScene_Start()
 {
 	swprintf_s(m_szTitle, L"1373");
 	swprintf_s(m_szSubTitle, L"space바를 눌러 시작");
-
-
 }
 
 
