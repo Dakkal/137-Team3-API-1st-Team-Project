@@ -18,9 +18,10 @@ public:
 public:
 	virtual void	OnCollision(CObj* _pObj)	override;
 
-	GUN_TYPE Get_GunType() { return m_eGunType; }
+	//GUN_TYPE Get_GunType() { return m_eGunType; }
 
 	void Set_GunType(GUN_TYPE _eGunType) { m_eGunType = _eGunType; }
+	void Set_DirType(DIR_TYPE _eDirType) { m_eDirType = _eDirType; }
 	
 public:
 	void		Normal_Pattern();
@@ -31,7 +32,14 @@ public:
 
 
 protected:
-	GUN_TYPE		m_eGunType;;
+	GUN_TYPE		m_eGunType;
+	DIR_TYPE		m_eDirType;
+
+	POINT			m_tCenter;
+	float			m_fBullRotAngle;
+	float			m_fBullRotSpeed;
+
+	bool			m_bStart;
 
 };
 

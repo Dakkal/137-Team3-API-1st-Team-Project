@@ -151,9 +151,6 @@
     <ClInclude Include="Template.h">
       <Filter>99.Define</Filter>
     </ClInclude>
-    <ClInclude Include="Struct.h">
-      <Filter>99.Define</Filter>
-    </ClInclude>
     <ClInclude Include="DefaultWindow.h">
       <Filter>000.Defualt</Filter>
     </ClInclude>
@@ -207,6 +204,9 @@
     </ClInclude>
     <ClInclude Include="Gun.h">
       <Filter>03. Obj\04. Gun</Filter>
+    </ClInclude>
+    <ClInclude Include="Struct.h">
+      <Filter>99.Define</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

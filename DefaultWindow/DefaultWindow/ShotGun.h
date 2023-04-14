@@ -16,5 +16,10 @@ public:
 
 public:
 	virtual void	OnCollision(CObj* _pObj)	override;
+
+	void	Set_Dir_Type(DIR_TYPE _eDirType) { m_eDirType = _eDirType; }
+
+private:
+	DIR_TYPE		m_eDirType;
 };
 

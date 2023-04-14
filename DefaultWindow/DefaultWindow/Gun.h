@@ -1,5 +1,6 @@
 #pragma once
 #include "Obj.h"
+
 class CGun :
 	public CObj
 {
@@ -22,6 +23,8 @@ public:
 	void Set_GunType(GUN_TYPE _eGunType) { m_eGunType = _eGunType; }
 
 protected:
+	POINT			m_tPosin;
+	
 	GUN_TYPE		m_eGunType;
 };
 

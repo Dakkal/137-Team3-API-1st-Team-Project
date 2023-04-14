@@ -20,14 +20,11 @@ public:
 
 public:
 	OBJECT_TYPE GetObjType() { return m_eObjType; }
+	INFO		Get_Info() { return m_tInfo; }
 	RECT		Get_Rect() { return m_tRect; }
 
-	void Set_Pos(float _X, float _Y)
-	{
-		m_tInfo.fX = _X;
-		m_tInfo.fY = _Y;
-	}
 
+	void Set_Pos(float _X, float _Y){m_tInfo.fX = _X; m_tInfo.fY = _Y;}
 	void Set_Angle(float _fAngle) { m_fAngle = _fAngle; }
 	void Set_Dis(float _fDis) { m_fDistance = _fDis; }
 	void Set_Target(CObj* _pTarget) { m_pTarget = _pTarget; }
