@@ -23,18 +23,18 @@ void CEquip::Initialize()
 
 int CEquip::Update()
 {
-	m_tInfo.fX += m_fSpeed;
+	//m_tInfo.fX += m_fSpeed;
 
-	switch (m_eDir)
-	{
-	case DIR_TYPE::UP:
-		m_tInfo.fY -= m_fSpeed;
-		break;
+	//switch (m_eDir)
+	//{
+	//case DIR_TYPE::UP:
+	//	m_tInfo.fY -= m_fSpeed;
+	//	break;
 
-	case DIR_TYPE::DOWN:
-		m_tInfo.fY += m_fSpeed;
-		break;
-	}
+	//case DIR_TYPE::DOWN:
+	//	m_tInfo.fY += m_fSpeed;
+	//	break;
+	//}
 
 
 	__super::Update_Rect();
@@ -46,33 +46,33 @@ int CEquip::Update()
 
 void CEquip::Late_Update()
 {
-	if (100 >= m_tRect.left || WINCX - 100 <= m_tRect.right)
-	{
-		m_fSpeed *= -1.f;
+	//if (100 >= m_tRect.left || WINCX - 100 <= m_tRect.right)
+	//{
+	//	m_fSpeed *= -1.f;
 
-		if (DIR_TYPE::UP == m_eDir)
-		{
-			m_eDir = DIR_TYPE::DOWN;
-		}
+	//	if (DIR_TYPE::UP == m_eDir)
+	//	{
+	//		m_eDir = DIR_TYPE::DOWN;
+	//	}
 
-		else
-		{
-			m_eDir = DIR_TYPE::UP;
-		}
-	}
+	//	else
+	//	{
+	//		m_eDir = DIR_TYPE::UP;
+	//	}
+	//}
 
-	if (100 >= m_tRect.top || WINCY - 100 <= m_tRect.bottom)
-	{
-		if (DIR_TYPE::UP == m_eDir)
-		{
-			m_eDir = DIR_TYPE::DOWN;
-		}
+	//if (100 >= m_tRect.top || WINCY - 100 <= m_tRect.bottom)
+	//{
+	//	if (DIR_TYPE::UP == m_eDir)
+	//	{
+	//		m_eDir = DIR_TYPE::DOWN;
+	//	}
 
-		else
-		{
-			m_eDir = DIR_TYPE::UP;
-		}
-	}
+	//	else
+	//	{
+	//		m_eDir = DIR_TYPE::UP;
+	//	}
+	//}
 }
 
 void CEquip::Render(HDC hDC)
