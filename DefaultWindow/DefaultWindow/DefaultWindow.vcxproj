@@ -154,11 +154,8 @@
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Enum.h" />
     <ClInclude Include="Enum_String.h" />
-<<<<<<< HEAD
     <ClInclude Include="Equip.h" />
     <ClInclude Include="EventFunc.h" />
-=======
->>>>>>> feature/yobi
     <ClInclude Include="EventMgr.h" />
     <ClInclude Include="GameCore.h" />
     <ClInclude Include="Item.h" />
@@ -188,12 +185,9 @@
     <ClCompile Include="CollisonMgr.cpp" />
     <ClCompile Include="DefaultWindow.cpp" />
     <ClCompile Include="Enemy.cpp" />
-<<<<<<< HEAD
     <ClCompile Include="Equip.cpp" />
     <ClCompile Include="EventFunc.cpp" />
-=======
     <ClCompile Include="EvenetFunc.cpp" />
->>>>>>> feature/yobi
     <ClCompile Include="EventMgr.cpp" />
     <ClCompile Include="GameCore.cpp" />
     <ClCompile Include="Item.cpp" />
