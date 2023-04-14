@@ -11,6 +11,8 @@ CScene_Start::CScene_Start()
 {
 	swprintf_s(m_szTitle, L"1373");
 	swprintf_s(m_szSubTitle, L"space바를 눌러 시작");
+
+
 }
 
 

@@ -151,6 +151,13 @@
     <ClInclude Include="EventMgr.h">
       <Filter>01. Manager\Event</Filter>
     </ClInclude>
+    <ClInclude Include="CollisionMgr.h" />
+    <ClInclude Include="Cunsumption.h" />
+    <ClInclude Include="Equip.h" />
+    <ClInclude Include="EventFunc.h" />
+    <ClInclude Include="Temp.h">
+      <Filter>99.Define</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Obj.cpp">
@@ -208,9 +215,10 @@
     <ClCompile Include="EventMgr.cpp">
       <Filter>01. Manager\Event</Filter>
     </ClCompile>
-    <ClCompile Include="EvenetFunc.cpp">
-      <Filter>05. EventFunc</Filter>
-    </ClCompile>
+    <ClCompile Include="CollisonMgr.cpp" />
+    <ClCompile Include="Cunsumption.cpp" />
+    <ClCompile Include="Equip.cpp" />
+    <ClCompile Include="EventFunc.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="DefaultWindow.rc">

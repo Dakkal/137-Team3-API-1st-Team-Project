@@ -8,6 +8,10 @@ struct tagEvent
 	DWORD_PTR	rParam;
 	EVENT_TYPE	evtType;
 };
+struct tagTemp
+{
+
+};
 
 class CEventMgr
 {
