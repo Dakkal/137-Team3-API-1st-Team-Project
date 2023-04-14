@@ -1,5 +1,6 @@
 #pragma once
 #include "Obj.h"
+
 class CItem :
 	public CObj
 {
@@ -9,12 +10,12 @@ public:
 
 public:
 	// CObj을(를) 통해 상속됨
-	virtual void	Initialize()	override;
-	virtual int		Update()		override;
-	virtual void	Late_Update()	override;
-	virtual void	Render(HDC hDC) override;
-	virtual void	Release()		override;
+	virtual void	Initialize()		  PURE;
+	virtual int		Update()			  PURE;
+	virtual void	Late_Update()		  PURE;
+	virtual void	Render(HDC hDC) 	  PURE;
+	virtual void	Release()			  PURE;					  	  
+	virtual void	OnCollision()		  PURE;
 
-	virtual void	OnCollision()	override;
+
 };
-

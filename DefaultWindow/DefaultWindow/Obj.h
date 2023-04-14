@@ -26,9 +26,11 @@ protected:
 protected:
 	INFO			m_tInfo;
 	RECT			m_tRect;
+	DIR_TYPE       m_eDir;
 
 
 	OBJECT_TYPE		m_eObjType;
 	float			m_fSpeed;
+
 };
 

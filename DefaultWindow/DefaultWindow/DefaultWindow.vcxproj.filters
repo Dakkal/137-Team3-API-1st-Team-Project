@@ -59,6 +59,12 @@
     <Filter Include="04. PenBrushTool">
       <UniqueIdentifier>{f6dd02ea-1bc8-4d04-ab3e-8c463721d971}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03. Obj\02. Item\00.Equip">
+      <UniqueIdentifier>{08e1e355-96a2-431b-bd4c-7ceb5a4b8009}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Obj\02. Item\01.Consumption">
+      <UniqueIdentifier>{f2349e97-cbd7-424c-ae9b-0cbdb43dd6f2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Obj.h">
@@ -133,6 +139,12 @@
     <ClInclude Include="SelectGDI.h">
       <Filter>04. PenBrushTool</Filter>
     </ClInclude>
+    <ClInclude Include="Cunsumption.h">
+      <Filter>03. Obj\02. Item\01.Consumption</Filter>
+    </ClInclude>
+    <ClInclude Include="Equip.h">
+      <Filter>03. Obj\02. Item\00.Equip</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Obj.cpp">
@@ -183,6 +195,12 @@
     </ClCompile>
     <ClCompile Include="SelectGDI.cpp">
       <Filter>04. PenBrushTool</Filter>
+    </ClCompile>
+    <ClCompile Include="Cunsumption.cpp">
+      <Filter>03. Obj\02. Item\01.Consumption</Filter>
+    </ClCompile>
+    <ClCompile Include="Equip.cpp">
+      <Filter>03. Obj\02. Item\00.Equip</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
