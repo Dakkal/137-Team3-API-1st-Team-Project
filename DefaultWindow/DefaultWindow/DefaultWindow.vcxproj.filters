@@ -71,6 +71,9 @@
     <Filter Include="05. EventFunc">
       <UniqueIdentifier>{853209e9-5a50-4366-b863-f887bf2c9608}</UniqueIdentifier>
     </Filter>
+    <Filter Include="01. Manager\Collision">
+      <UniqueIdentifier>{da74a70e-f614-42e0-ab5c-5fa5faa84cdd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Obj.h">
@@ -151,11 +154,19 @@
     <ClInclude Include="EventMgr.h">
       <Filter>01. Manager\Event</Filter>
     </ClInclude>
-    <ClInclude Include="CollisionMgr.h" />
-    <ClInclude Include="Cunsumption.h" />
-    <ClInclude Include="Equip.h" />
-    <ClInclude Include="EventFunc.h" />
-    <ClInclude Include="Temp.h">
+    <ClInclude Include="CollisionMgr.h">
+      <Filter>01. Manager\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="EventFunc.h">
+      <Filter>01. Manager\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="Cunsumption.h">
+      <Filter>03. Obj\02. Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Equip.h">
+      <Filter>03. Obj\02. Item</Filter>
+    </ClInclude>
+    <ClInclude Include="ASCII.h">
       <Filter>99.Define</Filter>
     </ClInclude>
   </ItemGroup>
@@ -215,10 +226,18 @@
     <ClCompile Include="EventMgr.cpp">
       <Filter>01. Manager\Event</Filter>
     </ClCompile>
-    <ClCompile Include="CollisonMgr.cpp" />
-    <ClCompile Include="Cunsumption.cpp" />
-    <ClCompile Include="Equip.cpp" />
-    <ClCompile Include="EventFunc.cpp" />
+    <ClCompile Include="CollisonMgr.cpp">
+      <Filter>01. Manager\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="EventFunc.cpp">
+      <Filter>01. Manager\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="Cunsumption.cpp">
+      <Filter>03. Obj\02. Item</Filter>
+    </ClCompile>
+    <ClCompile Include="Equip.cpp">
+      <Filter>03. Obj\02. Item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="DefaultWindow.rc">

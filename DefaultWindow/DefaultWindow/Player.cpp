@@ -2,11 +2,13 @@
 #include "Player.h"
 #include "SelectGDI.h"
 #include "GameCore.h"
+#include "ASCII.h"
 
 CPlayer::CPlayer()
 	:	CObj(OBJECT_TYPE::PLAYER)
 	,	m_fAngle(0.f)
 	,	m_ptShotPoint{0, 0}
+	,	m_fInvinTime(3000.f)
 {
 }
 
@@ -18,7 +20,7 @@ CPlayer::~CPlayer()
 
 void CPlayer::Initialize(void)
 {
-	m_tInfo = { 400.f, 300.f, 50.f, 50.f };
+	m_tInfo = { WINCX / 2, WINCY - 50.f, 50.f, 50.f };
 	m_fSpeed = 10.f;
 }
 
@@ -44,10 +46,14 @@ void CPlayer::Late_Update(void)
 
 void CPlayer::Render(HDC hDC)
 {
-	Ellipse(hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom);
-	MoveToEx(hDC, m_tInfo.fX, m_tInfo.fY, nullptr);
-	LineTo(hDC, m_ptShotPoint.x, m_ptShotPoint.y);
+	POINT temp;
+
+	Ellipse(hDC, m_ptShotPoint.x - 10, m_ptShotPoint.y - 10, m_ptShotPoint.x + 10, m_ptShotPoint.y + 10);
+	/*MoveToEx(hDC, m_tInfo.fX, m_tInfo.fY, &temp);
+	LineTo(hDC, m_ptShotPoint.x, m_ptShotPoint.y);  */      
 	
+	TextOut(hDC, m_tRect.left, m_tInfo.fY + 30, L"플레이어", wcsnlen_s(L"플레이어", 10));
+	Ellipse(hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom);
 }
 
 void CPlayer::Release(void)
@@ -56,23 +62,33 @@ void CPlayer::Release(void)
 
 void CPlayer::OnCollision(CObj * _pObj)
 {
-	
+	switch (_pObj->GetObjType())
+	{
+	case OBJECT_TYPE::ENEMY_PROJECTILE :
+		break;
+	case OBJECT_TYPE::MONSTER :
+		break;
+	case OBJECT_TYPE::ITEM :
+		break;
+	}
 }
 
 
 void CPlayer::Key_Input(void)
-{
-	//GetKeyState()
-	if (GetAsyncKeyState('W'))
-		m_tInfo.fY -= m_fSpeed;
-
-	if (GetAsyncKeyState('S'))
-		m_tInfo.fY += m_fSpeed;
-	
+{	
 	if (GetAsyncKeyState('A'))
+	{
+		if (m_tRect.left <= 0)
+			return;
 		m_tInfo.fX -= m_fSpeed;
+	}
+		
 
 	if (GetAsyncKeyState('D'))
+	{
+		if (m_tRect.right >= WINCX)
+			return;
 		m_tInfo.fX += m_fSpeed;
-
+	}
+		
 }

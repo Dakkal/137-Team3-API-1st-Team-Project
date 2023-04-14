@@ -20,6 +20,8 @@ public:
 
 public:
 	OBJECT_TYPE GetObjType() { return m_eObjType; }
+	RECT Get_Rect() { return m_tRect; }
+	INFO Get_Info() { return m_tInfo; }
 
 	void Set_Pos(float _X, float _Y)
 	{

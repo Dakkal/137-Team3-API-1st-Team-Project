@@ -46,6 +46,7 @@ using namespace std;
 #include "Enum_String.h"
 #include "Struct.h"
 #include "Template.h"
+#include "ASCII.h"
 
 #ifdef _DEBUG
 
