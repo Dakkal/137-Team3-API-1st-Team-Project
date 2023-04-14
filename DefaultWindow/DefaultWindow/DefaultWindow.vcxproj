@@ -185,7 +185,6 @@
     <ClCompile Include="DefaultWindow.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="EventFunc.cpp" />
-    <ClCompile Include="EvenetFunc.cpp" />
     <ClCompile Include="EventMgr.cpp" />
     <ClCompile Include="GameCore.cpp" />
     <ClCompile Include="Item.cpp" />
