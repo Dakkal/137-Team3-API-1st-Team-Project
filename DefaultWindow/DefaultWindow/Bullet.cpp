@@ -27,26 +27,26 @@ int CBullet::Update()
 	if (m_bEvent)
 		return OBJ_EVENT;
 
-	//switch (m_eBullType)
-	//{
-	//case BULLET_TYPE::NORMAL:
-	//	m_tInfo.iAttack = 10;
-	//	m_fSpeed = 5.f;
-	//	m_tInfo.fX -= m_fSpeed;
-	//	break;
+	/*switch (m_eBullType)
+	{
+	case BULLET_TYPE::NORMAL:
+		m_tInfo.iAttack = 10;
+		m_fSpeed = 5.f;
+		m_tInfo.fX -= m_fSpeed;
+		break;
 
-	//case BULLET_TYPE::EPIC:
-	//	m_tInfo.iAttack = 15;
-	//	m_fSpeed = 7.f;
-	//	m_tInfo.fX -= m_fSpeed;
-	//	break;
+	case BULLET_TYPE::EPIC:
+		m_tInfo.iAttack = 15;
+		m_fSpeed = 7.f;
+		m_tInfo.fX -= m_fSpeed;
+		break;
 
-	//case BULLET_TYPE::LEGEND:
-	//	m_tInfo.iAttack = 20;
-	//	m_fSpeed = 9.f;
-	//	m_tInfo.fX -= m_fSpeed;
-	//	break;
-	//}
+	case BULLET_TYPE::LEGEND:
+		m_tInfo.iAttack = 20;
+		m_fSpeed = 9.f;
+		m_tInfo.fX -= m_fSpeed;
+		break;
+	}*/
 
 	__super::Update_Rect();
 

@@ -17,6 +17,10 @@ void CScene_Stage1::Enter()
 {
 	if (GetObjTypeList(OBJECT_TYPE::PLAYER).size() <= 0)
 		GetObjTypeList(OBJECT_TYPE::PLAYER).push_back(CGameCore::GetInst()->GetPlayer());
+<<<<<<< HEAD
+=======
+
+>>>>>>> feature/yobi
 	
 }
 

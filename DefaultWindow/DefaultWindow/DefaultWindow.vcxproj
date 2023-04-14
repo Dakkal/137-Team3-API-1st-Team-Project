@@ -145,19 +145,24 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AbstractFactory.h" />
     <ClInclude Include="Bullet.h" />
+    <ClInclude Include="BulletTypeChange.h" />
     <ClInclude Include="CollisionMgr.h" />
-    <ClInclude Include="Cunsumption.h" />
     <ClInclude Include="DefaultWindow.h" />
     <ClInclude Include="Define.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Enum.h" />
     <ClInclude Include="Enum_String.h" />
+<<<<<<< HEAD
     <ClInclude Include="Equip.h" />
     <ClInclude Include="EventFunc.h" />
+=======
+>>>>>>> feature/yobi
     <ClInclude Include="EventMgr.h" />
     <ClInclude Include="GameCore.h" />
     <ClInclude Include="Item.h" />
+    <ClInclude Include="LifeUp.h" />
     <ClInclude Include="Obj.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Resource.h" />
@@ -179,15 +184,20 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Bullet.cpp" />
+    <ClCompile Include="BulletTypeChange.cpp" />
     <ClCompile Include="CollisonMgr.cpp" />
-    <ClCompile Include="Cunsumption.cpp" />
     <ClCompile Include="DefaultWindow.cpp" />
     <ClCompile Include="Enemy.cpp" />
+<<<<<<< HEAD
     <ClCompile Include="Equip.cpp" />
     <ClCompile Include="EventFunc.cpp" />
+=======
+    <ClCompile Include="EvenetFunc.cpp" />
+>>>>>>> feature/yobi
     <ClCompile Include="EventMgr.cpp" />
     <ClCompile Include="GameCore.cpp" />
     <ClCompile Include="Item.cpp" />
+    <ClCompile Include="LifeUp.cpp" />
     <ClCompile Include="Obj.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Scene.cpp" />

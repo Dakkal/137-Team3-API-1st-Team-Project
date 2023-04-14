@@ -1,11 +1,11 @@
 #pragma once
 #include "Item.h"
-class Ccunsumption :
+class CLifeUp :
 	public CItem
 {
 public:
-	Ccunsumption();
-	~Ccunsumption();
+	CLifeUp();
+	~CLifeUp();
 
 	// CItem을(를) 통해 상속됨
 	virtual void Initialize() override;
@@ -13,11 +13,7 @@ public:
 	virtual void Late_Update() override;
 	virtual void Render(HDC hDC) override;
 	virtual void Release() override;
-	virtual void OnCollision() override;
-
-
-	// CItem을(를) 통해 상속됨
-	virtual void Use_Item() override;
-
+	virtual void OnCollision(CObj * _pObj) override;
+	virtual void Use_Item(CObj * _pObj) override;
 };
 
