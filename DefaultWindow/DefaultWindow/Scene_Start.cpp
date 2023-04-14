@@ -26,13 +26,8 @@ void CScene_Start::Enter()
 
 void CScene_Start::Update()
 {
-<<<<<<< HEAD
 	if (Input_Space())
 		ChangeSceneEvt(SCENE_TYPE::STAGE1);
-=======
-	/*if(Input_Space())
-		CSceneMgr::GetInst()->ChangeScene(SCENE_TYPE::STAGE1);*/
->>>>>>> feature/yobi
 }
 
 void CScene_Start::Late_Update()
