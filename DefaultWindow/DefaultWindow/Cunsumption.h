@@ -16,5 +16,8 @@ public:
 	virtual void OnCollision() override;
 
 
+	// CItem을(를) 통해 상속됨
+	virtual void Use_Item() override;
+
 };
 

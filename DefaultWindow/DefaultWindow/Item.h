@@ -17,5 +17,6 @@ public:
 	virtual void	Release()			  PURE;					  	  
 	virtual void	OnCollision()		  PURE;
 
-
+public:
+	virtual void Use_Item() PURE;
 };

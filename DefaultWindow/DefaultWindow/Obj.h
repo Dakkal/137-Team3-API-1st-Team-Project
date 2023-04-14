@@ -18,6 +18,8 @@ public:
 
 public:
 	OBJECT_TYPE GetObjType() { return m_eObjType; }
+	RECT Get_Rect() { return m_tRect; }
+	INFO Get_Info() { return m_tInfo; }
 
 protected:
 	void		Update_Rect();

@@ -18,7 +18,6 @@ void CScene_Stage1::Enter()
 		GetObjTypeList(OBJECT_TYPE::PLAYER).push_back(CGameCore::GetInst()->GetPlayer());
 
 
-
 }
 
 void CScene_Stage1::Update()

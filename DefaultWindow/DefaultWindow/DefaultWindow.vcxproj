@@ -146,6 +146,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bullet.h" />
+    <ClInclude Include="CollisionMgr.h" />
     <ClInclude Include="Cunsumption.h" />
     <ClInclude Include="DefaultWindow.h" />
     <ClInclude Include="Define.h" />
@@ -174,6 +175,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Bullet.cpp" />
+    <ClCompile Include="CollisonMgr.cpp" />
     <ClCompile Include="Cunsumption.cpp" />
     <ClCompile Include="DefaultWindow.cpp" />
     <ClCompile Include="Enemy.cpp" />

@@ -18,7 +18,6 @@ void CScene_Start::Enter()
 {
 	if (GetObjTypeList(OBJECT_TYPE::PLAYER).size() <= 0)
 		GetObjTypeList(OBJECT_TYPE::PLAYER).push_back(CGameCore::GetInst()->GetPlayer());
-		
 }
 
 void CScene_Start::Update()

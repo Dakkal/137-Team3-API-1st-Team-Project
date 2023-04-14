@@ -84,3 +84,7 @@ void Ccunsumption::OnCollision()
 
 
 }
+
+void Ccunsumption::Use_Item()
+{
+}
