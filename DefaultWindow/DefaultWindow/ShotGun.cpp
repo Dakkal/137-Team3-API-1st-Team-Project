@@ -14,7 +14,7 @@ CShotGun::~CShotGun()
 
 void CShotGun::Initialize()
 {
-	m_eBullType = BULLET_TYPE::SHOTGUN;
+	m_eGunType = GUN_TYPE::SHOTGUN;
 }
 
 int CShotGun::Update()

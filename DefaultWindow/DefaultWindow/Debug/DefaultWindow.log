@@ -1,6 +1,9 @@
-﻿Build started 2023-04-14 오후 7:37:08.
+﻿Build started 2023-04-14 오후 8:25:46.
      1>Project "C:\Users\gmlwn\OneDrive\바탕 화면\프로그램\Team3 API 1st Project\DefaultWindow\DefaultWindow\DefaultWindow.vcxproj" on node 2 (Build target(s)).
-     1>Link:
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Yu"stdafx.h" /Fp"Debug\DefaultWindow.pch" /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt GameCore.cpp
+         GameCore.cpp
+       Link:
          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\gmlwn\OneDrive\바탕 화면\프로그램\Team3 API 1st Project\DefaultWindow\Debug\DefaultWindow.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\gmlwn\OneDrive\바탕 화면\프로그램\Team3 API 1st Project\DefaultWindow\Debug\DefaultWindow.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\gmlwn\OneDrive\바탕 화면\프로그램\Team3 API 1st Project\DefaultWindow\Debug\DefaultWindow.lib" /MACHINE:X86 Debug\DefaultWindow.res
          Debug\Bullet.obj
          Debug\CollisonMgr.obj
@@ -8,7 +11,7 @@
          Debug\DefaultWindow.obj
          Debug\Enemy.obj
          Debug\Equip.obj
-         Debug\EvenetFunc.obj
+         Debug\EventFunc.obj
          Debug\EventMgr.obj
          Debug\FollwGun.obj
          Debug\GameCore.obj
@@ -30,12 +33,9 @@
          Debug\SelectGDI.obj
          Debug\ShotGun.obj
          Debug\stdafx.obj
-     1>Scene_Start.obj : error LNK2005: "void __cdecl AddObjEvt(class CObj *)" (?AddObjEvt@@YAXPAVCObj@@@Z) already defined in EvenetFunc.obj
-     1>Scene_Start.obj : error LNK2005: "void __cdecl ChangeSceneEvt(enum SCENE_TYPE)" (?ChangeSceneEvt@@YAXW4SCENE_TYPE@@@Z) already defined in EvenetFunc.obj
-     1>Scene_Start.obj : error LNK2005: "void __cdecl DeleteObjEvt(class CObj *)" (?DeleteObjEvt@@YAXPAVCObj@@@Z) already defined in EvenetFunc.obj
-     1>C:\Users\gmlwn\OneDrive\바탕 화면\프로그램\Team3 API 1st Project\DefaultWindow\Debug\DefaultWindow.exe : fatal error LNK1169: one or more multiply defined symbols found
-     1>Done Building Project "C:\Users\gmlwn\OneDrive\바탕 화면\프로그램\Team3 API 1st Project\DefaultWindow\DefaultWindow\DefaultWindow.vcxproj" (Build target(s)) -- FAILED.
+         DefaultWindow.vcxproj -> C:\Users\gmlwn\OneDrive\바탕 화면\프로그램\Team3 API 1st Project\DefaultWindow\Debug\DefaultWindow.exe
+     1>Done Building Project "C:\Users\gmlwn\OneDrive\바탕 화면\프로그램\Team3 API 1st Project\DefaultWindow\DefaultWindow\DefaultWindow.vcxproj" (Build target(s)).
 
-Build FAILED.
+Build succeeded.
 
-Time Elapsed 00:00:00.27
+Time Elapsed 00:00:00.56

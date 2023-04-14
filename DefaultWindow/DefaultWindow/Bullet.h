@@ -9,22 +9,29 @@ public:
 
 public:
 	// CObj을(를) 통해 상속됨
-	virtual void	Initialize()	PURE;
-	virtual int		Update()		PURE;
-	virtual void	Late_Update()	PURE;
-	virtual void	Render(HDC hDC) PURE;
-	virtual void	Release()		PURE;
+	virtual void	Initialize()	override;
+	virtual int		Update()		override;
+	virtual void	Late_Update()	override;
+	virtual void	Render(HDC hDC) override;
+	virtual void	Release()		override;
 
 public:
-	virtual void	OnCollision(CObj* _pObj)	PURE;
+	virtual void	OnCollision(CObj* _pObj)	override;
 
-	BULLET_TYPE Get_BullType() { return m_eBullType; }
+	GUN_TYPE Get_GunType() { return m_eGunType; }
 
-	void Set_BullType(BULLET_TYPE _eBullType) { m_eBullType = _eBullType; }
+	void Set_GunType(GUN_TYPE _eGunType) { m_eGunType = _eGunType; }
 	
+public:
+	void		Normal_Pattern();
+	void		ShotGun_Pattern();
+	void		MachineGun_Pattern();
+	void		ScrewGun_Pattern();
+	void		FolloewGun_Pattern();
+
 
 protected:
-	BULLET_TYPE		m_eBullType;
+	GUN_TYPE		m_eGunType;;
 
 };
 

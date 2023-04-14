@@ -14,7 +14,7 @@ CMachineGun::~CMachineGun()
 
 void CMachineGun::Initialize()
 {
-	m_eBullType = BULLET_TYPE::MACHINEGUN;
+	m_eGunType = GUN_TYPE::MACHINEGUN;
 }
 
 int CMachineGun::Update()

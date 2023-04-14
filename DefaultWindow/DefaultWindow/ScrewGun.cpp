@@ -14,7 +14,7 @@ CScrewGun::~CScrewGun()
 
 void CScrewGun::Initialize()
 {
-	m_eBullType = BULLET_TYPE::SCRWGUN;
+	m_eGunType = GUN_TYPE::SCRWGUN
 }
 
 int CScrewGun::Update()

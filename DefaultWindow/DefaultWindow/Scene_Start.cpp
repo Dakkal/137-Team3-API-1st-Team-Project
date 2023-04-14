@@ -2,6 +2,7 @@
 #include "Scene_Start.h"
 #include "SceneMgr.h"
 #include "GameCore.h"
+#include "EventFunc.h"
 
 
 CScene_Start::CScene_Start()
@@ -23,7 +24,7 @@ void CScene_Start::Enter()
 void CScene_Start::Update()
 {
 	if (Input_Space())
-		//ChangeSceneEvt(SCENE_TYPE::STAGE1);
+		ChangeSceneEvt(SCENE_TYPE::STAGE1);
 }
 
 void CScene_Start::Late_Update()

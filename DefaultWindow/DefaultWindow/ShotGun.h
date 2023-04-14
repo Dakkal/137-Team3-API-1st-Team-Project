@@ -1,7 +1,7 @@
 #pragma once
-#include "Bullet.h"
+#include "Gun.h"
 class CShotGun :
-	public CBullet
+	public CGun
 {
 public:
 	explicit CShotGun();

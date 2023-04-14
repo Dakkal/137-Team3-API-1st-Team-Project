@@ -14,7 +14,7 @@ CNormalGun::~CNormalGun()
 
 void CNormalGun::Initialize()
 {
-	m_eBullType = BULLET_TYPE::NORMALGUN;
+	m_eGunType = GUN_TYPE::NORMALGUN;
 }
 
 int CNormalGun::Update()
@@ -33,11 +33,6 @@ void CNormalGun::Late_Update()
 
 void CNormalGun::Render(HDC hDC)
 {
-	MoveToEx(hDC, m_tInfo.fX, m_tInfo.fY, nullptr);
-	LineTo(hDC, m_tInfo.fX - 10, m_tInfo.fY);
-	LineTo(hDC, m_tInfo.fX, m_tInfo.fY - 30);
-	LineTo(hDC, m_tInfo.fX + 10, m_tInfo.fY);
-	LineTo(hDC, m_tInfo.fX, m_tInfo.fY);
 }
 
 void CNormalGun::Release()

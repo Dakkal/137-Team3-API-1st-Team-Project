@@ -14,7 +14,7 @@ CFollwGun::~CFollwGun()
 
 void CFollwGun::Initialize()
 {
-	m_eBullType = BULLET_TYPE::FOLLOWGUN;
+	m_eGunType = GUN_TYPE::FOLLOWGUN;
 }
 
 int CFollwGun::Update()
