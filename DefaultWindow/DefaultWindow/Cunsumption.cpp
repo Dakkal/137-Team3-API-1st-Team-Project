@@ -18,18 +18,18 @@ void Ccunsumption::Initialize()
 
 int Ccunsumption::Update()
 {
-	m_tInfo.fX += m_fSpeed;
+	//m_tInfo.fX += m_fSpeed;
 
-	switch (m_eDir)
-	{
-	case DIR_TYPE::UP:
-		m_tInfo.fY -= m_fSpeed;
-		break;
+	//switch (m_eDir)
+	//{
+	//case DIR_TYPE::UP:
+	//	m_tInfo.fY -= m_fSpeed;
+	//	break;
 
-	case DIR_TYPE::DOWN:
-		m_tInfo.fY += m_fSpeed;
-		break;
-	}
+	//case DIR_TYPE::DOWN:
+	//	m_tInfo.fY += m_fSpeed;
+	//	break;
+	//}
 
 
 	__super::Update_Rect();
@@ -41,7 +41,7 @@ int Ccunsumption::Update()
 
 void Ccunsumption::Late_Update()
 {
-	if (100 >= m_tRect.left || WINCX - 100 <= m_tRect.right)
+	/*if (100 >= m_tRect.left || WINCX - 100 <= m_tRect.right)
 	{
 		m_fSpeed *= -1.f;
 
@@ -67,7 +67,7 @@ void Ccunsumption::Late_Update()
 		{
 			m_eDir = DIR_TYPE::UP;
 		}
-	}
+	}*/
 }
 
 void Ccunsumption::Render(HDC hDC)

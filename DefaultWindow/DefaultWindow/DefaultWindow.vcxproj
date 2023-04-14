@@ -154,8 +154,12 @@
     <ClInclude Include="Enum.h" />
     <ClInclude Include="Enum_String.h" />
     <ClInclude Include="Equip.h" />
+    <ClInclude Include="EventMgr.h" />
+    <ClInclude Include="FollwGun.h" />
     <ClInclude Include="GameCore.h" />
     <ClInclude Include="Item.h" />
+    <ClInclude Include="MachineGun.h" />
+    <ClInclude Include="NormalGun.h" />
     <ClInclude Include="Obj.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Resource.h" />
@@ -167,7 +171,10 @@
     <ClInclude Include="Scene_Stage1.h" />
     <ClInclude Include="Scene_Stage2.h" />
     <ClInclude Include="Scene_Start.h" />
+    <ClInclude Include="Scene_Test.h" />
+    <ClInclude Include="ScrewGun.h" />
     <ClInclude Include="SelectGDI.h" />
+    <ClInclude Include="ShotGun.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Struct.h" />
     <ClInclude Include="targetver.h" />
@@ -180,8 +187,13 @@
     <ClCompile Include="DefaultWindow.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Equip.cpp" />
+    <ClCompile Include="EvenetFunc.cpp" />
+    <ClCompile Include="EventMgr.cpp" />
+    <ClCompile Include="FollwGun.cpp" />
     <ClCompile Include="GameCore.cpp" />
     <ClCompile Include="Item.cpp" />
+    <ClCompile Include="MachineGun.cpp" />
+    <ClCompile Include="NormalGun.cpp" />
     <ClCompile Include="Obj.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Scene.cpp" />
@@ -192,7 +204,10 @@
     <ClCompile Include="Scene_Stage1.cpp" />
     <ClCompile Include="Scene_Stage2.cpp" />
     <ClCompile Include="Scene_Start.cpp" />
+    <ClCompile Include="Scene_Test.cpp" />
+    <ClCompile Include="ScrewGun.cpp" />
     <ClCompile Include="SelectGDI.cpp" />
+    <ClCompile Include="ShotGun.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

@@ -7,7 +7,7 @@ public:
 	CEquip();
 	~CEquip();
 
-	EQUIP_TYPE Get_EquipType(void) { return m_eEquipType; }
+	/*EQUIP_TYPE Get_EquipType(void) { return m_eEquipType; }*/
 	// CItem을(를) 통해 상속됨
 	virtual void Initialize() override;
 	virtual int Update() override;
@@ -17,6 +17,6 @@ public:
 	virtual void OnCollision() override;
 
 private:
-	EQUIP_TYPE m_eEquipType;
+	//EQUIP_TYPE m_eEquipType;
 };
 

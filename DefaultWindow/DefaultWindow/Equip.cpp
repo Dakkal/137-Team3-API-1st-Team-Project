@@ -12,18 +12,18 @@ CEquip::~CEquip()
 
 void CEquip::Initialize()
 {
-	m_tInfo.fCX = 20.f;
+	/*m_tInfo.fCX = 20.f;
 	m_tInfo.fCY = 20.f;
 
 	srand((unsigned int)time(NULL));
 	int(m_eEquipType) = rand() % 3;
 
-	m_fSpeed = 5.f;
+	m_fSpeed = 5.f;*/
 }
 
 int CEquip::Update()
 {
-	m_tInfo.fX += m_fSpeed;
+	/*m_tInfo.fX += m_fSpeed;
 
 	switch (m_eDir)
 	{
@@ -37,7 +37,7 @@ int CEquip::Update()
 	}
 
 
-	__super::Update_Rect();
+	__super::Update_Rect();*/
 
 
 
@@ -46,7 +46,7 @@ int CEquip::Update()
 
 void CEquip::Late_Update()
 {
-	if (100 >= m_tRect.left || WINCX - 100 <= m_tRect.right)
+	/*if (100 >= m_tRect.left || WINCX - 100 <= m_tRect.right)
 	{
 		m_fSpeed *= -1.f;
 
@@ -72,7 +72,7 @@ void CEquip::Late_Update()
 		{
 			m_eDir = DIR_TYPE::UP;
 		}
-	}
+	}*/
 }
 
 void CEquip::Render(HDC hDC)
