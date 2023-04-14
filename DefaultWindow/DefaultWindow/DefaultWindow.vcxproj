@@ -149,6 +149,7 @@
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="BulletTypeChange.h" />
     <ClInclude Include="CollisionMgr.h" />
+    <ClInclude Include="CustomFunc.h" />
     <ClInclude Include="DefaultWindow.h" />
     <ClInclude Include="Define.h" />
     <ClInclude Include="Enemy.h" />
@@ -162,6 +163,7 @@
     <ClInclude Include="Obj.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="Satellite.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneMgr.h" />
     <ClInclude Include="Scene_Clear.h" />
@@ -191,6 +193,7 @@
     <ClCompile Include="LifeUp.cpp" />
     <ClCompile Include="Obj.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Satellite.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneMgr.cpp" />
     <ClCompile Include="Scene_Clear.cpp" />

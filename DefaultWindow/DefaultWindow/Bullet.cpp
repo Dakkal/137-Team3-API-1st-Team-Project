@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "Bullet.h"
-
+#include "SceneMgr.h"
+#include "Scene.h"
 
 CBullet::CBullet()
 	:CObj(OBJECT_TYPE::PLAYER_PROJECTILE)
@@ -24,16 +25,13 @@ void CBullet::Initialize()
 
 int CBullet::Update()
 {
-	if (m_bEvent)
-		return OBJ_EVENT;
+	//if (m_bEvent)
+	//	return OBJ_EVENT;
 
 	/*switch (m_eBullType)
 	{
 	case BULLET_TYPE::NORMAL:
-		m_tInfo.iAttack = 10;
-		m_fSpeed = 5.f;
-		m_tInfo.fX -= m_fSpeed;
-		break;
+		
 
 	case BULLET_TYPE::EPIC:
 		m_tInfo.iAttack = 15;
@@ -47,7 +45,12 @@ int CBullet::Update()
 		m_tInfo.fX -= m_fSpeed;
 		break;
 	}*/
+	
 
+
+	m_tInfo.iAttack = 10;
+	m_fSpeed = 5.f;
+	m_tInfo.fY -= m_fSpeed;
 	__super::Update_Rect();
 
 	return OBJ_NOEVENT;
@@ -55,19 +58,16 @@ int CBullet::Update()
 
 void CBullet::Late_Update()
 {
-	if (m_tRect.top <= 0 || m_tRect.left <= 0 ||
-		m_tRect.right >= WINCX || m_tRect.bottom >= WINCY)
-		m_bEvent = true;
-
+	
 }
 
 void CBullet::Render(HDC hDC)
 {
-	MoveToEx(hDC, m_tInfo.fX, m_tInfo.fY, nullptr);
-	LineTo(hDC, m_tInfo.fX - 10, m_tInfo.fY);
-	LineTo(hDC, m_tInfo.fX, m_tInfo.fY - 30);
-	LineTo(hDC, m_tInfo.fX + 10, m_tInfo.fY);
-	LineTo(hDC, m_tInfo.fX, m_tInfo.fY);
+	MoveToEx(hDC, (int)m_tInfo.fX, (int)m_tInfo.fY, nullptr);
+	LineTo(hDC, (int)m_tInfo.fX - 10, (int)m_tInfo.fY);
+	LineTo(hDC, (int)m_tInfo.fX, (int)m_tInfo.fY - 30);
+	LineTo(hDC, (int)m_tInfo.fX + 10, (int)m_tInfo.fY);
+	LineTo(hDC, (int)m_tInfo.fX, (int)m_tInfo.fY);
 }
 
 void CBullet::Release()

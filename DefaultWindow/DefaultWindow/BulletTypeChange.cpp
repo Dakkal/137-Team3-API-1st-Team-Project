@@ -21,9 +21,6 @@ void CBulletTypeChange::Initialize()
 
 int CBulletTypeChange::Update()
 {
-	if (m_bEvent)
-		return OBJ_EVENT;
-
 	m_tInfo.fY += m_fSpeed;
 
 	__super::Update_Rect();

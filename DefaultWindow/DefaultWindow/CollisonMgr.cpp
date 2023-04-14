@@ -48,7 +48,6 @@ bool CCollisonMgr::Check_Sphere(CObj * pDst, CObj * pSrc)
 	float fHeight = fabs(pDst->Get_Info().fY - pSrc->Get_Info().fY);
 
 	float fDiagonal = sqrt(pow(fWidth, 2) + pow(fHeight, 2));
-
 	float fRadius = (pDst->Get_Info().fCX + pSrc->Get_Info().fCX) * 0.5f;
 
 	return fDiagonal <= fRadius;

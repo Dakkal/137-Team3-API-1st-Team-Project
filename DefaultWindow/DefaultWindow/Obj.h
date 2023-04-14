@@ -29,6 +29,9 @@ public:
 		m_tInfo.fY = _Y;
 	}
 
+	float		GetAngleDegree() { return m_fAngle; }
+	float		GetAngleRadian() { return m_fAngle * (PI / 180); }
+	void		SetAngle(float _fDegree) { m_fAngle = _fDegree; }
 
 protected:
 	void		Update_Rect();
@@ -42,6 +45,7 @@ protected:
 	OBJECT_TYPE		m_eObjType;
 	float			m_fSpeed;
 
-	bool			m_bEvent;
+	float			m_fAngle;
+	bool			m_bCollision;				// 충돌 가능한지.
 };
 

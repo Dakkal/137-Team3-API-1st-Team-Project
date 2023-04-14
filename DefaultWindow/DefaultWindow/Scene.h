@@ -13,7 +13,7 @@ public:
 public:
 	SCENE_TYPE		GetSceneType()						{ return m_eType; }
 
-	void			AddObj(CObj* _pObj)					{ m_arrObjList[(int)_pObj->GetObjType()].push_back(_pObj); }
+	void			AddObj(CObj* _pObj)					{ _pObj->Initialize(); m_arrObjList[(int)_pObj->GetObjType()].push_back(_pObj); }
 	list<CObj*>&	GetObjTypeList(OBJECT_TYPE _eType)	{ return m_arrObjList[(int)_eType]; }
 
 public:
