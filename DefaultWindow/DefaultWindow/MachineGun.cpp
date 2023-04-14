@@ -21,15 +21,13 @@ void CMachineGun::Initialize()
 
 int CMachineGun::Update()
 {
-	if (m_bEvent == true)
-		return OBJ_EVENT;
 
 	m_tPosin.x = LONG(m_tInfo.fX + (m_fDistance * cos(m_fAngle * (PI / 180.f))));
 	m_tPosin.y = LONG(m_tInfo.fY - (m_fDistance * sin(m_fAngle * (PI / 180.f))));
 
 	__super::Update_Rect();
 
-	return OBJ_NOEVENT;
+	return 0;
 }
 
 void CMachineGun::Late_Update()

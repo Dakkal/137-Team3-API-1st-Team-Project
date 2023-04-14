@@ -49,8 +49,6 @@ protected:
 	float			m_fSpeed;
 	float			m_fAngle;
 	float			m_fDistance;
-
-	float			m_fAngle;
 	bool			m_bCollision;				// 충돌 가능한지.
 };
 

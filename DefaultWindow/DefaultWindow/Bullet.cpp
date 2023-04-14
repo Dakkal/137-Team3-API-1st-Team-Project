@@ -38,8 +38,6 @@ void CBullet::Initialize()
 
 int CBullet::Update()
 {
-	if (m_bEvent == true)
-		return OBJ_EVENT;
 
 	CScene* pScene = CSceneMgr::GetInst()->GetCurrScene();
 	list<CObj*>& copyList = pScene->GetObjTypeList(OBJECT_TYPE::MONSTER);
@@ -47,7 +45,7 @@ int CBullet::Update()
 	if (GUN_TYPE::NORMALGUN == m_eGunType) { Normal_Pattern(); }
 	if (GUN_TYPE::SHOTGUN == m_eGunType) { ShotGun_Pattern(); }
 	if (GUN_TYPE::MACHINEGUN == m_eGunType) { MachineGun_Pattern(); }
-	if (GUN_TYPE::SCRWGUN == m_eGunType) { ScrewGun_Pattern(); }
+	if (GUN_TYPE::SCREWGUN == m_eGunType) { ScrewGun_Pattern(); }
 	if (GUN_TYPE::FOLLOWGUN == m_eGunType) 
 	{ 
 		for (auto iter : copyList)
@@ -59,7 +57,7 @@ int CBullet::Update()
 
 	__super::Update_Rect();
 
-	return OBJ_NOEVENT;
+	return 0;
 }
 
 void CBullet::Late_Update()
