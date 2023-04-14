@@ -7,6 +7,7 @@ CObj::CObj(OBJECT_TYPE _eType)
 	, m_eObjType(_eType)
 	, m_fAngle(0.f)
 	, m_bCollision(false)
+	, m_bDead(false)
 {
 	ZeroMemory(&m_tInfo, sizeof(INFO));
 	ZeroMemory(&m_tRect, sizeof(RECT));

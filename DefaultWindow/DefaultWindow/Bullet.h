@@ -20,8 +20,8 @@ public:
 
 	//GUN_TYPE Get_GunType() { return m_eGunType; }
 
-	void Set_GunType(GUN_TYPE _eGunType) { m_eGunType = _eGunType; }
-	void Set_DirType(DIR_TYPE _eDirType) { m_eDirType = _eDirType; }
+	void		Set_GunType(GUN_TYPE _eGunType) { m_eGunType = _eGunType; }
+	void		Set_DirType(DIR_TYPE _eDirType) { m_eDirType = _eDirType; }
 	
 public:
 	void		Normal_Pattern();

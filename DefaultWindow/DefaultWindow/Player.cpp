@@ -8,6 +8,7 @@
 #include "SceneMgr.h"
 #include "Scene.h"
 #include "CustomFunc.h"
+#include "Bullet.h"
 
 CPlayer::CPlayer()
 	:	CObj(OBJECT_TYPE::PLAYER)
@@ -161,12 +162,18 @@ void CPlayer::Key_Input(void)
 		m_tInfo.fX += m_fSpeed;
 	}
 
-	if (GetAsyncKeyState(VK_LBUTTON))
+	if (GetAsyncKeyState(VK_LBUTTON) & 0x0001)
 	{
 		// TODO :: Shoot();
-		AddObjEvt(new CSatellite(this));
+		CBullet* pBullet = new CBullet;
+		pBullet->Initialize();
+		pBullet->Set_Pos(m_ptShotPoint.x, m_ptShotPoint.y);
+		pBullet->SetAngle(m_fAngle);
+		pBullet->Set_GunType(GUN_TYPE::NORMALGUN);
+
+		AddObjEvt(pBullet);
+		DeleteObjEvt(pBullet);
 	}
-	
 }
 
 void CPlayer::Sort_Interval_Satellite()

@@ -35,7 +35,5 @@ private:
 
 	LONG			m_lRecoverTime;		// 충돌 변수 m_bCollision의 복구 시간.
 	DWORD			dwTime;				// 시간 체크용 변수
-
-	
 };
 

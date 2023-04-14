@@ -2,6 +2,7 @@
 #include "EventMgr.h"
 #include "SceneMgr.h"
 #include "Scene.h"
+#include "Obj.h"
 
 
 CEventMgr::CEventMgr()
@@ -15,10 +16,10 @@ CEventMgr::~CEventMgr()
 
 void CEventMgr::Update()
 {
-	for (size_t i = 0; i < m_vecDeleteObj.size(); i++)
+	for (size_t i = 0; i < m_vecDeleteObj.size(); ++i)
 	{
 		if (nullptr != m_vecDeleteObj[i])
-			Safe_Delete<CObj*>(m_vecDeleteObj[i]);
+			delete m_vecDeleteObj[i];
 	}
 	m_vecDeleteObj.clear();
 
@@ -29,7 +30,7 @@ void CEventMgr::Update()
 	m_vecEvent.clear();
 }
 
-void CEventMgr::ExcuteEvent(tagEvent _eve)
+void CEventMgr::ExcuteEvent(tagEvent& _eve)
 {
 	switch (_eve.evtType)
 	{
@@ -45,7 +46,11 @@ void CEventMgr::ExcuteEvent(tagEvent _eve)
 
 	case EVENT_TYPE::DELETE_OBJ :
 		// lParam : CObj*
-		m_vecDeleteObj.push_back((CObj*)_eve.lParam);
+	{
+		CObj* pObj = (CObj*)_eve.lParam;
+		pObj->Set_Dead(true);
+		m_vecDeleteObj.push_back(pObj);
+	}
 		break;
 	}
 }
