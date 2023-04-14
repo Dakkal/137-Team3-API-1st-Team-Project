@@ -14,5 +14,15 @@ public:
 	virtual void Late_Update()			override;
 	virtual void Render(HDC hDC)		override;
 	virtual void Exit()					override;
+
+private:
+	HFONT		hTitleFont;
+	HFONT		hOldFont;
+
+	TCHAR		m_szTitle[32];
+	TCHAR		m_szSubTitle[32];
+
+private:
+	bool		Input_Space();
 };
 

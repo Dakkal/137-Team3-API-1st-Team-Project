@@ -45,6 +45,8 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
     HACCEL hAccelTable = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_DEFAULTWINDOW));
 
+	srand(unsigned(time(NULL)));
+
 	CGameCore::GetInst()->Initialize(g_hWnd);
 
     MSG msg;

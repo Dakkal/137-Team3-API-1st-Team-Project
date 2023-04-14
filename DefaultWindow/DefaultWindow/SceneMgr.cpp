@@ -59,6 +59,8 @@ void CSceneMgr::Late_Update()
 
 void CSceneMgr::Render(HDC hDC)
 {
+	Rectangle(hDC, 0, 0, WINCX, WINCY);
+
 	m_pCurrScene->Render(hDC);
 }
 

@@ -16,5 +16,9 @@ public:
 	virtual void	Release()		override;
 
 	virtual void	OnCollision()	override;
+
+private:
+	float		m_fDownSpeed;
+
 };
 

@@ -16,5 +16,12 @@ public:
 	virtual void	Release()		override;
 
 	virtual void	OnCollision()	override;
+
+public:
+	void Set_BullType(BULLET_TYPE _eBullType) { m_eBullType = _eBullType; }
+
+private:
+	BULLET_TYPE		m_eBullType;
+	OBJECT_TYPE		m_eBullObject;
 };
 

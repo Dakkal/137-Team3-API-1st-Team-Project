@@ -19,6 +19,13 @@ public:
 public:
 	OBJECT_TYPE GetObjType() { return m_eObjType; }
 
+	void Set_Pos(float _X, float _Y)
+	{
+		m_tInfo.fX = _X;
+		m_tInfo.fY = _Y;
+	}
+
+
 protected:
 	void		Update_Rect();
 
@@ -30,5 +37,7 @@ protected:
 
 	OBJECT_TYPE		m_eObjType;
 	float			m_fSpeed;
+
+	bool			m_bEvent;
 };
 
