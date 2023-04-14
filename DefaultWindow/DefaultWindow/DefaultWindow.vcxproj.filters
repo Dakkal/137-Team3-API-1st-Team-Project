@@ -230,7 +230,6 @@
       <Filter>01. Manager\Event</Filter>
     </ClCompile>
     <ClCompile Include="BulletTypeChange.cpp" />
-    <ClCompile Include="EvenetFunc.cpp" />
     <ClCompile Include="LifeUp.cpp" />
   </ItemGroup>
   <ItemGroup>
