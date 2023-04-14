@@ -30,6 +30,7 @@ void CScene::Late_Update()
 		for (; iter != m_arrObjList[i].end(); ++iter)
 			(*iter)->Late_Update();
 	}
+
 }
 
 void CScene::Render(HDC hDC)
