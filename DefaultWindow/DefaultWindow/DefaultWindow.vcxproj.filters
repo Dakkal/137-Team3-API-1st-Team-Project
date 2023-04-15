@@ -95,6 +95,9 @@
     <Filter Include="03. Obj\05. Satellite">
       <UniqueIdentifier>{b078d8f1-93e2-4631-a95f-9c720510498a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03. Obj\03. Bullet\00. Boss_Bullet">
+      <UniqueIdentifier>{decc0407-9791-47cd-bc0f-d6730ae94239}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Obj.h">
@@ -205,6 +208,9 @@
     <ClInclude Include="Satellite.h">
       <Filter>03. Obj\05. Satellite</Filter>
     </ClInclude>
+    <ClInclude Include="BossBullet.h">
+      <Filter>03. Obj\03. Bullet\00. Boss_Bullet</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Obj.cpp">
@@ -221,9 +227,6 @@
     </ClCompile>
     <ClCompile Include="Item.cpp">
       <Filter>03. Obj\02. Item</Filter>
-    </ClCompile>
-    <ClCompile Include="Bullet.cpp">
-      <Filter>03. Obj\03. Bullet</Filter>
     </ClCompile>
     <ClCompile Include="Scene_Start.cpp">
       <Filter>02. Scene\00. Scene_Start</Filter>
@@ -267,7 +270,6 @@
     <ClCompile Include="EventFunc.cpp">
       <Filter>01. Manager\Event</Filter>
     </ClCompile>
-    <ClCompile Include="LifeUp.cpp" />
     <ClCompile Include="Gun.cpp">
       <Filter>03. Obj\04. Gun</Filter>
     </ClCompile>
@@ -291,6 +293,12 @@
     </ClCompile>
     <ClCompile Include="Satellite.cpp">
       <Filter>03. Obj\05. Satellite</Filter>
+    </ClCompile>
+    <ClCompile Include="BossBullet.cpp">
+      <Filter>03. Obj\03. Bullet\00. Boss_Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>03. Obj\03. Bullet</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

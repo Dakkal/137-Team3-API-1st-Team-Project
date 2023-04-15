@@ -53,7 +53,6 @@ int CBullet::Update()
 		FollowGun_Pattern(); 
 	}
 
-
 	__super::Update_Rect();
 
 	return 0;
@@ -61,9 +60,9 @@ int CBullet::Update()
 
 void CBullet::Late_Update()
 {
-	if (m_tRect.left <= 0 || m_tRect.top <= 0 || m_tRect.right >= WINCX)
+	if (m_tRect.left <= 0 || m_tRect.top <= 0 || m_tRect.right >= WINCX || m_tRect.bottom >= WINCY)
 	{
-		DeleteObjEvt(this);
+		//DeleteObjEvt(this);
 	}
 }
 
@@ -101,7 +100,7 @@ void CBullet::ShotGun_Pattern()
 	if (m_eDirType == DIR_TYPE::LEFT) 
 	{
 		m_tInfo.iAttack = 10;
-		m_tInfo.fX += m_fSpeed * cosf(m_fAngle * PI / 90.f);
+		m_tInfo.fX += m_fSpeed * cosf(m_fAngle * PI / 100.f);
 		m_tInfo.fY -= m_fSpeed * sinf(m_fAngle * PI / 180.f);
 	}
 	if (m_eDirType == DIR_TYPE::UP) 
@@ -113,7 +112,7 @@ void CBullet::ShotGun_Pattern()
 	if (m_eDirType == DIR_TYPE::RIGHT) 
 	{
 		m_tInfo.iAttack = 10;
-		m_tInfo.fX += m_fSpeed * cosf(m_fAngle * PI / 720.f);
+		m_tInfo.fX += m_fSpeed * cosf(m_fAngle * PI / 260.f);
 		m_tInfo.fY -= m_fSpeed * sinf(m_fAngle * PI / 180.f);
 	}
 }
@@ -145,6 +144,8 @@ void CBullet::ScrewGun_Pattern()
 
 	m_tInfo.fX = m_tCenter.x + m_fDistance * cosf(m_fBullRotAngle * PI / 180.f);
 	m_tInfo.fY = m_tCenter.y - m_fDistance * -sinf(m_fBullRotAngle * PI / 180.f);
+
+	m_fDistance += 0.5f;
 
 }
 

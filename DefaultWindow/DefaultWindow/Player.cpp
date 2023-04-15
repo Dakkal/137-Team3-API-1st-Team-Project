@@ -9,7 +9,10 @@
 #include "Scene.h"
 #include "CustomFunc.h"
 #include "Bullet.h"
-#include "NormalGun.h"
+#include "ScrewGun.h"
+#include "FollowGun.h"
+#include "ShotGun.h"
+#include "MachineGun.h"
 
 CPlayer::CPlayer()
 	:	CObj(OBJECT_TYPE::PLAYER)
@@ -213,7 +216,7 @@ void CPlayer::Sort_Interval_Satellite()
 
 CObj* CPlayer::Get_Gun()
 {
-	CObj* pGun = new CNormalGun;
+	CObj* pGun = new CShotGun;
 	pGun->Initialize();
 	
 

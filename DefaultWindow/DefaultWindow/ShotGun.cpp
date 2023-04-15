@@ -18,10 +18,14 @@ CShotGun::~CShotGun()
 
 void CShotGun::Initialize()
 {
+	m_dwTime = GetTickCount();
+
 	m_eGunType = GUN_TYPE::SHOTGUN;
 	m_fDistance = 30.f;
 
 	m_iMagazineSize = 10;
+
+	Create_Magazine();
 }
 
 int CShotGun::Update()
@@ -51,6 +55,8 @@ void CShotGun::Late_Update()
 
 	m_tPosin.x = LONG(m_tInfo.fX + (m_fDistance * cos(m_fAngle * (PI / 180.f))));
 	m_tPosin.y = LONG(m_tInfo.fY - (m_fDistance * sin(m_fAngle * (PI / 180.f))));
+
+	Reload_Gun();
 }
 
 void CShotGun::Render(HDC hDC)
@@ -69,14 +75,12 @@ void CShotGun::OnCollision(CObj * _pObj)
 
 void CShotGun::Reload_Gun()
 {
-	if (m_iRemainBullet <= 0 && m_dwTime + 1030 <= GetTickCount())
+	if (m_iRemainBullet <= 0 && m_dwTime + 5000 <= GetTickCount())
 	{
 		Create_Magazine();
 
 		m_dwTime = GetTickCount();
 	}
-	else
-		m_dwTime = GetTickCount();
 }
 
 void CShotGun::Fire_Gun()

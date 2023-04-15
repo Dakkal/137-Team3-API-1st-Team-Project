@@ -17,10 +17,14 @@ CScrewGun::~CScrewGun()
 
 void CScrewGun::Initialize()
 {
+	m_dwTime = GetTickCount();
+
 	m_eGunType = GUN_TYPE::SCREWGUN;
 	m_fDistance = 30.f;
 
 	m_iMagazineSize = 5;
+
+	Create_Magazine();
 
 }
 
@@ -44,6 +48,16 @@ int CScrewGun::Update()
 
 void CScrewGun::Late_Update()
 {
+	m_tInfo.fX = CGameCore::GetInst()->GetPlayer()->Get_ShotPoint().x;
+	m_tInfo.fY = CGameCore::GetInst()->GetPlayer()->Get_ShotPoint().y;
+
+	POINT ptMouse = CGameCore::GetInst()->GetMousePos();
+	m_fAngle = (atan2(m_tInfo.fY - (float)ptMouse.y, (float)ptMouse.x - m_tInfo.fX) * 57.2958f);
+
+	m_tPosin.x = LONG(m_tInfo.fX + (m_fDistance * cos(m_fAngle * (PI / 180.f))));
+	m_tPosin.y = LONG(m_tInfo.fY - (m_fDistance * sin(m_fAngle * (PI / 180.f))));
+
+	Reload_Gun();
 }
 
 void CScrewGun::Render(HDC hDC)
@@ -62,14 +76,12 @@ void CScrewGun::OnCollision(CObj * _pObj)
 
 void CScrewGun::Reload_Gun()
 {
-	if (m_iRemainBullet <= 0 && m_dwTime + 1040 <= GetTickCount())
+	if (m_iRemainBullet <= 0 && m_dwTime + 1000 <= GetTickCount())
 	{
 		Create_Magazine();
 
 		m_dwTime = GetTickCount();
 	}
-	else
-		m_dwTime = GetTickCount();
 }
 
 void CScrewGun::Fire_Gun()

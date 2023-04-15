@@ -18,10 +18,14 @@ CMachineGun::~CMachineGun()
 
 void CMachineGun::Initialize()
 {
+	m_dwTime = GetTickCount();
+
 	m_eGunType = GUN_TYPE::MACHINEGUN;
 	m_fDistance = 30.f;
 
 	m_iMagazineSize = 50;
+
+	Create_Magazine();
 }
 
 int CMachineGun::Update()
@@ -51,6 +55,8 @@ void CMachineGun::Late_Update()
 
 	m_tPosin.x = LONG(m_tInfo.fX + (m_fDistance * cos(m_fAngle * (PI / 180.f))));
 	m_tPosin.y = LONG(m_tInfo.fY - (m_fDistance * sin(m_fAngle * (PI / 180.f))));
+
+	Reload_Gun();
 }
 
 void CMachineGun::Render(HDC hDC)
@@ -75,8 +81,6 @@ void CMachineGun::Reload_Gun()
 
 		m_dwTime = GetTickCount();
 	}
-	else
-		m_dwTime = GetTickCount();
 }
 
 void CMachineGun::Fire_Gun()

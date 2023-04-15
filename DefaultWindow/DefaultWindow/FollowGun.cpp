@@ -21,6 +21,8 @@ void CFollowGun::Initialize()
 	m_fDistance = 30.f;
 
 	m_iMagazineSize = 10;
+
+	Create_Magazine();
 }
 
 int CFollowGun::Update()
@@ -41,6 +43,16 @@ int CFollowGun::Update()
 
 void CFollowGun::Late_Update()
 {
+	m_tInfo.fX = CGameCore::GetInst()->GetPlayer()->Get_ShotPoint().x;
+	m_tInfo.fY = CGameCore::GetInst()->GetPlayer()->Get_ShotPoint().y;
+
+	POINT ptMouse = CGameCore::GetInst()->GetMousePos();
+	m_fAngle = (atan2(m_tInfo.fY - (float)ptMouse.y, (float)ptMouse.x - m_tInfo.fX) * 57.2958f);
+
+	m_tPosin.x = LONG(m_tInfo.fX + (m_fDistance * cos(m_fAngle * (PI / 180.f))));
+	m_tPosin.y = LONG(m_tInfo.fY - (m_fDistance * sin(m_fAngle * (PI / 180.f))));
+
+	Reload_Gun();
 }
 
 void CFollowGun::Render(HDC hDC)
@@ -66,8 +78,6 @@ void CFollowGun::Reload_Gun()
 
 		m_dwTime = GetTickCount();
 	}
-	else
-		m_dwTime = GetTickCount();
 }
 
 void CFollowGun::Fire_Gun()

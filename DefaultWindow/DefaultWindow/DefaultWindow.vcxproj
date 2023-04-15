@@ -145,6 +145,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BossBullet.h" />
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="CollisionMgr.h" />
     <ClInclude Include="CustomFunc.h" />
@@ -183,6 +184,7 @@
     <ClInclude Include="Template.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BossBullet.cpp" />
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="CollisonMgr.cpp" />
     <ClCompile Include="DefaultWindow.cpp" />
