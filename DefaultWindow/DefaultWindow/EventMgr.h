@@ -20,10 +20,10 @@ class CEventMgr
 
 public:
 	void Update();
-	void AddEvent(tagEvent _eve) { m_vecEvent.push_back(_eve); }
+	void AddEvent(tagEvent& _eve) { m_vecEvent.push_back(_eve); }
 	
 private:
-	void ExcuteEvent(tagEvent _eve);
+	void ExcuteEvent(tagEvent& _eve);
 	
 private: 
 	vector<tagEvent>	m_vecEvent;

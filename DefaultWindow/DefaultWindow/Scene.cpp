@@ -17,16 +17,11 @@ void CScene::Update()
 	for (int i = 0; i < (int)OBJECT_TYPE::END; ++i)
 	{
 		list<CObj*>::iterator iter = m_arrObjList[i].begin();
-
 		for (; iter != m_arrObjList[i].end(); ++iter)
 		{
-			if ((*iter) == nullptr)
-			{
-				m_arrObjList[i].erase(iter);
-			}
-			else
+			if (!(*iter)->Is_Dead())
 				(*iter)->Update();
-		}		
+		}
 	}
 }
 
@@ -35,9 +30,11 @@ void CScene::Late_Update()
 	for (int i = 0; i < (int)OBJECT_TYPE::END; ++i)
 	{
 		list<CObj*>::iterator iter = m_arrObjList[i].begin();
-
 		for (; iter != m_arrObjList[i].end(); ++iter)
-			(*iter)->Late_Update();
+		{
+			if (!(*iter)->Is_Dead())
+				(*iter)->Late_Update();
+		}
 	}
 
 }
@@ -47,7 +44,18 @@ void CScene::Render(HDC hDC)
 	for (int i = 0; i < (int)OBJECT_TYPE::END; ++i)
 	{
 		list<CObj*>::iterator iter = m_arrObjList[i].begin();
-		for (; iter != m_arrObjList[i].end(); ++iter)
-			(*iter)->Render(hDC);
+		for (; iter != m_arrObjList[i].end();)
+		{
+			if (!(*iter)->Is_Dead())
+			{
+				(*iter)->Render(hDC);
+				++iter;
+			}
+			else
+			{
+				iter = m_arrObjList[i].erase(iter);
+			}
+				
+		}
 	}
 }

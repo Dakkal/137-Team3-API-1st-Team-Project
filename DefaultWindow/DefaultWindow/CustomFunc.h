@@ -4,10 +4,7 @@
 
 RECT GetRectWithXY(int x, int y, int xOffset, int yOffset, int size)
 {
-	// x + xOffset
-	// y + yOffset
 
-	// size * 5.f
 	RECT rect{};
 	ZeroMemory(&rect, sizeof(RECT));
 

@@ -33,6 +33,7 @@ void CBullet::Initialize()
 	m_fDiagonal = 0.f;
 	m_fWidth = 0.f;
 	m_fHeigth = 0.f;
+	
 }
 
 int CBullet::Update()
