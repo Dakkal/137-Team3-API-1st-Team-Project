@@ -20,7 +20,7 @@ void CScrewGun::Initialize()
 	m_eGunType = GUN_TYPE::SCREWGUN;
 	m_fDistance = 30.f;
 
-	m_iMagazineSize = 5;
+	m_iMagazineSize = 10;
 	m_iRemainBullet = 5;
 
 	m_tInfo.fX = CGameCore::GetInst()->GetPlayer()->Get_ShotPoint().x;

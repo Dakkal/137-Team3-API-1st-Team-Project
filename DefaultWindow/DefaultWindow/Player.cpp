@@ -51,7 +51,7 @@ void CPlayer::Initialize(void)
 	for (int i = 0; i < (int)GUN_TYPE::END; ++i)
 		m_pArrGun[i]->Initialize();
 
-	m_pGun = m_pArrGun[(int)GUN_TYPE::SHOTGUN];
+	m_pGun = m_pArrGun[(int)GUN_TYPE::NORMALGUN];
 }
 
 int CPlayer::Update(void)
