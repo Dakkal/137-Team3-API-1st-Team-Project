@@ -98,6 +98,33 @@
     <Filter Include="03. Obj\02. Item\00.TimeStop">
       <UniqueIdentifier>{b15523a3-3251-49bc-94ec-ad431173f8ea}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03. Obj\02. Item\01.Item_Life">
+      <UniqueIdentifier>{d4a6acfc-0cc6-4935-98fc-37f79bc1ffc1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Obj\02. Item\02.Item_SpeedUp">
+      <UniqueIdentifier>{367930af-637b-4e2f-9bd2-aa531c7cd4b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Obj\02. Item\03.Item_NormalGun">
+      <UniqueIdentifier>{7b434e17-6618-4231-80f4-de9b9f898c5a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Obj\02. Item\04.Item_MachineGun">
+      <UniqueIdentifier>{7a20edfd-10cf-4259-bb41-bb1c161168e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Obj\02. Item\05.Item_FollowGun">
+      <UniqueIdentifier>{4b28cdc5-7a16-44a8-ba32-a7c76f835104}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Obj\02. Item\06.Item_ScrewGun">
+      <UniqueIdentifier>{f684e251-0b7a-4a42-8089-385825d8f495}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Obj\02. Item\07.Item_ShotGun">
+      <UniqueIdentifier>{c63e9d49-bdf4-482b-bdd4-41950b1d3e29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Obj\02. Item\08.Item_DeleteEnemy_Projectile">
+      <UniqueIdentifier>{ce7f575f-a006-4d30-944d-e88579c78cc6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Obj\02. Item\09.Item_Magnetic">
+      <UniqueIdentifier>{1bca5a72-b42f-4ac4-8e8b-49f5c775c8bc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Obj.h">
@@ -211,6 +238,33 @@
     <ClInclude Include="Item_TimeStop.h">
       <Filter>03. Obj\02. Item\00.TimeStop</Filter>
     </ClInclude>
+    <ClInclude Include="Item_Life.h">
+      <Filter>03. Obj\02. Item\01.Item_Life</Filter>
+    </ClInclude>
+    <ClInclude Include="Item_SpeedUp.h">
+      <Filter>03. Obj\02. Item\02.Item_SpeedUp</Filter>
+    </ClInclude>
+    <ClInclude Include="Item_NormalGun.h">
+      <Filter>03. Obj\02. Item\03.Item_NormalGun</Filter>
+    </ClInclude>
+    <ClInclude Include="Item_MachineGun.h">
+      <Filter>03. Obj\02. Item\04.Item_MachineGun</Filter>
+    </ClInclude>
+    <ClInclude Include="Item_FollowGun.h">
+      <Filter>03. Obj\02. Item\05.Item_FollowGun</Filter>
+    </ClInclude>
+    <ClInclude Include="Citem_ScrewGun.h">
+      <Filter>03. Obj\02. Item\06.Item_ScrewGun</Filter>
+    </ClInclude>
+    <ClInclude Include="Citem_ShotGun.h">
+      <Filter>03. Obj\02. Item\07.Item_ShotGun</Filter>
+    </ClInclude>
+    <ClInclude Include="Item_DeleteEnermy_Projectile.h">
+      <Filter>03. Obj\02. Item\08.Item_DeleteEnemy_Projectile</Filter>
+    </ClInclude>
+    <ClInclude Include="Item_Magnetic.h">
+      <Filter>03. Obj\02. Item\09.Item_Magnetic</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Obj.cpp">
@@ -297,6 +351,33 @@
     </ClCompile>
     <ClCompile Include="Item_Timestop.cpp">
       <Filter>03. Obj\02. Item\00.TimeStop</Filter>
+    </ClCompile>
+    <ClCompile Include="Item_Life.cpp">
+      <Filter>03. Obj\02. Item\01.Item_Life</Filter>
+    </ClCompile>
+    <ClCompile Include="Item_SpeedUp.cpp">
+      <Filter>03. Obj\02. Item\02.Item_SpeedUp</Filter>
+    </ClCompile>
+    <ClCompile Include="Item_NormalGun.cpp">
+      <Filter>03. Obj\02. Item\03.Item_NormalGun</Filter>
+    </ClCompile>
+    <ClCompile Include="Item_MachineGun.cpp">
+      <Filter>03. Obj\02. Item\04.Item_MachineGun</Filter>
+    </ClCompile>
+    <ClCompile Include="Item_FollowGun.cpp">
+      <Filter>03. Obj\02. Item\05.Item_FollowGun</Filter>
+    </ClCompile>
+    <ClCompile Include="Citem_ScrewGun.cpp">
+      <Filter>03. Obj\02. Item\06.Item_ScrewGun</Filter>
+    </ClCompile>
+    <ClCompile Include="Citem_ShotGun.cpp">
+      <Filter>03. Obj\02. Item\07.Item_ShotGun</Filter>
+    </ClCompile>
+    <ClCompile Include="Item_DeleteEnermy_Projectile.cpp">
+      <Filter>03. Obj\02. Item\08.Item_DeleteEnemy_Projectile</Filter>
+    </ClCompile>
+    <ClCompile Include="Item_Magnetic.cpp">
+      <Filter>03. Obj\02. Item\09.Item_Magnetic</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

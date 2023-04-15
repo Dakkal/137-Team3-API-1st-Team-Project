@@ -62,5 +62,5 @@ void CItem_Timestop::Use_Item(CObj * _pObj)
 {
 	// 아이템 효과를 구현.
 	list<CObj*>& objList = CSceneMgr::GetInst()->GetCurrScene()->GetObjTypeList(OBJECT_TYPE::MONSTER);
-	
+	//TODO : 시간정지 아이템 : 몬스터만 시간이 멈춰야함. 
 }

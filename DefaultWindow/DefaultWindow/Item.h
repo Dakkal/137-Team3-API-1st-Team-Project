@@ -16,8 +16,6 @@ public:
 	virtual void	Render(HDC hDC) 				PURE;
 	virtual void	Release()						PURE;					  	  
 	virtual void	OnCollision(CObj* _pObj)		PURE;
-
-public:
 	virtual void Use_Item(CObj* _pObj) PURE;
 
 };
