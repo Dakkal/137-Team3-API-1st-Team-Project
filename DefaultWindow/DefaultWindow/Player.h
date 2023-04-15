@@ -36,6 +36,15 @@ private:
 	LONG			m_lRecoverTime;		// 충돌 변수 m_bCollision의 복구 시간.
 	DWORD			dwTime;				// 시간 체크용 변수
 
+
+public:
+	CObj*		Get_Gun();
+
+	void		Set_Gun(list<CObj*>* _pGunList) { m_pGunList = _pGunList; }
+	POINT		Get_ShotPoint() { return m_ptShotPoint; }
+
+private:
+	list<CObj*>*		m_pGunList;
 	
 };
 

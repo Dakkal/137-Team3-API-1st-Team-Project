@@ -2,6 +2,7 @@
 #include "Bullet.h"
 #include "Scene.h"
 #include "SceneMgr.h"
+#include "EventFunc.h"
 
 CBullet::CBullet()
 	:CObj(OBJECT_TYPE::PLAYER_PROJECTILE)
@@ -17,8 +18,6 @@ void CBullet::Initialize()
 {
 	m_tInfo.fCX = 30.f;
 	m_tInfo.fCY = 30.f;
-
-	m_tInfo.iAttack = 10;
 
 	m_fSpeed = 5.f;
 	m_fDistance = 30.f;
@@ -62,6 +61,10 @@ int CBullet::Update()
 
 void CBullet::Late_Update()
 {
+	if (m_tRect.left <= 0 || m_tRect.top <= 0 || m_tRect.right >= WINCX)
+	{
+		DeleteObjEvt(this);
+	}
 }
 
 void CBullet::Render(HDC hDC)
@@ -79,14 +82,16 @@ void CBullet::Release()
 
 void CBullet::OnCollision(CObj * _pObj)
 {
-	if (m_eObjType == OBJECT_TYPE::MONSTER)
+	if (_pObj->GetObjType() == OBJECT_TYPE::MONSTER)
 	{
-		Safe_Delete<CObj*>(_pObj);
+		DeleteObjEvt(_pObj);
 	}
 }
 
 void CBullet::Normal_Pattern()
 {
+	m_tInfo.iAttack = 10;
+
 	m_tInfo.fX += m_fSpeed * cosf(m_fAngle * PI / 180.f);
 	m_tInfo.fY -= m_fSpeed * sinf(m_fAngle * PI / 180.f);
 }
@@ -95,16 +100,19 @@ void CBullet::ShotGun_Pattern()
 {
 	if (m_eDirType == DIR_TYPE::LEFT) 
 	{
+		m_tInfo.iAttack = 10;
 		m_tInfo.fX += m_fSpeed * cosf(m_fAngle * PI / 90.f);
 		m_tInfo.fY -= m_fSpeed * sinf(m_fAngle * PI / 180.f);
 	}
 	if (m_eDirType == DIR_TYPE::UP) 
 	{
+		m_tInfo.iAttack = 10;
 		m_tInfo.fX += m_fSpeed * cosf(m_fAngle * PI / 180.f);
 		m_tInfo.fY -= m_fSpeed * sinf(m_fAngle * PI / 180.f);
 	}
 	if (m_eDirType == DIR_TYPE::RIGHT) 
 	{
+		m_tInfo.iAttack = 10;
 		m_tInfo.fX += m_fSpeed * cosf(m_fAngle * PI / 720.f);
 		m_tInfo.fY -= m_fSpeed * sinf(m_fAngle * PI / 180.f);
 	}
@@ -112,7 +120,8 @@ void CBullet::ShotGun_Pattern()
 
 void CBullet::MachineGun_Pattern()
 {
-	m_fSpeed = 8.f;
+	m_fSpeed = 10.f;
+	m_tInfo.iAttack = 5;
 
 	m_tInfo.fX += m_fSpeed * cosf(m_fAngle * PI / 180.f);
 	m_tInfo.fY -= m_fSpeed * sinf(m_fAngle * PI / 180.f);
@@ -120,6 +129,8 @@ void CBullet::MachineGun_Pattern()
 
 void CBullet::ScrewGun_Pattern()
 {
+	m_tInfo.iAttack = 15;
+
 	if( m_bStart == true)
 	{
 		m_tCenter.x = (LONG)m_tInfo.fX;
@@ -139,6 +150,8 @@ void CBullet::ScrewGun_Pattern()
 
 void CBullet::FollowGun_Pattern()
 {
+	m_tInfo.iAttack = 8;
+
 	float	fRadian = 0.f;
 
 	fRadian = acosf(m_fWidth / m_fDiagonal);

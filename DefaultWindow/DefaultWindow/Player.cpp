@@ -8,6 +8,8 @@
 #include "SceneMgr.h"
 #include "Scene.h"
 #include "CustomFunc.h"
+#include "Bullet.h"
+#include "NormalGun.h"
 
 CPlayer::CPlayer()
 	:	CObj(OBJECT_TYPE::PLAYER)
@@ -34,11 +36,12 @@ void CPlayer::Initialize(void)
 	m_fSpeed = 10.f;
 	
 	dwTime = GetTickCount();
+
+	
 }
 
 int CPlayer::Update(void)
 {
-
 	Key_Input();
 	Sort_Interval_Satellite();
 	__super::Update_Rect();
@@ -166,7 +169,19 @@ void CPlayer::Key_Input(void)
 		// TODO :: Shoot();
 		AddObjEvt(new CSatellite(this));
 	}
+
+	if (GetAsyncKeyState('1'))
+	{
+		m_pGunList->push_back(Get_Gun());
+	}
 	
+	
+	if (GetAsyncKeyState(VK_SPACE))
+	{
+		// TODO :: Shoot();
+		static_cast<CGun*>(m_pGunList->front())->Fire_Gun();
+	}
+
 }
 
 void CPlayer::Sort_Interval_Satellite()
@@ -183,4 +198,24 @@ void CPlayer::Sort_Interval_Satellite()
 	for (int i = 0; iter != copyList.end(); ++iter, ++i)
 		(*iter)->SetAngle((float)(360 / copyList.size()) * (i + 1));
 	
+}
+
+//CObj* CPlayer::Create_Bullet()
+//{
+//	m_pBullet = new CBullet;
+//	m_pBullet->Initialize();
+//	m_pBullet->Set_Pos(m_ptShotPoint.x, m_ptShotPoint.y);
+//	m_pBullet->Set_Angle(m_fAngle);
+//	dynamic_cast<CBullet*>(m_pBullet)->Set_GunType(GUN_TYPE::NORMALGUN);
+//
+//	return m_pBullet;
+//}
+
+CObj* CPlayer::Get_Gun()
+{
+	CObj* pGun = new CNormalGun;
+	pGun->Initialize();
+	
+
+	return pGun;
 }
