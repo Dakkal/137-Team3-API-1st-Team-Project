@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿  ShotGun.cpp
 c:\users\gmlwn\onedrive\바탕 화면\프로그램\team3 api 1st project\defaultwindow\defaultwindow\shotgun.cpp(30): warning C4244: '=': conversion from 'LONG' to 'float', possible loss of data
 c:\users\gmlwn\onedrive\바탕 화면\프로그램\team3 api 1st project\defaultwindow\defaultwindow\shotgun.cpp(31): warning C4244: '=': conversion from 'LONG' to 'float', possible loss of data
@@ -40,3 +41,8 @@ c:\users\gmlwn\onedrive\바탕 화면\프로그램\team3 api 1st project\default
   Generating Code...
   DefaultWindow.vcxproj -> C:\Users\gmlwn\OneDrive\바탕 화면\프로그램\Team3 API 1st Project\DefaultWindow\Debug\DefaultWindow.exe
   DefaultWindow.vcxproj -> C:\Users\gmlwn\OneDrive\바탕 화면\프로그램\Team3 API 1st Project\DefaultWindow\Debug\DefaultWindow.pdb (Full PDB)
+=======
+﻿  Scene.cpp
+  DefaultWindow.vcxproj -> C:\Users\xodnj\Desktop\Lecture3_TeamAssignment_1\DefaultWindow\Debug\DefaultWindow.exe
+  DefaultWindow.vcxproj -> C:\Users\xodnj\Desktop\Lecture3_TeamAssignment_1\DefaultWindow\Debug\DefaultWindow.pdb (Full PDB)
+>>>>>>> 5140328c0ebe1b7a9e9dacbcc6ab9b54af81ffab
