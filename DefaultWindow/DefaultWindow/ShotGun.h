@@ -17,9 +17,13 @@ public:
 public:
 	virtual void	OnCollision(CObj* _pObj)	override;
 
-	void	Set_Dir_Type(DIR_TYPE _eDirType) { m_eDirType = _eDirType; }
+	// Inherited via CGun
+	virtual void	Reload_Gun() override;
+	virtual void	Fire_Gun() override;
+	virtual void	Create_Magazine() override;
+	virtual CObj*   Create_Bullet() override;
+	CObj*   Create_Left_Bullet();
+	CObj*   Create_Right_Bullet();
 
-private:
-	DIR_TYPE		m_eDirType;
 };
 

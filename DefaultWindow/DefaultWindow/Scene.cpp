@@ -19,7 +19,14 @@ void CScene::Update()
 		list<CObj*>::iterator iter = m_arrObjList[i].begin();
 
 		for (; iter != m_arrObjList[i].end(); ++iter)
-			(*iter)->Update();
+		{
+			if ((*iter) == nullptr)
+			{
+				m_arrObjList[i].erase(iter);
+			}
+			else
+				(*iter)->Update();
+		}		
 	}
 }
 
