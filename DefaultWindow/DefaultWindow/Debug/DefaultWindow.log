@@ -1,48 +1,47 @@
-<<<<<<< HEAD
-﻿  ShotGun.cpp
-c:\users\gmlwn\onedrive\바탕 화면\프로그램\team3 api 1st project\defaultwindow\defaultwindow\shotgun.cpp(30): warning C4244: '=': conversion from 'LONG' to 'float', possible loss of data
-c:\users\gmlwn\onedrive\바탕 화면\프로그램\team3 api 1st project\defaultwindow\defaultwindow\shotgun.cpp(31): warning C4244: '=': conversion from 'LONG' to 'float', possible loss of data
-c:\users\gmlwn\onedrive\바탕 화면\프로그램\team3 api 1st project\defaultwindow\defaultwindow\shotgun.cpp(46): warning C4244: '=': conversion from 'LONG' to 'float', possible loss of data
-c:\users\gmlwn\onedrive\바탕 화면\프로그램\team3 api 1st project\defaultwindow\defaultwindow\shotgun.cpp(47): warning C4244: '=': conversion from 'LONG' to 'float', possible loss of data
-c:\users\gmlwn\onedrive\바탕 화면\프로그램\team3 api 1st project\defaultwindow\defaultwindow\shotgun.cpp(58): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\gmlwn\onedrive\바탕 화면\프로그램\team3 api 1st project\defaultwindow\defaultwindow\shotgun.cpp(102): warning C4244: 'argument': conversion from 'LONG' to 'float', possible loss of data
-c:\users\gmlwn\onedrive\바탕 화면\프로그램\team3 api 1st project\defaultwindow\defaultwindow\shotgun.cpp(114): warning C4244: 'argument': conversion from 'LONG' to 'float', possible loss of data
-c:\users\gmlwn\onedrive\바탕 화면\프로그램\team3 api 1st project\defaultwindow\defaultwindow\shotgun.cpp(126): warning C4244: 'argument': conversion from 'LONG' to 'float', possible loss of data
+﻿  Player.cpp
+c:\users\xodnj\desktop\lecture3_teamassignment_1\defaultwindow\defaultwindow\customfunc.h(14): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\xodnj\desktop\lecture3_teamassignment_1\defaultwindow\defaultwindow\customfunc.h(15): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\xodnj\desktop\lecture3_teamassignment_1\defaultwindow\defaultwindow\customfunc.h(16): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\xodnj\desktop\lecture3_teamassignment_1\defaultwindow\defaultwindow\customfunc.h(17): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\xodnj\desktop\lecture3_teamassignment_1\defaultwindow\defaultwindow\player.cpp(24): warning C4244: '초기화 중': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  코드를 생성하고 있습니다...
+  컴파일하고 있습니다...
+  ShotGun.cpp
+c:\users\xodnj\desktop\lecture3_teamassignment_1\defaultwindow\defaultwindow\shotgun.cpp(30): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\xodnj\desktop\lecture3_teamassignment_1\defaultwindow\defaultwindow\shotgun.cpp(31): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\xodnj\desktop\lecture3_teamassignment_1\defaultwindow\defaultwindow\shotgun.cpp(46): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\xodnj\desktop\lecture3_teamassignment_1\defaultwindow\defaultwindow\shotgun.cpp(47): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\xodnj\desktop\lecture3_teamassignment_1\defaultwindow\defaultwindow\shotgun.cpp(58): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\xodnj\desktop\lecture3_teamassignment_1\defaultwindow\defaultwindow\shotgun.cpp(102): warning C4244: '인수': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\xodnj\desktop\lecture3_teamassignment_1\defaultwindow\defaultwindow\shotgun.cpp(114): warning C4244: '인수': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\xodnj\desktop\lecture3_teamassignment_1\defaultwindow\defaultwindow\shotgun.cpp(126): warning C4244: '인수': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   ScrewGun.cpp
-c:\users\gmlwn\onedrive\바탕 화면\프로그램\team3 api 1st project\defaultwindow\defaultwindow\screwgun.cpp(30): warning C4244: '=': conversion from 'LONG' to 'float', possible loss of data
-c:\users\gmlwn\onedrive\바탕 화면\프로그램\team3 api 1st project\defaultwindow\defaultwindow\screwgun.cpp(31): warning C4244: '=': conversion from 'LONG' to 'float', possible loss of data
-c:\users\gmlwn\onedrive\바탕 화면\프로그램\team3 api 1st project\defaultwindow\defaultwindow\screwgun.cpp(51): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\gmlwn\onedrive\바탕 화면\프로그램\team3 api 1st project\defaultwindow\defaultwindow\screwgun.cpp(93): warning C4244: 'argument': conversion from 'LONG' to 'float', possible loss of data
+c:\users\xodnj\desktop\lecture3_teamassignment_1\defaultwindow\defaultwindow\screwgun.cpp(30): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\xodnj\desktop\lecture3_teamassignment_1\defaultwindow\defaultwindow\screwgun.cpp(31): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\xodnj\desktop\lecture3_teamassignment_1\defaultwindow\defaultwindow\screwgun.cpp(51): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\xodnj\desktop\lecture3_teamassignment_1\defaultwindow\defaultwindow\screwgun.cpp(93): warning C4244: '인수': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Scene_Test.cpp
   NormalGun.cpp
-c:\users\gmlwn\onedrive\바탕 화면\프로그램\team3 api 1st project\defaultwindow\defaultwindow\normalgun.cpp(33): warning C4244: '=': conversion from 'LONG' to 'float', possible loss of data
-c:\users\gmlwn\onedrive\바탕 화면\프로그램\team3 api 1st project\defaultwindow\defaultwindow\normalgun.cpp(34): warning C4244: '=': conversion from 'LONG' to 'float', possible loss of data
-c:\users\gmlwn\onedrive\바탕 화면\프로그램\team3 api 1st project\defaultwindow\defaultwindow\normalgun.cpp(50): warning C4244: '=': conversion from 'LONG' to 'float', possible loss of data
-c:\users\gmlwn\onedrive\바탕 화면\프로그램\team3 api 1st project\defaultwindow\defaultwindow\normalgun.cpp(51): warning C4244: '=': conversion from 'LONG' to 'float', possible loss of data
-c:\users\gmlwn\onedrive\바탕 화면\프로그램\team3 api 1st project\defaultwindow\defaultwindow\normalgun.cpp(64): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\gmlwn\onedrive\바탕 화면\프로그램\team3 api 1st project\defaultwindow\defaultwindow\normalgun.cpp(101): warning C4244: 'argument': conversion from 'LONG' to 'float', possible loss of data
+c:\users\xodnj\desktop\lecture3_teamassignment_1\defaultwindow\defaultwindow\normalgun.cpp(33): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\xodnj\desktop\lecture3_teamassignment_1\defaultwindow\defaultwindow\normalgun.cpp(34): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\xodnj\desktop\lecture3_teamassignment_1\defaultwindow\defaultwindow\normalgun.cpp(50): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\xodnj\desktop\lecture3_teamassignment_1\defaultwindow\defaultwindow\normalgun.cpp(51): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\xodnj\desktop\lecture3_teamassignment_1\defaultwindow\defaultwindow\normalgun.cpp(64): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\xodnj\desktop\lecture3_teamassignment_1\defaultwindow\defaultwindow\normalgun.cpp(101): warning C4244: '인수': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   MachineGun.cpp
-c:\users\gmlwn\onedrive\바탕 화면\프로그램\team3 api 1st project\defaultwindow\defaultwindow\machinegun.cpp(30): warning C4244: '=': conversion from 'LONG' to 'float', possible loss of data
-c:\users\gmlwn\onedrive\바탕 화면\프로그램\team3 api 1st project\defaultwindow\defaultwindow\machinegun.cpp(31): warning C4244: '=': conversion from 'LONG' to 'float', possible loss of data
-c:\users\gmlwn\onedrive\바탕 화면\프로그램\team3 api 1st project\defaultwindow\defaultwindow\machinegun.cpp(46): warning C4244: '=': conversion from 'LONG' to 'float', possible loss of data
-c:\users\gmlwn\onedrive\바탕 화면\프로그램\team3 api 1st project\defaultwindow\defaultwindow\machinegun.cpp(47): warning C4244: '=': conversion from 'LONG' to 'float', possible loss of data
-c:\users\gmlwn\onedrive\바탕 화면\프로그램\team3 api 1st project\defaultwindow\defaultwindow\machinegun.cpp(58): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\gmlwn\onedrive\바탕 화면\프로그램\team3 api 1st project\defaultwindow\defaultwindow\machinegun.cpp(100): warning C4244: 'argument': conversion from 'LONG' to 'float', possible loss of data
+c:\users\xodnj\desktop\lecture3_teamassignment_1\defaultwindow\defaultwindow\machinegun.cpp(30): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\xodnj\desktop\lecture3_teamassignment_1\defaultwindow\defaultwindow\machinegun.cpp(31): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\xodnj\desktop\lecture3_teamassignment_1\defaultwindow\defaultwindow\machinegun.cpp(46): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\xodnj\desktop\lecture3_teamassignment_1\defaultwindow\defaultwindow\machinegun.cpp(47): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\xodnj\desktop\lecture3_teamassignment_1\defaultwindow\defaultwindow\machinegun.cpp(58): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\xodnj\desktop\lecture3_teamassignment_1\defaultwindow\defaultwindow\machinegun.cpp(100): warning C4244: '인수': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Gun.cpp
   FollowGun.cpp
-c:\users\gmlwn\onedrive\바탕 화면\프로그램\team3 api 1st project\defaultwindow\defaultwindow\followgun.cpp(28): warning C4244: '=': conversion from 'LONG' to 'float', possible loss of data
-c:\users\gmlwn\onedrive\바탕 화면\프로그램\team3 api 1st project\defaultwindow\defaultwindow\followgun.cpp(29): warning C4244: '=': conversion from 'LONG' to 'float', possible loss of data
-c:\users\gmlwn\onedrive\바탕 화면\프로그램\team3 api 1st project\defaultwindow\defaultwindow\followgun.cpp(48): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\gmlwn\onedrive\바탕 화면\프로그램\team3 api 1st project\defaultwindow\defaultwindow\followgun.cpp(91): warning C4244: 'argument': conversion from 'LONG' to 'float', possible loss of data
-  Bullet.cpp
-c:\users\gmlwn\onedrive\바탕 화면\프로그램\team3 api 1st project\defaultwindow\defaultwindow\bullet.cpp(72): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\gmlwn\onedrive\바탕 화면\프로그램\team3 api 1st project\defaultwindow\defaultwindow\bullet.cpp(73): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\gmlwn\onedrive\바탕 화면\프로그램\team3 api 1st project\defaultwindow\defaultwindow\bullet.cpp(74): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\gmlwn\onedrive\바탕 화면\프로그램\team3 api 1st project\defaultwindow\defaultwindow\bullet.cpp(75): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\gmlwn\onedrive\바탕 화면\프로그램\team3 api 1st project\defaultwindow\defaultwindow\bullet.cpp(76): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  Generating Code...
-  DefaultWindow.vcxproj -> C:\Users\gmlwn\OneDrive\바탕 화면\프로그램\Team3 API 1st Project\DefaultWindow\Debug\DefaultWindow.exe
-  DefaultWindow.vcxproj -> C:\Users\gmlwn\OneDrive\바탕 화면\프로그램\Team3 API 1st Project\DefaultWindow\Debug\DefaultWindow.pdb (Full PDB)
-=======
-﻿  Scene.cpp
+c:\users\xodnj\desktop\lecture3_teamassignment_1\defaultwindow\defaultwindow\followgun.cpp(28): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\xodnj\desktop\lecture3_teamassignment_1\defaultwindow\defaultwindow\followgun.cpp(29): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\xodnj\desktop\lecture3_teamassignment_1\defaultwindow\defaultwindow\followgun.cpp(48): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\xodnj\desktop\lecture3_teamassignment_1\defaultwindow\defaultwindow\followgun.cpp(91): warning C4244: '인수': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  코드를 생성하고 있습니다...
+  LINK : C:\Users\xodnj\Desktop\Lecture3_TeamAssignment_1\DefaultWindow\Debug\DefaultWindow.exe을(를) 찾을 수 없거나 마지막 증분 링크에 의해 빌드되지 않았습니다. 전체 링크를 수행하고 있습니다.
   DefaultWindow.vcxproj -> C:\Users\xodnj\Desktop\Lecture3_TeamAssignment_1\DefaultWindow\Debug\DefaultWindow.exe
   DefaultWindow.vcxproj -> C:\Users\xodnj\Desktop\Lecture3_TeamAssignment_1\DefaultWindow\Debug\DefaultWindow.pdb (Full PDB)
->>>>>>> 5140328c0ebe1b7a9e9dacbcc6ab9b54af81ffab

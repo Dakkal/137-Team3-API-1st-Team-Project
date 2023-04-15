@@ -27,9 +27,6 @@ public:
 	void Set_GunType(GUN_TYPE _eGunType) { m_eGunType = _eGunType; }*/
 
 
-public:
-	virtual void Fire() PURE;
-
 protected:
 	POINT			m_tPosin;
 	GUN_TYPE		m_eGunType;
