@@ -20,7 +20,13 @@ void CFollowGun::Initialize()
 	m_eGunType = GUN_TYPE::FOLLOWGUN;
 	m_fDistance = 30.f;
 
+	m_iRemainBullet = 10;
 	m_iMagazineSize = 10;
+
+	m_tInfo.fX = CGameCore::GetInst()->GetPlayer()->Get_ShotPoint().x;
+	m_tInfo.fY = CGameCore::GetInst()->GetPlayer()->Get_ShotPoint().y;
+
+	m_dwTime = GetTickCount();
 }
 
 int CFollowGun::Update()
@@ -41,6 +47,7 @@ int CFollowGun::Update()
 
 void CFollowGun::Late_Update()
 {
+	Reload();
 }
 
 void CFollowGun::Render(HDC hDC)
@@ -58,30 +65,22 @@ void CFollowGun::OnCollision(CObj * _pObj)
 {
 }
 
-void CFollowGun::Reload_Gun()
+void CFollowGun::Reload()
 {
-	if (m_iRemainBullet <= 0 && m_dwTime + 1040 <= GetTickCount())
+	if (m_iRemainBullet < m_iMagazineSize && (m_dwTime + 1040) <= GetTickCount())
 	{
-		Create_Magazine();
-
+		++m_iRemainBullet;
 		m_dwTime = GetTickCount();
 	}
-	else
-		m_dwTime = GetTickCount();
 }
 
-void CFollowGun::Fire_Gun()
+void CFollowGun::Fire()
 {
 	if (m_iRemainBullet > 0)
 	{
 		AddObjEvt(Create_Bullet());
 		--m_iRemainBullet;
 	}
-}
-
-void CFollowGun::Create_Magazine()
-{
-	m_iRemainBullet = m_iMagazineSize;
 }
 
 CObj * CFollowGun::Create_Bullet()

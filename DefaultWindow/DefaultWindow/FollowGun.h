@@ -17,9 +17,8 @@ public:
 public:
 	virtual void	OnCollision(CObj * _pObj) override;
 
-	virtual void	Reload_Gun() override;
-	virtual void	Fire_Gun() override;
-	virtual void	Create_Magazine() override;
+	virtual void	Reload() override;
+	virtual void	Fire() override;
 	virtual CObj*	Create_Bullet() override;
 };
 

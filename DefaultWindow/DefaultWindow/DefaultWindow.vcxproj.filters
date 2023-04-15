@@ -95,6 +95,9 @@
     <Filter Include="03. Obj\04. Gun\04. ShotGun">
       <UniqueIdentifier>{6f01fe38-700d-4b5b-a3f2-f9588b78850d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03. Obj\02. Item\00.TimeStop">
+      <UniqueIdentifier>{b15523a3-3251-49bc-94ec-ad431173f8ea}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Obj.h">
@@ -205,6 +208,9 @@
     <ClInclude Include="ShotGun.h">
       <Filter>03. Obj\04. Gun\04. ShotGun</Filter>
     </ClInclude>
+    <ClInclude Include="Item_TimeStop.h">
+      <Filter>03. Obj\02. Item\00.TimeStop</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Obj.cpp">
@@ -268,7 +274,6 @@
     <ClCompile Include="EventFunc.cpp">
       <Filter>01. Manager\Event</Filter>
     </ClCompile>
-    <ClCompile Include="LifeUp.cpp" />
     <ClCompile Include="Gun.cpp">
       <Filter>03. Obj\04. Gun</Filter>
     </ClCompile>
@@ -289,6 +294,9 @@
     </ClCompile>
     <ClCompile Include="ShotGun.cpp">
       <Filter>03. Obj\04. Gun\04. ShotGun</Filter>
+    </ClCompile>
+    <ClCompile Include="Item_Timestop.cpp">
+      <Filter>03. Obj\02. Item\00.TimeStop</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

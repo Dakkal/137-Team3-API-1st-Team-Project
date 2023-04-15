@@ -23,8 +23,12 @@ void CNormalGun::Initialize()
 	m_fDistance = 30.f;
 
 	m_iMagazineSize = 30;
+	m_iRemainBullet = 30;
 
-	Create_Magazine();
+	m_tInfo.fX = CGameCore::GetInst()->GetPlayer()->Get_ShotPoint().x;
+	m_tInfo.fY = CGameCore::GetInst()->GetPlayer()->Get_ShotPoint().y;
+
+	m_dwTime = GetTickCount();
 }
 
 int CNormalGun::Update()
@@ -56,7 +60,7 @@ void CNormalGun::Late_Update()
 	m_tPosin.x = LONG(m_tInfo.fX + (m_fDistance * cos(m_fAngle * (PI / 180.f))));
 	m_tPosin.y = LONG(m_tInfo.fY - (m_fDistance * sin(m_fAngle * (PI / 180.f))));
 
-	Reload_Gun();
+	Reload();
 }
 
 void CNormalGun::Render(HDC hDC)
@@ -73,19 +77,16 @@ void CNormalGun::OnCollision(CObj * _pObj)
 {
 }
 
-void CNormalGun::Reload_Gun()
+void CNormalGun::Reload()
 {
-	if (m_iRemainBullet <= 0 && m_dwTime + 1010 <= GetTickCount())
+	if (m_iRemainBullet < m_iMagazineSize &&( m_dwTime + 1010) <= GetTickCount())
 	{
-		Create_Magazine();
-
-		m_dwTime = GetTickCount();
+			++m_iRemainBullet;
+			m_dwTime = GetTickCount();
 	}
-	else
-		m_dwTime = GetTickCount();
 }
 
-void CNormalGun::Fire_Gun()
+void CNormalGun::Fire()
 {
 	if (m_iRemainBullet > 0)
 	{
@@ -94,7 +95,7 @@ void CNormalGun::Fire_Gun()
 	}
 }
 
-CObj * CNormalGun::Create_Bullet()
+CObj* CNormalGun::Create_Bullet()
 {
 	CBullet* pBullet = new CBullet;
 	pBullet->Initialize();
@@ -103,9 +104,4 @@ CObj * CNormalGun::Create_Bullet()
 	pBullet->Set_GunType(m_eGunType);
 
 	return pBullet;
-}
-
-void CNormalGun::Create_Magazine()
-{
-	m_iRemainBullet = m_iMagazineSize;
 }

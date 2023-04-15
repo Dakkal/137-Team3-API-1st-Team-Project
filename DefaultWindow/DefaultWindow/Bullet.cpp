@@ -147,6 +147,7 @@ void CBullet::ScrewGun_Pattern()
 	m_tInfo.fX = m_tCenter.x + m_fDistance * cosf(m_fBullRotAngle * PI / 180.f);
 	m_tInfo.fY = m_tCenter.y - m_fDistance * -sinf(m_fBullRotAngle * PI / 180.f);
 
+	m_fDistance += .5f;
 }
 
 void CBullet::FollowGun_Pattern()

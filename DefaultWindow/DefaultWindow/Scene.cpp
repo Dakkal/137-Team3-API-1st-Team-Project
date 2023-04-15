@@ -10,7 +10,17 @@ CScene::CScene(SCENE_TYPE _eType)
 
 CScene::~CScene()
 {
+	for (int i = 0; i < (int)OBJECT_TYPE::END; ++i)
+	{
+		list<CObj*>::iterator iter = m_arrObjList[i].begin();
+		for (; iter != m_arrObjList[i].end(); ++iter)
+		{
+			if ((*iter) == nullptr)
+				Safe_Delete<CObj*>(*iter);
+		}
+	}
 }
+
 
 void CScene::Update()
 {

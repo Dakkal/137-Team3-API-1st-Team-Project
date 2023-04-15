@@ -24,14 +24,14 @@ public:
 	RECT		Get_Rect() { return m_tRect; }
 
 
-	void Set_Pos(float _X, float _Y){m_tInfo.fX = _X; m_tInfo.fY = _Y;}
-	void Set_Angle(float _fAngle) { m_fAngle = _fAngle; }
-	void Set_Dis(float _fDis) { m_fDistance = _fDis; }
-	void Set_Target(CObj* _pTarget) { m_pTarget = _pTarget; }
-	void Set_ObjType(OBJECT_TYPE _eObjType) { m_eObjType = _eObjType; }
+	void		Set_Pos(float _X, float _Y){m_tInfo.fX = _X; m_tInfo.fY = _Y;}
+	void		Set_Angle(float _fAngle) { m_fAngle = _fAngle; }
+	void		Set_Dis(float _fDis) { m_fDistance = _fDis; }
+	void		Set_Target(CObj* _pTarget) { m_pTarget = _pTarget; }
+	void		Set_ObjType(OBJECT_TYPE _eObjType) { m_eObjType = _eObjType; }
 
-	void Set_Dead(bool _b) { m_bDead = _b; }
-	bool Is_Dead() { return m_bDead; }
+	void		Set_Dead(bool _b) { m_bDead = _b; }
+	bool		Is_Dead() { return m_bDead; }
 
 	float		GetAngleDegree() { return m_fAngle; }
 	float		GetAngleRadian() { return m_fAngle * (PI / 180); }

@@ -10,6 +10,10 @@
 #include "CustomFunc.h"
 #include "Bullet.h"
 #include "NormalGun.h"
+#include "ShotGun.h"
+#include "MachineGun.h"
+#include "ScrewGun.h"
+#include "FollowGun.h"
 
 CPlayer::CPlayer()
 	:	CObj(OBJECT_TYPE::PLAYER)
@@ -21,6 +25,7 @@ CPlayer::CPlayer()
 	,	m_iSatelliteCount(0)
 	,	m_lRecoverTime(3000.f)
 	,	dwTime(0)
+	,	m_pGun(nullptr)
 {
 }
 
@@ -34,16 +39,27 @@ void CPlayer::Initialize(void)
 {
 	m_tInfo = { WINCX / 2, WINCY - 50.f, 50.f, 50.f };
 	m_fSpeed = 10.f;
-	
+
 	dwTime = GetTickCount();
 
-	
+	m_pArrGun[(int)GUN_TYPE::NORMALGUN]		=	new CNormalGun;
+	m_pArrGun[(int)GUN_TYPE::SHOTGUN]		=	new CShotGun;
+	m_pArrGun[(int)GUN_TYPE::MACHINEGUN]	=	new CMachineGun;
+	m_pArrGun[(int)GUN_TYPE::SCREWGUN]		=	new CScrewGun;
+	m_pArrGun[(int)GUN_TYPE::FOLLOWGUN]		=	new CFollowGun;
+
+	for (int i = 0; i < (int)GUN_TYPE::END; ++i)
+		m_pArrGun[i]->Initialize();
+
+	m_pGun = m_pArrGun[(int)GUN_TYPE::SHOTGUN];
 }
 
 int CPlayer::Update(void)
 {
+	m_pGun->Update();
 	Key_Input();
 	Sort_Interval_Satellite();
+
 	__super::Update_Rect();
 	
 	return 0;
@@ -51,12 +67,14 @@ int CPlayer::Update(void)
 
 void CPlayer::Late_Update(void)
 {
+	m_pGun->Late_Update();
 	POINT ptMouse = CGameCore::GetInst()->GetMousePos();
 
 	m_fAngle = (atan2(m_tInfo.fY - (float)ptMouse.y, (float)ptMouse.x - m_tInfo.fX) * 57.2958f);
-
 	m_ptShotPoint.x = LONG(m_tInfo.fX + (50.f * cos(m_fAngle * (PI / 180.f))));
 	m_ptShotPoint.y = LONG(m_tInfo.fY - (50.f * sin(m_fAngle * (PI / 180.f))));
+
+	
 
 }
 
@@ -64,8 +82,6 @@ void CPlayer::Render(HDC hDC)
 {
 	POINT temp{};
 	ZeroMemory(&temp, sizeof(POINT));
-	
-	
 	
 	if (!m_bCollision)
 	{
@@ -82,6 +98,7 @@ void CPlayer::Render(HDC hDC)
 
 
 	// 포신위치. 곧 Gun의 위치가 될거다.
+	m_pGun->Render(hDC);
 	Ellipse(hDC, m_ptShotPoint.x - 10, m_ptShotPoint.y - 10, m_ptShotPoint.x + 10, m_ptShotPoint.y + 10);
 	
 	if (!m_bCollision)
@@ -116,7 +133,30 @@ void CPlayer::Render(HDC hDC)
 	}
 
 	// 2. SP(총알) Bar
-
+	for (int i = 0; i < m_pGun->GetMaxBullet(); ++i)
+	{
+		RECT rect = GetRectWithXY((int)10, (int)10, (10 * (i + 1)), 0, 10);
+		if (m_pGun->GetRemainBullet() >= i + 1)
+		{
+			SelectGDI g(hDC, BRUSH_TYPE::GREEN);
+			Rectangle(hDC, rect.left, rect.top, rect.right, rect.bottom);
+		}
+		else
+		{
+			SelectGDI g(hDC, BRUSH_TYPE::HOLLOW);
+			Rectangle(hDC, rect.left, rect.top, rect.right, rect.bottom);
+		}
+	}
+	wstring strBullet;
+	strBullet.append(L"Bullet : ");
+	strBullet.append(to_wstring(m_pGun->GetRemainBullet()));
+	strBullet.append(L" / ");
+	strBullet.append(to_wstring(m_pGun->GetMaxBullet()));
+	
+	const wstring strGunName = STR_GUN[(int)m_pGun->GetGunType()];
+	
+	TextOut(hDC, 30, 30, strBullet.c_str(), strBullet.size());
+	TextOut(hDC, 30, 60, strGunName.c_str(), strGunName.size());
 	
 	
 	/*MoveToEx(hDC, m_tInfo.fX, m_tInfo.fY, &temp);
@@ -127,7 +167,11 @@ void CPlayer::Render(HDC hDC)
 
 void CPlayer::Release(void)
 {
-
+	for (int i = 0; i < (int)GUN_TYPE::END; ++i)
+	{
+		if (nullptr != m_pArrGun[i])
+			Safe_Delete<CGun*>(m_pArrGun[i]);
+	}
 }
 
 void CPlayer::OnCollision(CObj * _pObj)
@@ -164,22 +208,36 @@ void CPlayer::Key_Input(void)
 		m_tInfo.fX += m_fSpeed;
 	}
 
-	if (GetAsyncKeyState(VK_LBUTTON))
+	if (GetAsyncKeyState(VK_LBUTTON) & 0x0001)
 	{
 		// TODO :: Shoot();
-		AddObjEvt(new CSatellite(this));
+		m_pGun->Fire();
 	}
 
 	if (GetAsyncKeyState('1'))
 	{
-		m_pGunList->push_back(Get_Gun());
+		Set_Gun(GUN_TYPE::NORMALGUN);
+	}
+
+	if (GetAsyncKeyState('2'))
+	{
+		Set_Gun(GUN_TYPE::SHOTGUN);
+	}
+
+	if (GetAsyncKeyState('3'))
+	{
+		Set_Gun(GUN_TYPE::SCREWGUN);
+	}
+
+	if (GetAsyncKeyState('4'))
+	{
+		Set_Gun(GUN_TYPE::FOLLOWGUN);
 	}
 	
 	
 	if (GetAsyncKeyState(VK_SPACE))
 	{
-		// TODO :: Shoot();
-		static_cast<CGun*>(m_pGunList->front())->Fire_Gun();
+		//TODO :: USE SPECIAL ITEM	
 	}
 
 }
@@ -200,22 +258,3 @@ void CPlayer::Sort_Interval_Satellite()
 	
 }
 
-//CObj* CPlayer::Create_Bullet()
-//{
-//	m_pBullet = new CBullet;
-//	m_pBullet->Initialize();
-//	m_pBullet->Set_Pos(m_ptShotPoint.x, m_ptShotPoint.y);
-//	m_pBullet->Set_Angle(m_fAngle);
-//	dynamic_cast<CBullet*>(m_pBullet)->Set_GunType(GUN_TYPE::NORMALGUN);
-//
-//	return m_pBullet;
-//}
-
-CObj* CPlayer::Get_Gun()
-{
-	CObj* pGun = new CNormalGun;
-	pGun->Initialize();
-	
-
-	return pGun;
-}

@@ -1,5 +1,7 @@
 #pragma once
 #include "Obj.h"
+
+class CPlayer;
 class CGun :
 	public CObj
 {
@@ -15,19 +17,19 @@ public:
 	virtual void	Release()			PURE;
 
 public:
-	virtual void OnCollision(CObj * _pObj) PURE;
+	virtual void	OnCollision(CObj * _pObj) PURE;
 
-	virtual void Reload_Gun() PURE;
-	virtual void Fire_Gun() PURE;
-	virtual void Create_Magazine() PURE;
-	virtual CObj* Create_Bullet() PURE;
+	virtual void	Reload() PURE;
+	virtual void	Fire() PURE;
+	virtual CObj*	Create_Bullet() PURE;
 
-
-	/*GUN_TYPE Get_GunType() { return m_eGunType; }
-	void Set_GunType(GUN_TYPE _eGunType) { m_eGunType = _eGunType; }*/
-
+public:
+	int				GetRemainBullet() { return m_iRemainBullet; }
+	int				GetMaxBullet() { return m_iMagazineSize; }
+	GUN_TYPE		GetGunType() { return m_eGunType; }
 
 protected:
+	CObj*			m_pOwner;
 	POINT			m_tPosin;
 	GUN_TYPE		m_eGunType;
 
