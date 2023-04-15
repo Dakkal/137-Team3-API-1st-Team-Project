@@ -22,6 +22,11 @@ void CMachineGun::Initialize()
 	m_fDistance = 30.f;
 
 	m_iMagazineSize = 50;
+
+	m_tInfo.fX = CGameCore::GetInst()->GetPlayer()->Get_ShotPoint().x;
+	m_tInfo.fY = CGameCore::GetInst()->GetPlayer()->Get_ShotPoint().y;
+
+	m_dwTime = GetTickCount();
 }
 
 int CMachineGun::Update()
@@ -51,6 +56,8 @@ void CMachineGun::Late_Update()
 
 	m_tPosin.x = LONG(m_tInfo.fX + (m_fDistance * cos(m_fAngle * (PI / 180.f))));
 	m_tPosin.y = LONG(m_tInfo.fY - (m_fDistance * sin(m_fAngle * (PI / 180.f))));
+
+	Reload();
 }
 
 void CMachineGun::Render(HDC hDC)
@@ -67,19 +74,16 @@ void CMachineGun::OnCollision(CObj * _pObj)
 {
 }
 
-void CMachineGun::Reload_Gun()
+void CMachineGun::Reload()
 {
-	if (m_iRemainBullet <= 0 && m_dwTime + 1020 <= GetTickCount())
+	if (m_iRemainBullet < m_iMagazineSize && (m_dwTime + 1020) <= GetTickCount())
 	{
-		Create_Magazine();
-
+		++m_iRemainBullet;
 		m_dwTime = GetTickCount();
 	}
-	else
-		m_dwTime = GetTickCount();
 }
 
-void CMachineGun::Fire_Gun()
+void CMachineGun::Fire()
 {
 	if (m_iRemainBullet > 0)
 	{
@@ -88,10 +92,6 @@ void CMachineGun::Fire_Gun()
 	}
 }
 
-void CMachineGun::Create_Magazine()
-{
-	m_iRemainBullet = m_iMagazineSize;
-}
 
 CObj * CMachineGun::Create_Bullet()
 {

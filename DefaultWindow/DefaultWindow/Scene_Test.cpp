@@ -3,6 +3,10 @@
 #include "Obj.h"
 #include "Player.h"
 #include "NormalGun.h"
+#include "EventFunc.h"
+#include "Item_Timestop.h"
+#include "Enemy.h"
+#include "CollisionMgr.h"
 
 CScene_Test::CScene_Test()
 	:CScene(SCENE_TYPE::TEST)
@@ -12,7 +16,7 @@ CScene_Test::CScene_Test()
 
 CScene_Test::~CScene_Test()
 {
-
+	
 }
 
 void CScene_Test::Enter()
@@ -20,9 +24,17 @@ void CScene_Test::Enter()
 	if (GetObjTypeList(OBJECT_TYPE::PLAYER).size() <= 0)
 		GetObjTypeList(OBJECT_TYPE::PLAYER).push_back(CGameCore::GetInst()->GetPlayer());
 
-	if (GetObjTypeList(OBJECT_TYPE::GUN).size() <= 0)
-	static_cast<CPlayer*>(GetObjTypeList(OBJECT_TYPE::PLAYER).front())->Set_Gun(&GetObjTypeList(OBJECT_TYPE::GUN));
+	CItem_Timestop* pItem = new CItem_Timestop;
+	pItem->Initialize();
+	pItem->Set_Pos(WINCX / 2, 0);
 
+	AddObjEvt(pItem);
+
+	for (int i = 0; i < 10; ++i)
+	{
+		CEnemy* pEnemy = new CEnemy;
+		AddObjEvt(pEnemy);
+	}
 }
 
 void CScene_Test::Update()
@@ -33,6 +45,7 @@ void CScene_Test::Update()
 void CScene_Test::Late_Update()
 {
 	CScene::Late_Update();
+	CCollisonMgr::GetInst()->Collision_Rect(GetObjTypeList(OBJECT_TYPE::PLAYER), GetObjTypeList(OBJECT_TYPE::ITEM));
 }
 
 void CScene_Test::Render(HDC _dc)

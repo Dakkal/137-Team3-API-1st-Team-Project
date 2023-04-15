@@ -1,6 +1,7 @@
 #pragma once
 #include "Obj.h"
 
+class CGun;
 class CPlayer :	public CObj
 {
 public:
@@ -22,6 +23,13 @@ private:
 	void			Key_Input();				// 키보드 입력
 	void			Sort_Interval_Satellite();	// 플레이어 위성별 위치값 조정
 
+public:
+	CGun*		Get_Gun()					{ return m_pGun; }
+
+	void		Set_Gun(GUN_TYPE _eType) { m_pGun = m_pArrGun[(int)_eType]; }
+	POINT		Get_ShotPoint()			 { return m_ptShotPoint; }
+
+
 private:
 	int				m_iHp;
 	int				m_iMaxHp;
@@ -35,16 +43,13 @@ private:
 
 	LONG			m_lRecoverTime;		// 충돌 변수 m_bCollision의 복구 시간.
 	DWORD			dwTime;				// 시간 체크용 변수
+	
+	CGun*			m_pGun;
+	CGun*			m_pArrGun[(int)GUN_TYPE::END];
 
 
-public:
-	CObj*		Get_Gun();
 
-	void		Set_Gun(list<CObj*>* _pGunList) { m_pGunList = _pGunList; }
-	POINT		Get_ShotPoint() { return m_ptShotPoint; }
-
-private:
-	list<CObj*>*		m_pGunList;
+	
 	
 };
 

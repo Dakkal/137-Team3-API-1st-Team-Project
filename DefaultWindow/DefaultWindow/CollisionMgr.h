@@ -2,9 +2,7 @@
 #include "Obj.h"
 class CCollisonMgr
 {
-public:
-	CCollisonMgr();
-	~CCollisonMgr();
+	SINGLETON(CCollisonMgr);
 
 public:
 	static void	Collision_Rect(list<CObj*> Dst, list<CObj*> Src);

@@ -22,11 +22,16 @@ void CShotGun::Initialize()
 	m_fDistance = 30.f;
 
 	m_iMagazineSize = 10;
+	m_iRemainBullet = 10;
+
+	m_tInfo.fX = CGameCore::GetInst()->GetPlayer()->Get_ShotPoint().x;
+	m_tInfo.fY = CGameCore::GetInst()->GetPlayer()->Get_ShotPoint().y;
+
+	m_dwTime = GetTickCount();
 }
 
 int CShotGun::Update()
 {
-
 	m_tInfo.fX = CGameCore::GetInst()->GetPlayer()->Get_ShotPoint().x;
 	m_tInfo.fY = CGameCore::GetInst()->GetPlayer()->Get_ShotPoint().y;
 
@@ -51,6 +56,8 @@ void CShotGun::Late_Update()
 
 	m_tPosin.x = LONG(m_tInfo.fX + (m_fDistance * cos(m_fAngle * (PI / 180.f))));
 	m_tPosin.y = LONG(m_tInfo.fY - (m_fDistance * sin(m_fAngle * (PI / 180.f))));
+
+	Reload();
 }
 
 void CShotGun::Render(HDC hDC)
@@ -67,19 +74,16 @@ void CShotGun::OnCollision(CObj * _pObj)
 {
 }
 
-void CShotGun::Reload_Gun()
+void CShotGun::Reload()
 {
-	if (m_iRemainBullet <= 0 && m_dwTime + 1030 <= GetTickCount())
+	if (m_iRemainBullet < m_iMagazineSize && (m_dwTime + 1030) <= GetTickCount())
 	{
-		Create_Magazine();
-
+		++m_iRemainBullet;
 		m_dwTime = GetTickCount();
 	}
-	else
-		m_dwTime = GetTickCount();
 }
 
-void CShotGun::Fire_Gun()
+void CShotGun::Fire()
 {
 	if (m_iRemainBullet > 0)
 	{
@@ -88,11 +92,6 @@ void CShotGun::Fire_Gun()
 		AddObjEvt(Create_Right_Bullet());
 		--m_iRemainBullet;
 	}
-}
-
-void CShotGun::Create_Magazine()
-{
-	m_iRemainBullet = m_iMagazineSize;
 }
 
 CObj * CShotGun::Create_Bullet()
