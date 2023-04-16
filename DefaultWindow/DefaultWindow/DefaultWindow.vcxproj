@@ -191,6 +191,7 @@
     <ClInclude Include="Satellite.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneMgr.h" />
+    <ClInclude Include="Scene_Boss.h" />
     <ClInclude Include="Scene_Clear.h" />
     <ClInclude Include="Scene_Exit.h" />
     <ClInclude Include="Scene_GameOver.h" />
@@ -249,6 +250,7 @@
     <ClCompile Include="Satellite.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneMgr.cpp" />
+    <ClCompile Include="Scene_Boss.cpp" />
     <ClCompile Include="Scene_Clear.cpp" />
     <ClCompile Include="Scene_Exit.cpp" />
     <ClCompile Include="Scene_GameOver.cpp" />
