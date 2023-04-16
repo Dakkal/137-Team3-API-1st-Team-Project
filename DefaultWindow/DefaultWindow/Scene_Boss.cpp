@@ -47,6 +47,8 @@ void CScene_Boss::Late_Update()
 void CScene_Boss::Render(HDC _dc)
 {
 	CScene::Render(_dc);
+	wstring strScore = L"Á¡¼ö : " + to_wstring(g_iScore);
+	TextOut(_dc, WINCX - 50, 200, strScore.c_str(), strScore.size());
 }
 
 void CScene_Boss::Exit()

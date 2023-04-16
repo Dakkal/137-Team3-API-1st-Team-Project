@@ -174,6 +174,7 @@ void CEnemy::OnDamaged()
 	if (m_iHp <= 0)
 	{
 		Spawn_Item();
+		g_iScore++;
 		DeleteObjEvt(this);
 	}
 		

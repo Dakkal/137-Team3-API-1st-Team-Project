@@ -45,6 +45,8 @@ void CScene_Stage3::Render(HDC hDC)
 	CScene::Render(hDC);
 	TextOut(hDC, WINCX / 2, 0, strSceneName.c_str(), strSceneName.size());
 	TextOut(hDC, WINCX - 50, 100, to_wstring((float)m_dwDeltaTime / 1000).c_str(), to_wstring((float)m_dwDeltaTime / 1000).size());
+	wstring strScore = L"Á¡¼ö : " + to_wstring(g_iScore);
+	TextOut(hDC, WINCX - 50, 200, strScore.c_str(), strScore.size());
 }
 
 void CScene_Stage3::Exit()

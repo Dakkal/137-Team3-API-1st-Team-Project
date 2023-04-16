@@ -1,4 +1,7 @@
-﻿  BossGun.cpp
-c:\users\xodnj\desktop\lecture3_teamassignment_1\defaultwindow\defaultwindow\bossgun.cpp(162): warning C4244: '인수': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+﻿  Scene_Stage1.cpp
+c:\users\xodnj\desktop\lecture3_teamassignment_1\defaultwindow\defaultwindow\scene_stage1.cpp(119): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\xodnj\desktop\lecture3_teamassignment_1\defaultwindow\defaultwindow\scene_stage1.cpp(132): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\xodnj\desktop\lecture3_teamassignment_1\defaultwindow\defaultwindow\scene_stage1.cpp(134): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\xodnj\desktop\lecture3_teamassignment_1\defaultwindow\defaultwindow\scene_stage1.cpp(147): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   DefaultWindow.vcxproj -> C:\Users\xodnj\Desktop\Lecture3_TeamAssignment_1\DefaultWindow\Debug\DefaultWindow.exe
   DefaultWindow.vcxproj -> C:\Users\xodnj\Desktop\Lecture3_TeamAssignment_1\DefaultWindow\Debug\DefaultWindow.pdb (Full PDB)

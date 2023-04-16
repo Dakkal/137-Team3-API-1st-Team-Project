@@ -29,3 +29,4 @@ private:\
 #define NOT_CLONE(type) type* Clone() = delete;
 
 extern HWND	g_hWnd;
+extern int g_iScore;

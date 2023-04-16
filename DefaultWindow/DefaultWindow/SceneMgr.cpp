@@ -47,7 +47,7 @@ void CSceneMgr::Initialize()
 	m_arrScene[(int)SCENE_TYPE::TEST]		= new CScene_Test;
 	m_arrScene[(int)SCENE_TYPE::BOSS]		= new CScene_Boss;
 
-	m_pCurrScene = m_arrScene[(int)SCENE_TYPE::BOSS];
+	m_pCurrScene = m_arrScene[(int)SCENE_TYPE::START];
 	m_pCurrScene->Enter();
 
 }

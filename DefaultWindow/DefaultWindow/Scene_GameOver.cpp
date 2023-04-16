@@ -36,6 +36,8 @@ void CScene_GameOver::Update()
 
 	if (m_iCount <= 0 || Input_Space())
 	{
+		CGameCore::GetInst()->GetPlayer()->Revive();
+		g_iScore = 0;
 		ChangeSceneEvt(SCENE_TYPE::START);
 	}
 
@@ -99,6 +101,7 @@ bool CScene_GameOver::Input_Space()
 	if (GetAsyncKeyState(VK_SPACE))
 	{
 		CGameCore::GetInst()->GetPlayer()->Revive();
+		g_iScore = 0;
 		return true;
 	}
 		

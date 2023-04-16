@@ -48,6 +48,7 @@ void CScene_Start::Render(HDC hDC)
 	TextOut(hDC, 300, 400, m_szSubTitle, lstrlen(m_szSubTitle));
 	SelectObject(CGameCore::GetInst()->GetMainDC(), hOldFont);
 	DeleteObject(hTitleFont);
+
 }
 
 void CScene_Start::Exit()
@@ -57,6 +58,7 @@ void CScene_Start::Exit()
 
 void CScene_Start::GameOver()
 {
+	ChangeSceneEvt(SCENE_TYPE::GAMEOVER);
 }
 
 bool CScene_Start::Input_Space()
