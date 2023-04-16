@@ -217,6 +217,7 @@
     <ClCompile Include="Citem_ScrewGun.cpp" />
     <ClCompile Include="Citem_ShotGun.cpp" />
     <ClCompile Include="CollisonMgr.cpp" />
+    <ClCompile Include="CustomFunc.cpp" />
     <ClCompile Include="DefaultWindow.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="EventFunc.cpp" />

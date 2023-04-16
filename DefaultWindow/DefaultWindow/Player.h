@@ -1,5 +1,6 @@
 #pragma once
 #include "Obj.h"
+#include "CustomFunc.h"
 
 class CGun;
 class CPlayer :	public CObj

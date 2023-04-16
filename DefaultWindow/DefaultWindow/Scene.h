@@ -26,8 +26,9 @@ public:
 
 private:
 	SCENE_TYPE		m_eType;
-	list<CObj*>		m_arrObjList[(int)OBJECT_TYPE::END];
 
+protected:
+	list<CObj*>		m_arrObjList[(int)OBJECT_TYPE::END];
 	int				m_iScore;
 };
 

@@ -1,5 +1,6 @@
 #pragma once
 #include "Obj.h"
+
 class CEnemy :
 	public CObj
 {
@@ -9,29 +10,38 @@ public:
 
 public:
 	// CObj을(를) 통해 상속됨
-	virtual void	Initialize()	override;
-	virtual int		Update()		override;
-	virtual void	Late_Update()	override;
-	virtual void	Render(HDC hDC) override;
-	virtual void	Release()		override;
+	virtual void	Initialize()				override;
+	virtual int		Update()					override;
+	virtual void	Late_Update()				override;
+	virtual void	Render(HDC hDC)				override;
+	virtual void	Release()					override;
 
+public:
 	virtual void	OnCollision(CObj* _pObj)	override;
 
-public :
+public:
+	int				GetHp()						{ return m_iHp; }
+	void			SetHp(int _iHp)				{ m_iHp = _iHp; }
 
-	void Update_Rect2();
-	void Update_Rect3();
-	CObj* Enemy();
+public:
+	void			SetPause(int _iPauseTime)	{ m_bPause = true; m_lPauseTime = _iPauseTime * 1000; m_dwPauseTime = GetTickCount(); }
+	void			SetSpeed(int _iSpeed)		{ m_iSpeed = _iSpeed; }
+
 
 private:
-	INFO			m_tInfo2;
-	RECT			m_tRect2;
+	void			OnDamaged();
+	void			Update_Pause();
 
-	INFO			m_tInfo3;
-	RECT			m_tRect3;
+private:
+	int				m_iHp;
+	int				m_iMaxHp;
+	int				m_iSpeed;
 
-	CObj* EnemyCpy;
-	list<CObj*> EnemyCopy;
-	DWORD time;
+	LONG			m_lRecoverTime;
+	LONG			m_dwCollisionTime;
+
+	bool			m_bPause;
+	LONG			m_dwPauseTime;
+	LONG			m_lPauseTime;
 };
 

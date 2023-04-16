@@ -18,8 +18,9 @@ public:
 public:
 	virtual void GameOver()			override;
 
-	void Boss_Clear();
-	void Gun_Clear();
-	void Missile_Clear();
+
+private:
+	LONG		m_dwStartTime;
+	LONG		m_dwDeltaTime;
 };
 
