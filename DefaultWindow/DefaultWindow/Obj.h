@@ -30,8 +30,8 @@ public:
 	void		Set_Target(CObj* _pTarget) { m_pTarget = _pTarget; }
 	void		Set_ObjType(OBJECT_TYPE _eObjType) { m_eObjType = _eObjType; }
 
-	void		Set_Dead(bool _b) { m_bDead = _b; }
-	bool		Is_Dead() { return m_bDead; }
+	void		Set_Dead(bool _b)	{ m_bDead = _b; }
+	bool		Is_Dead()			{ return m_bDead; }
 
 	float		GetAngleDegree() { return m_fAngle; }
 	float		GetAngleRadian() { return m_fAngle * (PI / 180); }

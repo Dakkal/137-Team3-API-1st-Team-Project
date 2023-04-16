@@ -63,7 +63,7 @@ void CScene_Stage2::Exit()
 
 void CScene_Stage2::GameOver()
 {
-
+	ChangeSceneEvt(SCENE_TYPE::GAMEOVER);
 }
 
 void CScene_Stage2::StartWait()
@@ -73,7 +73,7 @@ void CScene_Stage2::StartWait()
 
 void CScene_Stage2::ExcutePattern()
 {
-	if (GetObjTypeList(OBJECT_TYPE::MONSTER).size() != 0 || m_iPatternCount > 4)
+	if (GetObjTypeList(OBJECT_TYPE::MONSTER).size() != 0)
 		return;
 
 	if (m_iPatternCount == 1)
@@ -83,7 +83,7 @@ void CScene_Stage2::ExcutePattern()
 	if (m_iPatternCount == 3)
 		Pattern_3();
 	if (m_iPatternCount >= 4)
-		ChangeSceneEvt(SCENE_TYPE::STAGE1);
+		ChangeSceneEvt(SCENE_TYPE::STAGE3);
 
 	m_iPatternCount++;
 }

@@ -24,6 +24,7 @@ CPlayer::CPlayer()
 	,	dwCollisionTime(0)
 	,	m_pGun(nullptr)
 	,	m_bFire(true)
+	,	m_lSatellite(1000)
 {
 }
 
@@ -51,6 +52,7 @@ void CPlayer::Initialize(void)
 
 	dwCollisionTime = GetTickCount();
 	dwFireTime = GetTickCount();
+	m_dwSatellite = GetTickCount();
 }
 
 int CPlayer::Update(void)
@@ -87,6 +89,17 @@ int CPlayer::Update(void)
 		dwFireTime = GetTickCount();
 	}
 
+	if (m_dwSatellite + m_lSatellite < GetTickCount())
+	{
+		list<CObj*>& copyList = CSceneMgr::GetInst()->GetCurrScene()->GetObjTypeList(OBJECT_TYPE::SATTELLITE);
+
+		list<CObj*>::iterator iter = copyList.begin();
+		for (int i = 0; iter != copyList.end(); ++iter, ++i)
+			dynamic_cast<CSatellite*>(*iter)->Shoot();
+
+		m_dwSatellite = GetTickCount();
+	}
+
 
 	__super::Update_Rect();
 	
@@ -104,9 +117,6 @@ void CPlayer::Late_Update(void)
 
 	for (int i = 0; i < (int)GUN_TYPE::END; ++i)
 	{
-		if (m_pGun == m_pArrGun[i])
-			continue;
-
 		m_pArrGun[i]->Reload();
 	}
 }
@@ -284,18 +294,12 @@ void CPlayer::Key_Input(void)
 	}
 	
 	
-	if (GetAsyncKeyState(VK_SPACE) & 0x0001)
+	if (GetAsyncKeyState(VK_TAB) & 0x0001)
 	{
 		//TODO :: USE SPECIAL ITEM
 		CSatellite* pBarrior = new CSatellite(this);
 		AddObjEvt(pBarrior);
 	} 
-
-	if (GetAsyncKeyState(VK_TAB) & 0x0001)
-	{
-		m_iMaxHp = 100;
-		m_iHp = 100;
-	}
 }
 
 void CPlayer::Sort_Interval_Satellite()
@@ -307,6 +311,7 @@ void CPlayer::Sort_Interval_Satellite()
 		return;
 
 	m_iSatelliteCount = copyList.size();
+
 
 	list<CObj*>::iterator iter = copyList.begin();
 	for (int i = 0; iter != copyList.end(); ++iter, ++i)
@@ -323,6 +328,7 @@ void CPlayer::Revive()
 
 	dwCollisionTime = GetTickCount();
 	dwFireTime = GetTickCount();
+	m_dwSatellite = GetTickCount();
 
 	m_iHp = 3;
 	m_iMaxHp = 3;

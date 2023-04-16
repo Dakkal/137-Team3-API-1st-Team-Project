@@ -30,7 +30,6 @@ int CBossBullet::Update()
 	if (BOSSBULLET_TYPE::NORMAL == m_eBulletType)
 	{
 		m_tInfo.fY += m_fSpeed;
-		m_fSpeed += 0.1f;
 	}
 	
 

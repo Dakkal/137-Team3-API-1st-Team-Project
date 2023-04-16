@@ -11,6 +11,9 @@ CScene_GameOver::CScene_GameOver()
 	: CScene(SCENE_TYPE::GAMEOVER)
 {
 	m_iCount = 10;
+
+	swprintf_s(m_szTitle, L"GAME OVER %d", m_iCount);
+	swprintf_s(m_szSubTitle, L"space바를 눌러 다시하기");
 }
 
 
@@ -85,9 +88,8 @@ void CScene_GameOver::GameOver()
 	if (m_dwTime + 1000 <= GetTickCount())
 	{
 		m_iCount--;
-		swprintf_s(m_szTitle, L"GAME OVER %d", m_iCount);
-		swprintf_s(m_szSubTitle, L"space바를 눌러 다시하기");
 		//TODO : wsprintfW(m_szScore, L"현재 스코어 : %d", CScene::Get_Score());
+		swprintf_s(m_szTitle, L"GAME OVER %d", m_iCount);
 		m_dwTime = GetTickCount();
 	}
 }
@@ -95,7 +97,11 @@ void CScene_GameOver::GameOver()
 bool CScene_GameOver::Input_Space()
 {
 	if (GetAsyncKeyState(VK_SPACE))
+	{
+		CGameCore::GetInst()->GetPlayer()->Revive();
 		return true;
+	}
+		
 
 	return false;
 }

@@ -4,6 +4,8 @@
 #include "EventFunc.h"
 #include "GameCore.h"
 #include "Player.h"
+#include "Item_Life.h"
+#include "Item_RemainBullet.h"
 
 CBossMissile::CBossMissile()
 {
@@ -70,14 +72,33 @@ void CBossMissile::Release()
 
 void CBossMissile::OnCollision(CObj * _pObj)
 {
-	if (!m_bCollision && m_bDead)
+	if (!m_bCollision || m_bDead)
 		return;
 
 	switch (_pObj->GetObjType())
 	{
 	case OBJECT_TYPE::PLAYER_PROJECTILE:
+	{
+		srand(rand() * rand() * rand());
+		int iRandom = 1 + (rand() % 2);
+
+		if (iRandom % 2 == 0)
+		{
+			CItem* pItem = new CItem_Life;
+			pItem->Set_Pos(m_tInfo.fX, 0);
+			AddObjEvt(pItem);
+		}
+		else
+		{
+			CItem* pItem = new CItem_RemainBullet;
+			pItem->Set_Pos(m_tInfo.fX, 0);
+			AddObjEvt(pItem);
+		}
+		m_bCollision = false;
 		DeleteObjEvt(this);
-		break;
 	}
-	m_bCollision = false;
+	break;
+	
+	}
+	
 }

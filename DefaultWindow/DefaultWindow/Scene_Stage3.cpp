@@ -7,7 +7,7 @@
 CScene_Stage3::CScene_Stage3()
 	: CScene(SCENE_TYPE::STAGE3)
 	, m_iPatternCount(1)
-	, strSceneName(L"Stage 2")
+	, strSceneName(L"Stage 3")
 {
 }
 
@@ -63,7 +63,7 @@ void CScene_Stage3::Exit()
 
 void CScene_Stage3::GameOver()
 {
-
+	ChangeSceneEvt(SCENE_TYPE::GAMEOVER);
 }
 
 void CScene_Stage3::StartWait()
@@ -83,7 +83,7 @@ void CScene_Stage3::ExcutePattern()
 	if (m_iPatternCount == 3)
 		Pattern_3();
 	if (m_iPatternCount >= 4)
-		ChangeSceneEvt(SCENE_TYPE::STAGE1);
+		ChangeSceneEvt(SCENE_TYPE::BOSS);
 
 	m_iPatternCount++;
 }

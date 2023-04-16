@@ -20,8 +20,8 @@ CBullet::~CBullet()
 
 void CBullet::Initialize()
 {
-	m_tInfo.fCX = 30.f;
-	m_tInfo.fCY = 30.f;
+	m_tInfo.fCX = 20.f;
+	m_tInfo.fCY = 20.f;
 
 	m_fSpeed = 5.f;
 	m_fDistance = 30.f;
@@ -72,15 +72,15 @@ void CBullet::Late_Update()
 
 void CBullet::Render(HDC hDC)
 {
-	SelectGDI g(hDC, PEN_TYPE::BLUE);
-
 	float fRadian = m_fAngle * (PI / 180);
 
-	MoveToEx(hDC, m_tInfo.fX, m_tInfo.fY, nullptr);
+	/*MoveToEx(hDC, m_tInfo.fX, m_tInfo.fY, nullptr);
 	LineTo(hDC, m_tInfo.fX - 10.f, m_tInfo.fY);
 	LineTo(hDC, m_tInfo.fX, m_tInfo.fY - 30.f);
 	LineTo(hDC, m_tInfo.fX + 10.f, m_tInfo.fY);
-	LineTo(hDC, m_tInfo.fX, m_tInfo.fY);
+	LineTo(hDC, m_tInfo.fX, m_tInfo.fY);*/
+	SelectGDI g(hDC, BRUSH_TYPE::BLUE);
+	Ellipse(hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom);
 }
 
 void CBullet::Release()

@@ -18,14 +18,15 @@ void CItem_Explosion::Initialize()
 	m_tInfo.fCX = 5.f;
 	m_tInfo.fCY = 5.f;
 
-	m_fSpeed = 6.f;
+	m_fSpeed = 2.f;
 
 	m_tInfo.fX = CGameCore::GetInst()->GetMousePos().x;
 	m_tInfo.fY = CGameCore::GetInst()->GetMousePos().y;
 
 	m_bMax = true;
-
+	
 	m_dwTime = GetTickCount();
+	Set_ObjType(OBJECT_TYPE::PLAYER_PROJECTILE);
 }
 
 int CItem_Explosion::Update()

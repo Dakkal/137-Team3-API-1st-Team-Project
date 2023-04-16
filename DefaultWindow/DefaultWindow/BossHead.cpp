@@ -22,7 +22,7 @@ void CBossHead::Initialize()
 {
 	m_tInfo.fCX = 50.f;
 	m_tInfo.fCY = 50.f;
-	m_iHp = 1;
+	m_iHp = 30;
 	m_iMaxHp = 30;
 
 	m_fSpeed = m_pOwner->GetSpeed();
@@ -66,19 +66,19 @@ void CBossHead::Render(HDC hDC)
 	if (!m_bCollision)
 	{
 		SelectGDI g(hDC, BRUSH_TYPE::RED);
-		Ellipse(hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom + 40);
+		Ellipse(hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom);
 	}
 	else
 	{
 		SelectGDI brush(hDC, BRUSH_TYPE::ORANGE);
-		Ellipse(hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom + 40);
+		Ellipse(hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom);
 	}
 
 	//HP_BAR
 	for (int i = 0; i < m_iMaxHp; ++i)
 	{
-		RECT rect = GetRectWithXY((int)m_tInfo.fX, (int)m_tInfo.fY, -40, -1 * (10 * (i + 1)), 10);
-		if (m_iHp >= (i + 1) * 2)
+		RECT rect = GetRectWithXY((int)m_tInfo.fX - 150, (int)m_tInfo.fY, (10 * (i + 1)), -100, 10);
+		if (m_iHp >= (i + 1))
 		{
 			SelectGDI g(hDC, BRUSH_TYPE::RED);
 			Rectangle(hDC, rect.left, rect.top, rect.right, rect.bottom);

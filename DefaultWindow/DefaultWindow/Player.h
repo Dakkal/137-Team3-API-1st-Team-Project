@@ -58,6 +58,9 @@ private:
 	CGun*			m_pArrGun[(int)GUN_TYPE::END];
 
 	bool			m_bMovable;
+
+	DWORD			m_dwSatellite;
+	LONG			m_lSatellite;
 	
 };
 

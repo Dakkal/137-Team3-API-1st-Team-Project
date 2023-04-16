@@ -41,7 +41,6 @@ void CScene_Start::Render(HDC hDC)
 	TextOut(hDC, 185, 100, m_szTitle, lstrlen(m_szTitle));
 	SelectObject(CGameCore::GetInst()->GetMainDC(), hOldFont);
 	DeleteObject(hTitleFont);
-
 	hTitleFont = CreateFont(30, 0, 0, 0, FW_NORMAL, FALSE, FALSE, FALSE, DEFAULT_CHARSET, OUT_OUTLINE_PRECIS, CLIP_DEFAULT_PRECIS, CLEARTYPE_QUALITY, DEFAULT_PITCH, TEXT("Arial"));
 	hOldFont = (HFONT)SelectObject(hDC, hTitleFont);
 	SetTextColor(hDC, RGB(0, 0, 0));
@@ -62,7 +61,7 @@ void CScene_Start::GameOver()
 
 bool CScene_Start::Input_Space()
 {
-	if (GetAsyncKeyState(VK_RETURN))
+	if (GetAsyncKeyState(VK_SPACE))
 		return true;
 
 	return false;

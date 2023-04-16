@@ -17,7 +17,7 @@ CEnemy::CEnemy()
 	,	m_iMaxHp(3)
 	,	m_iSpeed(5)
 	,	m_dwCollisionTime(GetTickCount())
-	,	m_lRecoverTime(50)
+	,	m_lRecoverTime(10)
 	,	m_dwPauseTime(GetTickCount())
 	,	m_bPause(false)
 	,	m_lPauseTime(1000)
@@ -69,17 +69,28 @@ int CEnemy::Update()
 		Update_Pause();
 	}
 
+	__super::Update_Rect();
+
+
+	if (m_bPause) return 0 ;
+
 	if (m_dwShotTime + m_lShotTime < GetTickCount())
 	{
+		
+		srand(time(NULL));
+		srand(rand() * rand() * rand());
+
 		m_dwShotTime = GetTickCount();
 		CBossBullet* pBullet = new CBossBullet;
 		pBullet->Set_Pos(m_tInfo.fX, m_tInfo.fY);
+		int iAngle = (90 + (rand() % 90));
+
+		pBullet->SetAngle(iAngle);
 		pBullet->Set_BossBullet_Type(BOSSBULLET_TYPE::NORMAL);
 		AddObjEvt(pBullet);
 	}
 
-	__super::Update_Rect();
-
+	
 	return 0;
 	
 }
@@ -104,7 +115,11 @@ void CEnemy::Render(HDC hDC)
 		Rectangle(hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom);
 	}
 	else
+	{
+		SelectGDI g(hDC, BRUSH_TYPE::ORANGE);
 		Rectangle(hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom);
+	}
+		
 
 
 	//UI_RENDER

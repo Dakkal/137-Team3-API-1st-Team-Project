@@ -170,6 +170,9 @@
     <Filter Include="02. Scene\096. Scene_Clear">
       <UniqueIdentifier>{1ad118bc-a5df-4f56-9bf8-3079f9b67b08}</UniqueIdentifier>
     </Filter>
+    <Filter Include="02. Scene\04. Boss">
+      <UniqueIdentifier>{3749ebab-5a6b-4947-88f4-0fa01b371855}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Obj.h">
@@ -355,6 +358,9 @@
     <ClInclude Include="Scene_Stage3.h">
       <Filter>02. Scene\03. Scene_Stage3</Filter>
     </ClInclude>
+    <ClInclude Include="Scene_Boss.h">
+      <Filter>02. Scene\04. Boss</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Obj.cpp">
@@ -516,6 +522,9 @@
     </ClCompile>
     <ClCompile Include="Scene_Stage3.cpp">
       <Filter>02. Scene\03. Scene_Stage3</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene_Boss.cpp">
+      <Filter>02. Scene\04. Boss</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -72,7 +72,7 @@ void CScene_Stage1::Exit()
 
 void CScene_Stage1::GameOver()
 {
-	
+	ChangeSceneEvt(SCENE_TYPE::GAMEOVER);
 }
 
 void CScene_Stage1::StartWait()
@@ -94,6 +94,8 @@ void CScene_Stage1::ExcutePattern()
 	if (iSize > 0 || m_iPatternCount > 4)
 		return;
 
+	m_iPatternCount++;
+
 	if (m_iPatternCount == 1)
 		Pattern_1();
 	if (m_iPatternCount == 2)
@@ -103,7 +105,7 @@ void CScene_Stage1::ExcutePattern()
 	if (m_iPatternCount >= 4)
 		ChangeSceneEvt(SCENE_TYPE::STAGE2);
 
-	m_iPatternCount++;
+	
 }
 
 void CScene_Stage1::Pattern_1()

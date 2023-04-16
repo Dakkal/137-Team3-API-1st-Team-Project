@@ -18,15 +18,22 @@ public:
 
 public:
 	void		SetGunType(int _i) { m_iGunType = _i; }
+
+
 private:
 	CObj*		Create_Bullet_1();
 	CObj*		Create_Bullet_2();
 
+	void		GenerateSpecialPattern();
+	void		Pattern1();
+	void		Pattern2();
 private:
 	CBoss*	m_pOwner;
-	DWORD	dwCollisionTime;
+	DWORD	m_dwCollisionTime;
 	LONG	m_lRecoverTime;
 
+	DWORD	m_dwSpecialTime;
+	LONG	m_lSpecialTime;
 
 };
 

@@ -35,6 +35,7 @@ void CScene_Boss::Update()
 {
 	if (m_pBoss->IsDestroy())
 		GameClear();
+		
 	CScene::Update();
 }
 

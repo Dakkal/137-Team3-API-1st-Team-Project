@@ -25,13 +25,15 @@ CBoss::~CBoss()
 
 void CBoss::Initialize()
 {
-	m_tInfo = { 400.f, 50.f, 200.f, 50.f };
+	m_tInfo = { 400.f, 100.f, 200.f, 50.f };
 	m_fSpeed = 5.f;
 
-	Create_Head();
+
+	
+	Create_Missile_Pot();
 	Create_Gun1();
 	Create_Gun2();
-	Create_Missile_Pot();
+	Create_Head();
 }
 
 int CBoss::Update()

@@ -27,6 +27,7 @@ public:
 	int				GetRemainBullet() { return m_iRemainBullet; }
 	int				GetMaxBullet() { return m_iMagazineSize; }
 	GUN_TYPE		GetGunType() { return m_eGunType; }
+	void			FullReload() { m_iRemainBullet = m_iMagazineSize; }
 
 protected:
 	CObj*			m_pOwner;

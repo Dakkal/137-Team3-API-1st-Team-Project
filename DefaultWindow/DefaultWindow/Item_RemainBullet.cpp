@@ -20,7 +20,7 @@ void CItem_RemainBullet::Initialize()
 	m_tInfo.fCX = 30.f;
 	m_tInfo.fCY = 30.f;
 
-	m_fSpeed = 5.f;
+	m_fSpeed = 2.f;
 
 	m_pTarget = CGameCore::GetInst()->GetPlayer();
 }
@@ -65,7 +65,7 @@ void CItem_RemainBullet::Late_Update()
 void CItem_RemainBullet::Render(HDC hDC)
 {
 	Rectangle(hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom);
-	TCHAR szName[32] = L"무적";
+	TCHAR szName[32] = L"총알 채우기";
 	TextOut(hDC, m_tInfo.fX - 30.f, m_tInfo.fY + 20.f, szName, lstrlen(szName));
 }
 
@@ -81,15 +81,13 @@ void CItem_RemainBullet::OnCollision(CObj * _pObj)
 		{
 			m_bCollision = false;
 			Use_Item(_pObj);
-			DeleteObjEvt(this);
 		}
 	}
 }
 
 void CItem_RemainBullet::Use_Item(CObj * _pObj)
 {
-	if (_pObj->GetObjType() == OBJECT_TYPE::PLAYER)
-	{
-		//TODO : dynamic_cast<CPlayer*>(_pObj)->Get_Gun()-> // 장전할 총알
-	}
+	CPlayer* pPlayer = dynamic_cast<CPlayer*>(_pObj);
+	pPlayer->Get_Gun()->FullReload();
+	DeleteObjEvt(this);
 }
