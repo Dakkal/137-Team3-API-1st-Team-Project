@@ -9,6 +9,7 @@
 #include "Item_Magnetic.h"
 #include "Item_SpeedSlow.h"
 #include "Item_TimeStop.h"
+#include "BossBullet.h"
 
 CEnemy::CEnemy()
 	:	CObj(OBJECT_TYPE::MONSTER)
@@ -17,9 +18,11 @@ CEnemy::CEnemy()
 	,	m_iSpeed(5)
 	,	m_dwCollisionTime(GetTickCount())
 	,	m_lRecoverTime(50)
-	,	m_dwPauseTime(0)
+	,	m_dwPauseTime(GetTickCount())
 	,	m_bPause(false)
 	,	m_lPauseTime(1000)
+	,	m_dwShotTime(GetTickCount())
+	,   m_lShotTime(1000)
 {
 }
 
@@ -34,6 +37,9 @@ void CEnemy::Initialize()
 	m_tInfo.fCX = 30.f;
 	m_tInfo.fCY = 30.f;
 	m_dwCollisionTime = GetTickCount();
+	m_dwPauseTime = GetTickCount();
+	m_dwShotTime = GetTickCount();
+
 	m_fSpeed = 2.f;
 	
 }
@@ -61,6 +67,15 @@ int CEnemy::Update()
 	else
 	{
 		Update_Pause();
+	}
+
+	if (m_dwShotTime + m_lShotTime < GetTickCount())
+	{
+		m_dwShotTime = GetTickCount();
+		CBossBullet* pBullet = new CBossBullet;
+		pBullet->Set_Pos(m_tInfo.fX, m_tInfo.fY);
+		pBullet->Set_BossBullet_Type(BOSSBULLET_TYPE::NORMAL);
+		AddObjEvt(pBullet);
 	}
 
 	__super::Update_Rect();
