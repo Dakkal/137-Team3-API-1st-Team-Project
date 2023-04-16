@@ -101,9 +101,7 @@ void CItem_SpeedSlow::Use_Item(CObj * _pObj)
 		}
 
 		list<CObj*>& Enemy_ProjectileList = CSceneMgr::GetInst()->GetCurrScene()->GetObjTypeList(OBJECT_TYPE::ENEMY_PROJECTILE);
-
 		list<CObj*> ::iterator Iter2 = Enemy_ProjectileList.begin();
-
 		for (auto iter2 : Enemy_ProjectileList)
 		{
 			// TODO:적 총알 속도 느리게해야함

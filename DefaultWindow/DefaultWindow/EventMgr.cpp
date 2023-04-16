@@ -24,15 +24,14 @@ void CEventMgr::Update()
 {
 	for (size_t i = 0; i < m_vecDeleteObj.size(); ++i)
 	{
-		if (nullptr != m_vecDeleteObj[i])
+		if (nullptr != m_vecDeleteObj[i] && m_vecDeleteObj[i]->Is_Dead())
 			delete m_vecDeleteObj[i];
 	}
 	m_vecDeleteObj.clear();
 
 	for (size_t i = 0; i < m_vecEvent.size(); ++i)
-	{
 		ExcuteEvent(m_vecEvent[i]);
-	}
+
 	m_vecEvent.clear();
 }
 

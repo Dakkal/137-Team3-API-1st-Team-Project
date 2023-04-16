@@ -88,6 +88,10 @@ void CItem_Life::Use_Item(CObj * _pObj)
 {
 	if (_pObj->GetObjType() == OBJECT_TYPE::PLAYER)
 	{
-	//TODO : 플레이어 HP 회복시켜야함. _pObj->Get_Info().Set_HP();
+		CPlayer* pPlayer = dynamic_cast<CPlayer*>(_pObj);
+		if (pPlayer->Get_Hp() == 3)
+			return;
+		else
+			pPlayer->Set_Hp(pPlayer->Get_Hp() + 1);
 	}
 }

@@ -23,7 +23,7 @@ public:
 public:
 	//액세스 메서드
 	HWND		GetMainHwnd()	{ return m_hWnd; }
-	HDC			GetMainDC()		{ return m_hDC; }
+	HDC			GetMainDC()		{ return m_memDC; }
 
 public:
 	//GDI 관련(색깔 바꾸기 용 함수)

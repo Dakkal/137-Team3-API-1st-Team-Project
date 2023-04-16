@@ -1,13 +1,10 @@
 #include "stdafx.h"
 #include "Player.h"
-#include "SelectGDI.h"
 #include "GameCore.h"
-#include "ASCII.h"
 #include "EventFunc.h"
 #include "Satellite.h"
 #include "SceneMgr.h"
 #include "Scene.h"
-#include "CustomFunc.h"
 #include "Bullet.h"
 #include "NormalGun.h"
 #include "ShotGun.h"
@@ -38,7 +35,7 @@ CPlayer::~CPlayer()
 
 void CPlayer::Initialize(void)
 {
-	m_tInfo = { WINCX / 2, WINCY - 50.f, 50.f, 50.f };
+	m_tInfo = { WINCX / 2, WINCY - 50.f, 25.f, 25.f };
 	m_fSpeed = 10.f;
 
 	m_pArrGun[(int)GUN_TYPE::NORMALGUN]		=	new CNormalGun;
@@ -126,10 +123,15 @@ void CPlayer::Render(HDC hDC)
 	if (!m_bCollision)
 	{
 		SelectGDI g(hDC, BRUSH_TYPE::RED);
+		SelectGDI pen(hDC, PEN_TYPE::BLUE);
 		Ellipse(hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom);
 	}
 	else
+	{
+		SelectGDI pen(hDC, PEN_TYPE::BLUE);
 		Ellipse(hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom);
+	}
+		
 
 	TextOut(hDC, (int)m_tRect.left, (int)m_tInfo.fY + 30, L"플레이어", wcsnlen_s(L"플레이어", 10));
 	
@@ -199,8 +201,6 @@ void CPlayer::OnCollision(CObj * _pObj)
 {
 	if (!m_bCollision)
 		return;
-
-	
 
 	switch (_pObj->GetObjType())
 	{
@@ -306,7 +306,5 @@ void CPlayer::OnDamaged()
 {
 	m_iHp > 0 ? --m_iHp : 0;
 	m_bCollision = false;
-
-
 }
 

@@ -17,5 +17,10 @@ public:
 
 public:
 	virtual void GameOver()			override;
+
+
+private:
+	LONG		m_dwStartTime;
+	LONG		m_dwDeltaTime;
 };
 
