@@ -5,7 +5,7 @@
 #include "GameCore.h"
 #include "Player.h"
 
-CBossMissile::CBossMissile() : iCount(1)
+CBossMissile::CBossMissile()
 {
 }
 
@@ -23,7 +23,7 @@ void CBossMissile::Initialize()
 	m_tInfo.fCY = 10.f;
 
 	m_fSpeed = 3.f;
-	m_tInfo.iHp = 2;
+	m_tInfo.iHp = 1;
 }
 
 int CBossMissile::Update()
@@ -32,29 +32,26 @@ int CBossMissile::Update()
 
 	__super::Update_Rect();
 
-	if (m_tInfo.fY >= 300.f)
+
+	if (m_tInfo.fY >= 400.f)
 	{
-		for (int i = 0; i < 8; ++i)
+		const float fInterval = 360.f / 12.f;
+		for (int i = 0; i < 12; ++i)
 		{
 			AddObjEvt(Create_Missile_Bullet());
-			m_fAngle += (i + 1.f) * 80.f;
+			m_fAngle += fInterval;
 		}
 		m_fAngle = 0.f;
 		DeleteObjEvt(this);
 	}
 
-	if (m_tInfo.iHp <= 0)
-	{
-		DeleteObjEvt(this);
-	}
+	
 
 	return 0;
 }
 
 void CBossMissile::Late_Update()
 {
-	
-	
 }
 
 
@@ -69,10 +66,16 @@ void CBossMissile::Release()
 
 void CBossMissile::OnCollision(CObj * _pObj)
 {
-	if (OBJECT_TYPE::PLAYER_PROJECTILE == _pObj->GetObjType())
+	if (!m_bCollision)
+		return;
+
+	switch (_pObj->GetObjType())
 	{
-		m_tInfo.iHp -= _pObj->Get_Info().iAttack;
+	case OBJECT_TYPE::PLAYER_PROJECTILE:
+		DeleteObjEvt(this);
+		break;
 	}
+	m_bCollision = false;
 }
 
 CObj* CBossMissile::Create_Missile_Bullet()

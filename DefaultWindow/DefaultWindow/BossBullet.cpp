@@ -28,7 +28,7 @@ int CBossBullet::Update()
 	if (BOSSBULLET_TYPE::NORMAL == m_eBulletType)
 	{
 		m_tInfo.fY += m_fSpeed;
-		m_fSpeed += 0.5f;
+		m_fSpeed += 0.1f;
 	}
 
 	if (BOSSBULLET_TYPE::FOLLOW == m_eBulletType)
@@ -52,8 +52,10 @@ int CBossBullet::Update()
 
 	if (BOSSBULLET_TYPE::FIREWORK == m_eBulletType)
 	{
-		m_tInfo.fX += m_fSpeed * cosf(m_fAngle * PI / 180.f);
-		m_tInfo.fY += m_fSpeed * sinf(m_fAngle * PI / 180.f);
+		const float fRadian = m_fAngle * PI / 180.f;
+
+		m_tInfo.fX += m_fSpeed * cosf(fRadian);
+		m_tInfo.fY += m_fSpeed * sinf(fRadian);
 	}
 
 	__super::Update_Rect();
@@ -65,7 +67,7 @@ void CBossBullet::Late_Update()
 {
 	if (m_tRect.left <= 0 || m_tRect.top <= 0 || m_tRect.right >= WINCX || m_tRect.bottom >= WINCY)
 	{
-		//DeleteObjEvt(this);
+		DeleteObjEvt(this);
 	}
 }
 
@@ -80,14 +82,17 @@ void CBossBullet::Release()
 
 void CBossBullet::OnCollision(CObj * _pObj)
 {
-	if (OBJECT_TYPE::PLAYER == _pObj->GetObjType())
+	if (!m_bCollision)
+		return;
+
+	switch (_pObj->GetObjType())
 	{
-		//플레이어 체력줄어드는 함수
+	case OBJECT_TYPE::PLAYER:
 		DeleteObjEvt(this);
-	}
-	if (OBJECT_TYPE::SATTELLITE == _pObj->GetObjType())
-	{
-		DeleteObjEvt(_pObj);
+		break;
+	case OBJECT_TYPE::SATTELLITE:
 		DeleteObjEvt(this);
+		break;
 	}
+	m_bCollision = false;
 }

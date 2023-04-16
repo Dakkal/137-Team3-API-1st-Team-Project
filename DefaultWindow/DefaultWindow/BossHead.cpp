@@ -20,7 +20,7 @@ void CBossHead::Initialize()
 
 	m_tInfo.fCX = 50.f;
 	m_tInfo.fCY = 50.f;
-	m_tInfo.iHp = 300;
+	m_tInfo.iHp = 1;
 }
 
 int CBossHead::Update()
@@ -34,6 +34,10 @@ int CBossHead::Update()
 
 void CBossHead::Late_Update()
 {
+	if (m_tRect.left <= 0 + 75.f || m_tRect.right >= WINCX - 75.f)
+		m_fSpeed *= -1.f;
+
+
 	if (m_tInfo.iHp <= 0)
 		DeleteObjEvt(this);
 }
@@ -49,8 +53,15 @@ void CBossHead::Release()
 
 void CBossHead::OnCollision(CObj * _pObj)
 {
-	if (OBJECT_TYPE::PLAYER_PROJECTILE == _pObj->GetObjType())
+	if (!m_bCollision)
+		return;
+
+	switch (_pObj->GetObjType())
 	{
+	case OBJECT_TYPE::PLAYER_PROJECTILE:
 		m_tInfo.iHp -= _pObj->Get_Info().iAttack;
+		break;
 	}
+	m_bCollision = false;
+
 }

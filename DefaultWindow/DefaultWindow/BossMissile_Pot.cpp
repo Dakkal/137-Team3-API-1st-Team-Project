@@ -42,6 +42,8 @@ int CBossMissile_Pot::Update()
 
 void CBossMissile_Pot::Late_Update()
 {
+	if (m_tRect.left <= 0 + 85.f || m_tRect.right >= WINCX - 85.f)
+		m_fSpeed *= -1.f;
 }
 
 void CBossMissile_Pot::Render(HDC hDC)
