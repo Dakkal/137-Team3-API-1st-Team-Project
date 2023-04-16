@@ -3,6 +3,7 @@
 #include "Scene.h"
 #include "SceneMgr.h"
 #include "EventFunc.h"
+#include "SelectGDI.h"
 
 CBullet::CBullet()
 	:CObj(OBJECT_TYPE::PLAYER_PROJECTILE)
@@ -42,10 +43,10 @@ int CBullet::Update()
 	CScene* pScene = CSceneMgr::GetInst()->GetCurrScene();
 	list<CObj*>& copyList = pScene->GetObjTypeList(OBJECT_TYPE::MONSTER);
 
-	if (GUN_TYPE::NORMALGUN == m_eGunType) { Normal_Pattern(); }
-	if (GUN_TYPE::SHOTGUN == m_eGunType) { ShotGun_Pattern(); }
+	if (GUN_TYPE::NORMALGUN == m_eGunType)	{ Normal_Pattern(); }
+	if (GUN_TYPE::SHOTGUN == m_eGunType)	{ ShotGun_Pattern(); }
 	if (GUN_TYPE::MACHINEGUN == m_eGunType) { MachineGun_Pattern(); }
-	if (GUN_TYPE::SCREWGUN == m_eGunType) { ScrewGun_Pattern(); }
+	if (GUN_TYPE::SCREWGUN == m_eGunType)	{ ScrewGun_Pattern(); }
 	if (GUN_TYPE::FOLLOWGUN == m_eGunType) 
 	{ 
 		for (auto iter : copyList)
@@ -70,6 +71,9 @@ void CBullet::Late_Update()
 
 void CBullet::Render(HDC hDC)
 {
+	SelectGDI g(hDC, PEN_TYPE::BLUE);
+	float fRadian = m_fAngle * (PI / 180);
+
 	MoveToEx(hDC, m_tInfo.fX, m_tInfo.fY, nullptr);
 	LineTo(hDC, m_tInfo.fX - 10, m_tInfo.fY);
 	LineTo(hDC, m_tInfo.fX, m_tInfo.fY - 30);
@@ -83,9 +87,10 @@ void CBullet::Release()
 
 void CBullet::OnCollision(CObj * _pObj)
 {
+	return;
 	if (_pObj->GetObjType() == OBJECT_TYPE::MONSTER)
 	{
-		DeleteObjEvt(_pObj);
+		DeleteObjEvt(this);
 	}
 }
 

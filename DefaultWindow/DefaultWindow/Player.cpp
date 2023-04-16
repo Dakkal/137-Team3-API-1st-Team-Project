@@ -21,11 +21,12 @@ CPlayer::CPlayer()
 	,	m_iMaxHp(3)
 	,	m_fAngle(0.f)
 	,	m_ptShotPoint{0, 0}
-	,	m_fInvinTime(3000.f)
 	,	m_iSatelliteCount(0)
-	,	m_lRecoverTime(3000.f)
-	,	dwTime(0)
+	,	m_lRecoverTime(1000.f)
+	,	m_lFireDelay(100.f)
+	,	dwCollisionTime(0)
 	,	m_pGun(nullptr)
+	,	m_bFire(true)
 {
 }
 
@@ -40,8 +41,6 @@ void CPlayer::Initialize(void)
 	m_tInfo = { WINCX / 2, WINCY - 50.f, 50.f, 50.f };
 	m_fSpeed = 10.f;
 
-	dwTime = GetTickCount();
-
 	m_pArrGun[(int)GUN_TYPE::NORMALGUN]		=	new CNormalGun;
 	m_pArrGun[(int)GUN_TYPE::SHOTGUN]		=	new CShotGun;
 	m_pArrGun[(int)GUN_TYPE::MACHINEGUN]	=	new CMachineGun;
@@ -52,6 +51,9 @@ void CPlayer::Initialize(void)
 		m_pArrGun[i]->Initialize();
 
 	m_pGun = m_pArrGun[(int)GUN_TYPE::NORMALGUN];
+
+	dwCollisionTime = GetTickCount();
+	dwFireTime = GetTickCount();
 }
 
 int CPlayer::Update(void)
@@ -59,6 +61,33 @@ int CPlayer::Update(void)
 	m_pGun->Update();
 	Key_Input();
 	Sort_Interval_Satellite();
+
+	if (!m_bCollision)
+	{
+		if (dwCollisionTime + m_lRecoverTime < GetTickCount())
+		{
+			m_bCollision = true;
+			dwCollisionTime = GetTickCount();
+		}
+	}
+	else
+	{
+		dwCollisionTime = GetTickCount();
+	}
+
+	if (!m_bFire)
+	{
+		if (dwFireTime + m_lFireDelay < GetTickCount())
+		{
+			m_bFire = true;
+			dwFireTime = GetTickCount();
+		}
+	}
+	else
+	{
+		dwFireTime = GetTickCount();
+	}
+
 
 	__super::Update_Rect();
 	
@@ -74,27 +103,20 @@ void CPlayer::Late_Update(void)
 	m_ptShotPoint.x = LONG(m_tInfo.fX + (50.f * cos(m_fAngle * (PI / 180.f))));
 	m_ptShotPoint.y = LONG(m_tInfo.fY - (50.f * sin(m_fAngle * (PI / 180.f))));
 
-	
+	for (int i = 0; i < (int)GUN_TYPE::END; ++i)
+	{
+		if (m_pGun == m_pArrGun[i])
+			continue;
 
+		m_pArrGun[i]->Reload();
+	}
 }
 
 void CPlayer::Render(HDC hDC)
 {
 	POINT temp{};
 	ZeroMemory(&temp, sizeof(POINT));
-	
-	if (!m_bCollision)
-	{
-		if (dwTime + m_lRecoverTime < GetTickCount())
-		{
-			m_bCollision = true;
-			dwTime = GetTickCount();
-		}
-	}
-	else
-	{
-		dwTime = GetTickCount();
-	}
+
 
 
 	// 포신위치. 곧 Gun의 위치가 될거다.
@@ -115,7 +137,6 @@ void CPlayer::Render(HDC hDC)
 	
 
 	//UI_RENDER
-
 	// 1. HP Bar
 	for (int i = 0; i < m_iMaxHp; ++i)
 	{
@@ -179,15 +200,22 @@ void CPlayer::OnCollision(CObj * _pObj)
 	if (!m_bCollision)
 		return;
 
+	
+
 	switch (_pObj->GetObjType())
 	{
 	case OBJECT_TYPE::ENEMY_PROJECTILE :
+		OnDamaged();
+		m_bCollision = false;
 		break;
 	case OBJECT_TYPE::MONSTER :
+		OnDamaged();
+		m_bCollision = false;
 		break;
 	case OBJECT_TYPE::ITEM :
 		break;
 	}
+	
 }
 
 
@@ -208,38 +236,54 @@ void CPlayer::Key_Input(void)
 		m_tInfo.fX += m_fSpeed;
 	}
 
-	if (GetAsyncKeyState(VK_LBUTTON) & 0x0001)
+	if (GetAsyncKeyState(VK_LBUTTON))
 	{
 		// TODO :: Shoot();
-		m_pGun->Fire();
+		if (m_bFire)
+		{
+			m_bFire = false;
+			m_pGun->Fire();
+		}
 	}
 
 	if (GetAsyncKeyState('1'))
 	{
 		Set_Gun(GUN_TYPE::NORMALGUN);
+		m_lFireDelay = 300;
 	}
 
 	if (GetAsyncKeyState('2'))
 	{
-		Set_Gun(GUN_TYPE::SHOTGUN);
+		Set_Gun(GUN_TYPE::MACHINEGUN);
+		m_lFireDelay = 200;
 	}
 
 	if (GetAsyncKeyState('3'))
 	{
-		Set_Gun(GUN_TYPE::SCREWGUN);
+		Set_Gun(GUN_TYPE::SHOTGUN);
+		m_lFireDelay = 700;
 	}
 
 	if (GetAsyncKeyState('4'))
 	{
-		Set_Gun(GUN_TYPE::FOLLOWGUN);
-	}
-	
-	
-	if (GetAsyncKeyState(VK_SPACE))
-	{
-		//TODO :: USE SPECIAL ITEM	
+		Set_Gun(GUN_TYPE::SCREWGUN);
+		m_lFireDelay = 300;
 	}
 
+
+	if (GetAsyncKeyState('5'))
+	{
+		Set_Gun(GUN_TYPE::FOLLOWGUN);
+		m_lFireDelay = 500;
+	}
+	
+	
+	if (GetAsyncKeyState(VK_SPACE) & 0x0001)
+	{
+		//TODO :: USE SPECIAL ITEM
+		CSatellite* pBarrior = new CSatellite(this);
+		AddObjEvt(pBarrior);
+	} 
 }
 
 void CPlayer::Sort_Interval_Satellite()
@@ -251,10 +295,18 @@ void CPlayer::Sort_Interval_Satellite()
 		return;
 
 	m_iSatelliteCount = copyList.size();
-	list<CObj*>::iterator iter = copyList.begin();
 
+	list<CObj*>::iterator iter = copyList.begin();
 	for (int i = 0; iter != copyList.end(); ++iter, ++i)
 		(*iter)->SetAngle((float)(360 / copyList.size()) * (i + 1));
 	
+}
+
+void CPlayer::OnDamaged()
+{
+	m_iHp > 0 ? --m_iHp : 0;
+	m_bCollision = false;
+
+
 }
 

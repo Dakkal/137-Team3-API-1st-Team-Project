@@ -36,3 +36,7 @@ void CScene_Clear::Render(HDC hDC)
 void CScene_Clear::Exit()
 {
 }
+
+void CScene_Clear::GameOver()
+{
+}

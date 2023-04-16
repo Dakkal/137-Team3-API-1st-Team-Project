@@ -17,7 +17,8 @@ public:
 	list<CObj*>&	GetObjTypeList(OBJECT_TYPE _eType)	{ return m_arrObjList[(int)_eType]; }
 
 public:
-	// TODO :: 충돌체크 함수 만들고 구현하기.
+	virtual void GameOver()				PURE;
+
 
 public:
 	explicit CScene(SCENE_TYPE _eType);
@@ -26,5 +27,7 @@ public:
 private:
 	SCENE_TYPE		m_eType;
 	list<CObj*>		m_arrObjList[(int)OBJECT_TYPE::END];
+
+	int				m_iScore;
 };
 

@@ -56,6 +56,10 @@ void CScene_Start::Exit()
 	
 }
 
+void CScene_Start::GameOver()
+{
+}
+
 bool CScene_Start::Input_Space()
 {
 	if (GetAsyncKeyState(VK_SPACE))

@@ -14,5 +14,8 @@ public:
 	virtual void Late_Update()			override;
 	virtual void Render(HDC hDC)		override;
 	virtual void Exit()					override;
+
+public:
+	virtual void GameOver()				override;
 };
 

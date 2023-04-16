@@ -12,6 +12,12 @@ CEventMgr::CEventMgr()
 
 CEventMgr::~CEventMgr()
 {
+	for (size_t i = 0; i < m_vecDeleteObj.size(); ++i)
+	{
+		if (nullptr != m_vecDeleteObj[i])
+			delete m_vecDeleteObj[i];
+	}
+
 }
 
 void CEventMgr::Update()
@@ -28,6 +34,10 @@ void CEventMgr::Update()
 		ExcuteEvent(m_vecEvent[i]);
 	}
 	m_vecEvent.clear();
+}
+
+void CEventMgr::Release()
+{
 }
 
 void CEventMgr::ExcuteEvent(tagEvent& _eve)

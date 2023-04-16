@@ -10,6 +10,9 @@ public:
 	void		Initialize(HWND _hWnd);
 	void		Tick();
 	void		Stop() { m_bPlaying = false; }
+	
+	void		TimeRewind();
+
 	void		Release();
 
 public:
@@ -28,8 +31,10 @@ public:
 	HPEN		GetPen(PEN_TYPE _eType) { return m_arrPen[(UINT)_eType]; };
 
 private:
-	void		ClearScreen() { Rectangle(m_hDC, -1, -1, WINCX + 1, WINCY + 1); }
+	HBITMAP		ScreenCapture(void);
+	void		ClearScreen() { Rectangle(m_memDC, -1, -1, WINCX + 1, WINCY + 1); }
 	void		CreateBrusnAndPen();
+
 private:
 	CPlayer*	m_pPlayer;
 	bool		m_bPlaying;
@@ -40,8 +45,14 @@ private:
 	HWND		m_hWnd;
 	HDC			m_hDC;
 
+	HBITMAP		m_hBitmap;
+	HDC			m_memDC;
+
 	POINT		m_ptMousePos;
 	Image*		m_pImgCursor;
+
+	list<HDC>	m_dcList;
+	DWORD		dwSaveTime;
 
 };
 

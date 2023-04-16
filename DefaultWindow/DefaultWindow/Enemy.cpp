@@ -22,7 +22,6 @@ void CEnemy::Initialize()
 
 int CEnemy::Update()
 {
-	m_tInfo.fX += rand() % 3 + 1;
 	m_tInfo.fY += m_fSpeed;
 
 	__super::Update_Rect();
@@ -47,5 +46,6 @@ void CEnemy::Release()
 
 void CEnemy::OnCollision(CObj * _pObj)
 {
+	return;
 }
 
