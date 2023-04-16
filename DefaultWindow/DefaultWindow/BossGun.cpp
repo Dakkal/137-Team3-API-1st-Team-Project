@@ -22,7 +22,7 @@ void CBossGun::Initialize()
 
 	m_tInfo.fCX = 20.f;
 	m_tInfo.fCY = 20.f;
-	m_tInfo.iHp = 100;
+	m_tInfo.iHp = 30;
 
 }
 
@@ -48,6 +48,18 @@ int CBossGun::Update()
 
 void CBossGun::Late_Update()
 {
+	if (m_iGunType == 1)
+	{
+		if (m_tRect.left <= 0 + 10.f || m_tRect.right >= WINCX - 170.f)
+			m_fSpeed *= -1.f;
+	}
+
+	if (m_iGunType == 2)
+	{
+		if (m_tRect.left <= 0 + 170.f || m_tRect.right >= WINCX - 10.f)
+			m_fSpeed *= -1.f;
+	}
+	
 	if (m_tInfo.iHp <= 0)
 		DeleteObjEvt(this);
 }
@@ -63,10 +75,16 @@ void CBossGun::Release()
 
 void CBossGun::OnCollision(CObj * _pObj)
 {
-	if (OBJECT_TYPE::PLAYER_PROJECTILE == _pObj->GetObjType())
+	if (!m_bCollision)
+		return;
+
+	switch (_pObj->GetObjType())
 	{
+	case OBJECT_TYPE::PLAYER_PROJECTILE:
 		m_tInfo.iHp -= _pObj->Get_Info().iAttack;
+		break;
 	}
+	m_bCollision = false;
 }
 
 CObj* CBossGun::Create_Bullet_1()

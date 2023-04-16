@@ -4,6 +4,9 @@
 #include "SceneMgr.h"
 #include "EventFunc.h"
 #include "SelectGDI.h"
+#include "BossHead.h"
+#include "BossGun.h"
+#include "BossMissile.h"
 
 CBullet::CBullet()
 	:CObj(OBJECT_TYPE::PLAYER_PROJECTILE)
@@ -19,6 +22,7 @@ void CBullet::Initialize()
 {
 	m_tInfo.fCX = 30.f;
 	m_tInfo.fCY = 30.f;
+	m_tInfo.iAttack = 1;
 
 	m_fSpeed = 5.f;
 	m_fDistance = 30.f;
@@ -72,12 +76,13 @@ void CBullet::Late_Update()
 void CBullet::Render(HDC hDC)
 {
 	SelectGDI g(hDC, PEN_TYPE::BLUE);
+
 	float fRadian = m_fAngle * (PI / 180);
 
 	MoveToEx(hDC, m_tInfo.fX, m_tInfo.fY, nullptr);
-	LineTo(hDC, m_tInfo.fX - 10, m_tInfo.fY);
-	LineTo(hDC, m_tInfo.fX, m_tInfo.fY - 30);
-	LineTo(hDC, m_tInfo.fX + 10, m_tInfo.fY);
+	LineTo(hDC, m_tInfo.fX - 10.f, m_tInfo.fY);
+	LineTo(hDC, m_tInfo.fX, m_tInfo.fY - 30.f);
+	LineTo(hDC, m_tInfo.fX + 10.f, m_tInfo.fY);
 	LineTo(hDC, m_tInfo.fX, m_tInfo.fY);
 }
 
@@ -87,24 +92,24 @@ void CBullet::Release()
 
 void CBullet::OnCollision(CObj * _pObj)
 {
-	if (m_bCollision)
+	if (!m_bCollision)
+		return;
+
+	switch (_pObj->GetObjType())
 	{
-		switch (_pObj->GetObjType())
-		{
-		case OBJECT_TYPE::MONSTER :
-		case OBJECT_TYPE::BOSS:
-			DeleteObjEvt(this);
-			m_bCollision = false;
-			break;
-		}
-		
+	case OBJECT_TYPE::MONSTER:
+		DeleteObjEvt(this);
+		break;
+	case OBJECT_TYPE::BOSS:
+		DeleteObjEvt(this);
+		break;
 	}
+	m_bCollision = false;
+
 }
 
 void CBullet::Normal_Pattern()
 {
-	m_tInfo.iAttack = 10;
-
 	m_tInfo.fX += m_fSpeed * cosf(m_fAngle * PI / 180.f);
 	m_tInfo.fY -= m_fSpeed * sinf(m_fAngle * PI / 180.f);
 }
@@ -113,19 +118,16 @@ void CBullet::ShotGun_Pattern()
 {
 	if (m_eDirType == DIR_TYPE::LEFT) 
 	{
-		m_tInfo.iAttack = 10;
 		m_tInfo.fX += m_fSpeed * cosf(m_fAngle * PI / 90.f);
 		m_tInfo.fY -= m_fSpeed * sinf(m_fAngle * PI / 180.f);
 	}
 	if (m_eDirType == DIR_TYPE::UP) 
 	{
-		m_tInfo.iAttack = 10;
 		m_tInfo.fX += m_fSpeed * cosf(m_fAngle * PI / 180.f);
 		m_tInfo.fY -= m_fSpeed * sinf(m_fAngle * PI / 180.f);
 	}
 	if (m_eDirType == DIR_TYPE::RIGHT) 
 	{
-		m_tInfo.iAttack = 10;
 		m_tInfo.fX += m_fSpeed * cosf(m_fAngle * PI / 720.f);
 		m_tInfo.fY -= m_fSpeed * sinf(m_fAngle * PI / 180.f);
 	}
@@ -134,7 +136,6 @@ void CBullet::ShotGun_Pattern()
 void CBullet::MachineGun_Pattern()
 {
 	m_fSpeed = 10.f;
-	m_tInfo.iAttack = 5;
 
 	m_tInfo.fX += m_fSpeed * cosf(m_fAngle * PI / 180.f);
 	m_tInfo.fY -= m_fSpeed * sinf(m_fAngle * PI / 180.f);
@@ -142,8 +143,6 @@ void CBullet::MachineGun_Pattern()
 
 void CBullet::ScrewGun_Pattern()
 {
-	m_tInfo.iAttack = 15;
-
 	if( m_bStart == true)
 	{
 		m_tCenter.x = (LONG)m_tInfo.fX;
@@ -164,8 +163,6 @@ void CBullet::ScrewGun_Pattern()
 
 void CBullet::FollowGun_Pattern()
 {
-	m_tInfo.iAttack = 8;
-
 	float	fRadian = 0.f;
 
 	fRadian = acosf(m_fWidth / m_fDiagonal);
@@ -185,6 +182,21 @@ void CBullet::Find_Follow_Distance(CObj * _pObj)
 	float fHeigth = 0.f;
 
 	if (_pObj->GetObjType() == OBJECT_TYPE::MONSTER)
+	{
+		fWidth = _pObj->Get_Info().fX - m_tInfo.fX;
+		fHeigth = _pObj->Get_Info().fY - m_tInfo.fY;
+		f_Diagonal = sqrtf(fWidth * fWidth + fHeigth * fHeigth);
+
+		if (f_Diagonal <= m_fMin)
+		{
+			m_fDiagonal = f_Diagonal;
+			m_fWidth = fWidth;
+			m_fHeigth = fHeigth;
+			m_fMin = m_fDiagonal;
+		}
+	}
+
+	if (_pObj->GetObjType() == OBJECT_TYPE::BOSS)
 	{
 		fWidth = _pObj->Get_Info().fX - m_tInfo.fX;
 		fHeigth = _pObj->Get_Info().fY - m_tInfo.fY;

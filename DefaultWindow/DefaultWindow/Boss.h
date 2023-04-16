@@ -15,7 +15,7 @@ public:
 	virtual void Release() override;
 	virtual void OnCollision(CObj * _pObj) override;
 
-protected:
+public:
 	virtual	BOSS_PART Get_BossPart() { return m_eBossPart; }
 	virtual	int Get_GunType() { return m_iGunType; }
 
@@ -24,15 +24,13 @@ protected:
 	virtual void Set_GunType(int _iType) { m_iGunType = _iType; }
 private:
 	void	Update_BossLocate();
+	CObj*	Create_Head();
+	CObj*	Create_Gun1();
+	CObj*	Create_Gun2();
+	CObj*	Create_Missile_Pot();
 
 protected:
 	BOSS_PART	m_eBossPart;
 	int			m_iGunType;
-
-private:
-	CObj*		m_pBossHead;
-	CObj*		m_pBossGun_1;
-	CObj*		m_pBossGun_2;
-	CObj*		m_pBossMissile_Pot;
 };
 
