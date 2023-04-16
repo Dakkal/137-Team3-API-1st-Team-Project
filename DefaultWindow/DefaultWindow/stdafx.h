@@ -32,12 +32,10 @@ using namespace std;
 #include <string>
 #include <stdio.h>
 #include <tchar.h>
-
 #include <algorithm>
 #include <stack>
 #include <list>
 #include <vector>
-
 #include <ctime>
 #include <cmath>
 
@@ -47,6 +45,9 @@ using namespace std;
 #include "Struct.h"
 #include "Template.h"
 #include "ASCII.h"
+#include "CustomFunc.h"
+#include "SelectGDI.h"
+
 
 #ifdef _DEBUG
 

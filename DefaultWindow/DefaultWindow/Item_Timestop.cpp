@@ -6,6 +6,7 @@
 #include "Scene.h"
 #include "GameCore.h"
 #include "Player.h"
+#include "Enemy.h"
 
 CItem_Timestop::CItem_Timestop()
 {
@@ -90,11 +91,13 @@ void CItem_Timestop::OnCollision(CObj * _pObj)
 
 void CItem_Timestop::Use_Item(CObj * _pObj)
 {
-	if (_pObj->GetObjType() == OBJECT_TYPE::PLAYER)
-		// 아이템 효과를 구현.
-	{
-
-	}
 	list<CObj*>& objList = CSceneMgr::GetInst()->GetCurrScene()->GetObjTypeList(OBJECT_TYPE::MONSTER);
+	list<CObj*>::iterator iter = objList.begin();
+	for (; iter != objList.end(); ++iter)
+	{
+		(dynamic_cast<CEnemy*>(*iter))->SetPause(3);
+	}
+	
+	
 	//TODO : 시간정지 아이템 : 몬스터만 시간이 멈춰야함. 
 }

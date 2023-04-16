@@ -41,12 +41,12 @@ int CSatellite::Update()
 
 	__super::Update_Rect();
 
-	/*m_lCurTime = GetTickCount();
+	m_lCurTime = GetTickCount();
 	if (m_lCurTime - m_lStartTime >= m_lShotDelayTime)
 	{
 		Shoot();
 		m_lStartTime = GetTickCount();
-	}*/
+	}
 
 	return 0;
 }
@@ -67,18 +67,26 @@ void CSatellite::Release()
 
 void CSatellite::OnCollision(CObj * _pObj)
 {
-	switch (_pObj->GetObjType())
+	if (m_bCollision)
 	{
-	case OBJECT_TYPE::MONSTER:
-		break;
-	case OBJECT_TYPE::ENEMY_PROJECTILE:
-		break;
+		switch (_pObj->GetObjType())
+		{
+		case OBJECT_TYPE::MONSTER:
+			DeleteObjEvt(this);
+			break;
+		case OBJECT_TYPE::ENEMY_PROJECTILE:
+			break;
+		}
+		m_bCollision = false;
 	}
+	
 }
 
 void CSatellite::Shoot()
 {
 	CBullet* pBullet = new CBullet;
 	pBullet->Set_Pos(m_tInfo.fX, m_tInfo.fY);
+	pBullet->Set_Angle(90);
+	pBullet->Set_GunType(GUN_TYPE::NORMALGUN);
 	AddObjEvt(pBullet);
 }

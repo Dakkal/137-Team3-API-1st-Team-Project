@@ -44,7 +44,7 @@ void CSceneMgr::Initialize()
 	m_arrScene[(int)SCENE_TYPE::EXIT]		= new CScene_Exit;
 	m_arrScene[(int)SCENE_TYPE::TEST]		= new CScene_Test;
 
-	m_pCurrScene = m_arrScene[(int)SCENE_TYPE::TEST];
+	m_pCurrScene = m_arrScene[(int)SCENE_TYPE::STAGE1];
 	m_pCurrScene->Enter();
 
 }
@@ -61,8 +61,6 @@ void CSceneMgr::Late_Update()
 
 void CSceneMgr::Render(HDC hDC)
 {
-	Rectangle(hDC, 0, 0, WINCX, WINCY);
-
 	m_pCurrScene->Render(hDC);
 }
 

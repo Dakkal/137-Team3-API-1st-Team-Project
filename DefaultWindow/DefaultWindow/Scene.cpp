@@ -17,8 +17,10 @@ CScene::~CScene()
 		list<CObj*>::iterator iter = m_arrObjList[i].begin();
 		for (; iter != m_arrObjList[i].end(); ++iter)
 		{
-			Safe_Delete<CObj*>(*iter);
+			if(!(*iter)->Is_Dead())
+				Safe_Delete<CObj*>(*iter);
 		}
+		m_arrObjList[i].clear();
 	}
 }
 
@@ -65,9 +67,11 @@ void CScene::Late_Update()
 	CCollisonMgr::GetInst()->Collision_Rect(GetObjTypeList(OBJECT_TYPE::PLAYER), GetObjTypeList(OBJECT_TYPE::MONSTER));
 	CCollisonMgr::GetInst()->Collision_Rect(GetObjTypeList(OBJECT_TYPE::PLAYER), GetObjTypeList(OBJECT_TYPE::ITEM));
 	CCollisonMgr::GetInst()->Collision_Rect(GetObjTypeList(OBJECT_TYPE::PLAYER), GetObjTypeList(OBJECT_TYPE::ENEMY_PROJECTILE));
+	CCollisonMgr::GetInst()->Collision_Rect(GetObjTypeList(OBJECT_TYPE::PLAYER), GetObjTypeList(OBJECT_TYPE::BOSS));
 	CCollisonMgr::GetInst()->Collision_Rect(GetObjTypeList(OBJECT_TYPE::SATTELLITE), GetObjTypeList(OBJECT_TYPE::MONSTER));
 	CCollisonMgr::GetInst()->Collision_Rect(GetObjTypeList(OBJECT_TYPE::SATTELLITE), GetObjTypeList(OBJECT_TYPE::ENEMY_PROJECTILE));
 	CCollisonMgr::GetInst()->Collision_Rect(GetObjTypeList(OBJECT_TYPE::MONSTER), GetObjTypeList(OBJECT_TYPE::PLAYER_PROJECTILE));
+	CCollisonMgr::GetInst()->Collision_Rect(GetObjTypeList(OBJECT_TYPE::BOSS), GetObjTypeList(OBJECT_TYPE::PLAYER_PROJECTILE));
 }
 
 void CScene::Render(HDC hDC)

@@ -149,6 +149,9 @@
     <Filter Include="03. Obj\02. Item\16.Item_BoundBall\Item_Ball">
       <UniqueIdentifier>{ec26e9c7-de01-4784-a183-da9a8c70a9ca}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03. Obj\06. Boss">
+      <UniqueIdentifier>{bc85e7c4-85f9-41a7-b2a1-42cdf25201ce}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Obj.h">
@@ -313,6 +316,24 @@
     <ClInclude Include="Item_Ball.h">
       <Filter>03. Obj\02. Item\16.Item_BoundBall\Item_Ball</Filter>
     </ClInclude>
+    <ClInclude Include="Boss.h">
+      <Filter>03. Obj\06. Boss</Filter>
+    </ClInclude>
+    <ClInclude Include="BossBullet.h">
+      <Filter>03. Obj\06. Boss</Filter>
+    </ClInclude>
+    <ClInclude Include="BossGun.h">
+      <Filter>03. Obj\06. Boss</Filter>
+    </ClInclude>
+    <ClInclude Include="BossHead.h">
+      <Filter>03. Obj\06. Boss</Filter>
+    </ClInclude>
+    <ClInclude Include="BossMissile.h">
+      <Filter>03. Obj\06. Boss</Filter>
+    </ClInclude>
+    <ClInclude Include="BossMissile_Pot.h">
+      <Filter>03. Obj\06. Boss</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Obj.cpp">
@@ -450,6 +471,27 @@
     </ClCompile>
     <ClCompile Include="Item_Ball.cpp">
       <Filter>03. Obj\02. Item\16.Item_BoundBall\Item_Ball</Filter>
+    </ClCompile>
+    <ClCompile Include="Boss.cpp">
+      <Filter>03. Obj\06. Boss</Filter>
+    </ClCompile>
+    <ClCompile Include="BossBullet.cpp">
+      <Filter>03. Obj\06. Boss</Filter>
+    </ClCompile>
+    <ClCompile Include="BossGun.cpp">
+      <Filter>03. Obj\06. Boss</Filter>
+    </ClCompile>
+    <ClCompile Include="BossHead.cpp">
+      <Filter>03. Obj\06. Boss</Filter>
+    </ClCompile>
+    <ClCompile Include="BossMissile.cpp">
+      <Filter>03. Obj\06. Boss</Filter>
+    </ClCompile>
+    <ClCompile Include="BossMissile_Pot.cpp">
+      <Filter>03. Obj\06. Boss</Filter>
+    </ClCompile>
+    <ClCompile Include="CustomFunc.cpp">
+      <Filter>99.Define</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

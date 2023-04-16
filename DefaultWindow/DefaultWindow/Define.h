@@ -9,7 +9,7 @@
 #define			OBJ_EVENT	 1
 #define			PI			 3.141592f
 
-#define			SAFE_DELETE(type) if(type != nullptr) delete type; type = nullptr;
+#define			SAFE_DELETE(type) if(type != nullptr) { delete type; type = nullptr; }
 
 
 #pragma region Singleton
