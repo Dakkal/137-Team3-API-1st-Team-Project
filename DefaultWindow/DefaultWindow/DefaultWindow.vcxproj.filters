@@ -125,8 +125,29 @@
     <Filter Include="03. Obj\02. Item\09.Item_Magnetic">
       <UniqueIdentifier>{1bca5a72-b42f-4ac4-8e8b-49f5c775c8bc}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Obj\02. Item\10.SpeedSlow">
+    <Filter Include="03. Obj\02. Item\10.Item_SpeedSlow">
       <UniqueIdentifier>{3b40e40d-c7da-48e6-8276-c78c92d6d17c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Obj\02. Item\11.Item_Bomb">
+      <UniqueIdentifier>{36bb7961-8850-4c77-84ca-c77de7379873}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Obj\02. Item\12.Item_Explosion">
+      <UniqueIdentifier>{aab620bd-ef82-4f0d-9513-2f005519d719}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Obj\02. Item\13.Item_Satellite">
+      <UniqueIdentifier>{04ac768a-209a-4f70-9bea-8b4f12adb4ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Obj\02. Item\14.Item_Invincibility">
+      <UniqueIdentifier>{66836cf1-dad0-4eca-b9ae-899dd56afca1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Obj\02. Item\15.Item_RemainBullet">
+      <UniqueIdentifier>{3c550751-a364-47d9-a1f5-c3d9673554e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Obj\02. Item\16.Item_BoundBall">
+      <UniqueIdentifier>{15a30133-190d-46f5-936b-6c4846a8f63b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Obj\02. Item\16.Item_BoundBall\Item_Ball">
+      <UniqueIdentifier>{ec26e9c7-de01-4784-a183-da9a8c70a9ca}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -269,7 +290,28 @@
       <Filter>03. Obj\02. Item\09.Item_Magnetic</Filter>
     </ClInclude>
     <ClInclude Include="Item_SpeedSlow.h">
-      <Filter>03. Obj\02. Item\10.SpeedSlow</Filter>
+      <Filter>03. Obj\02. Item\10.Item_SpeedSlow</Filter>
+    </ClInclude>
+    <ClInclude Include="Item_Bomb.h">
+      <Filter>03. Obj\02. Item\11.Item_Bomb</Filter>
+    </ClInclude>
+    <ClInclude Include="Item_Explosion.h">
+      <Filter>03. Obj\02. Item\12.Item_Explosion</Filter>
+    </ClInclude>
+    <ClInclude Include="Item_Satellite.h">
+      <Filter>03. Obj\02. Item\13.Item_Satellite</Filter>
+    </ClInclude>
+    <ClInclude Include="Item_Invincibility.h">
+      <Filter>03. Obj\02. Item\14.Item_Invincibility</Filter>
+    </ClInclude>
+    <ClInclude Include="Item_RemainBullet.h">
+      <Filter>03. Obj\02. Item\15.Item_RemainBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="Item_BoundBall.h">
+      <Filter>03. Obj\02. Item\16.Item_BoundBall</Filter>
+    </ClInclude>
+    <ClInclude Include="Item_Ball.h">
+      <Filter>03. Obj\02. Item\16.Item_BoundBall\Item_Ball</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -386,7 +428,28 @@
       <Filter>03. Obj\02. Item\09.Item_Magnetic</Filter>
     </ClCompile>
     <ClCompile Include="Item_SpeedSlow.cpp">
-      <Filter>03. Obj\02. Item\10.SpeedSlow</Filter>
+      <Filter>03. Obj\02. Item\10.Item_SpeedSlow</Filter>
+    </ClCompile>
+    <ClCompile Include="Item_Bomb.cpp">
+      <Filter>03. Obj\02. Item\11.Item_Bomb</Filter>
+    </ClCompile>
+    <ClCompile Include="Item_Explosion.cpp">
+      <Filter>03. Obj\02. Item\12.Item_Explosion</Filter>
+    </ClCompile>
+    <ClCompile Include="Item_Satellite.cpp">
+      <Filter>03. Obj\02. Item\13.Item_Satellite</Filter>
+    </ClCompile>
+    <ClCompile Include="Item_Invincibility.cpp">
+      <Filter>03. Obj\02. Item\14.Item_Invincibility</Filter>
+    </ClCompile>
+    <ClCompile Include="Item_RemainBullet.cpp">
+      <Filter>03. Obj\02. Item\15.Item_RemainBullet</Filter>
+    </ClCompile>
+    <ClCompile Include="Item_BoundBall.cpp">
+      <Filter>03. Obj\02. Item\16.Item_BoundBall</Filter>
+    </ClCompile>
+    <ClCompile Include="Item_Ball.cpp">
+      <Filter>03. Obj\02. Item\16.Item_BoundBall\Item_Ball</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

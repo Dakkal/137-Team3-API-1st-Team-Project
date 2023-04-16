@@ -21,10 +21,13 @@ void CItem_Magnetic::Initialize()
 	m_tInfo.fCY = 30.f;
 
 	m_fSpeed = 5.f;
+
+	m_pTarget = CGameCore::GetInst()->GetPlayer();
 }
 
 int CItem_Magnetic::Update()
 {
+
 	m_fWidth = m_pTarget->Get_Info().fX - m_tInfo.fX;
 	m_fHeight = m_pTarget->Get_Info().fY - m_tInfo.fY;
 
@@ -63,6 +66,8 @@ void CItem_Magnetic::Late_Update()
 void CItem_Magnetic::Render(HDC hDC)
 {
 	Rectangle(hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom);
+	TCHAR szName[32] = L"ÀÚ¼®";
+	TextOut(hDC, m_tInfo.fX - 30.f, m_tInfo.fY + 20.f, szName, lstrlen(szName));
 }
 
 void CItem_Magnetic::Release()
@@ -71,22 +76,31 @@ void CItem_Magnetic::Release()
 
 void CItem_Magnetic::OnCollision(CObj * _pObj)
 {
-	if (_pObj->GetObjType() == OBJECT_TYPE::PLAYER)
+	if (m_bCollision)
 	{
-		Use_Item(_pObj);
-		DeleteObjEvt(_pObj);
+
+		if (_pObj->GetObjType() == OBJECT_TYPE::PLAYER)
+		{
+			m_bCollision = false;
+			Use_Item(_pObj);
+			DeleteObjEvt(this);
+		}
+
 	}
 }
 
 void CItem_Magnetic::Use_Item(CObj * _pObj)
 {
-	list<CObj*>& objList = CSceneMgr::GetInst()->GetCurrScene()->GetObjTypeList(OBJECT_TYPE::ITEM);
-
-	list<CObj*> ::iterator Iter = objList.begin();
-
-	for (auto iter : objList)
+	if (_pObj->GetObjType() == OBJECT_TYPE::PLAYER)
 	{
-		iter->Set_Target(CGameCore::GetInst()->GetPlayer());
-		dynamic_cast<CItem*>(iter)->Set_Magnetic(true);
+		list<CObj*>& ItemList = CSceneMgr::GetInst()->GetCurrScene()->GetObjTypeList(OBJECT_TYPE::ITEM);
+
+		list<CObj*> ::iterator Iter = ItemList.begin();
+
+		for (auto iter : ItemList)
+		{
+			iter->Set_Target(CGameCore::GetInst()->GetPlayer());
+			dynamic_cast<CItem*>(iter)->Set_Magnetic(true);
+		}
 	}
 }

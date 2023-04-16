@@ -1,3 +1,17 @@
-﻿  Item_Magnetic.cpp
+﻿  Item_SpeedSlow.cpp
+c:\users\bjohn\desktop\팀 폴더\defaultwindow\defaultwindow\item_speedslow.cpp(70): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Item_Satellite.cpp
+c:\users\bjohn\desktop\팀 폴더\defaultwindow\defaultwindow\item_satellite.cpp(70): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Item_Magnetic.cpp
+c:\users\bjohn\desktop\팀 폴더\defaultwindow\defaultwindow\item_magnetic.cpp(70): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Item_Invincibility.cpp
+c:\users\bjohn\desktop\팀 폴더\defaultwindow\defaultwindow\item_invincibility.cpp(68): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Item_DeleteEnermy_Projectile.cpp
+c:\users\bjohn\desktop\팀 폴더\defaultwindow\defaultwindow\item_deleteenermy_projectile.cpp(70): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Item_Bomb.cpp
+c:\users\bjohn\desktop\팀 폴더\defaultwindow\defaultwindow\item_bomb.cpp(70): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Citem_ShotGun.cpp
+c:\users\bjohn\desktop\팀 폴더\defaultwindow\defaultwindow\citem_shotgun.cpp(68): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  코드를 생성하고 있습니다...
   DefaultWindow.vcxproj -> C:\Users\bjohn\Desktop\팀 폴더\DefaultWindow\Debug\DefaultWindow.exe
   DefaultWindow.vcxproj -> C:\Users\bjohn\Desktop\팀 폴더\DefaultWindow\Debug\DefaultWindow.pdb (Full PDB)

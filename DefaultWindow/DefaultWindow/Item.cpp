@@ -5,7 +5,7 @@
 
 
 CItem::CItem()
-	:CObj(OBJECT_TYPE::ITEM), m_bMagnetic(true)
+	: CObj(OBJECT_TYPE::ITEM), m_bMagnetic(false)
 {
 	m_fWidth = 0.f;
 	m_fHeight = 0.f;

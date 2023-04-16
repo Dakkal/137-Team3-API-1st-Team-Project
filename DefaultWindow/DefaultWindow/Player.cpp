@@ -237,7 +237,7 @@ void CPlayer::Key_Input(void)
 	
 	if (GetAsyncKeyState(VK_SPACE))
 	{
-		//TODO :: USE SPECIAL ITEM	
+		//TODO :: USE SPECIAL ITEM
 	}
 
 }

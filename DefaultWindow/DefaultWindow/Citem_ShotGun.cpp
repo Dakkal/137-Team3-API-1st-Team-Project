@@ -20,6 +20,8 @@ void Citem_ShotGun::Initialize()
 	m_tInfo.fCY = 30.f;
 
 	m_fSpeed = 5.f;
+
+	m_pTarget = CGameCore::GetInst()->GetPlayer();
 }
 
 int Citem_ShotGun::Update()
@@ -62,6 +64,8 @@ void Citem_ShotGun::Late_Update()
 void Citem_ShotGun::Render(HDC hDC)
 {
 	Rectangle(hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom);
+	TCHAR szName[32] = L"¼¦°Ç";
+	TextOut(hDC, m_tInfo.fX - 30.f, m_tInfo.fY + 20.f, szName, lstrlen(szName));
 }
 
 void Citem_ShotGun::Release()
@@ -70,14 +74,19 @@ void Citem_ShotGun::Release()
 
 void Citem_ShotGun::OnCollision(CObj * _pObj)
 {
-	if (_pObj->GetObjType() == OBJECT_TYPE::PLAYER)
+	if (m_bCollision)
 	{
-		Use_Item(_pObj);
-		DeleteObjEvt(_pObj);
+		if (_pObj->GetObjType() == OBJECT_TYPE::PLAYER)
+		{
+			m_bCollision = false;
+			Use_Item(_pObj);
+			DeleteObjEvt(this);
+		}
 	}
 }
 
 void Citem_ShotGun::Use_Item(CObj * _pObj)
 {
-	dynamic_cast<CPlayer*>(_pObj)->Set_Gun(GUN_TYPE::SHOTGUN);
+	if (_pObj->GetObjType() == OBJECT_TYPE::PLAYER)
+		dynamic_cast<CPlayer*>(_pObj)->Set_Gun(GUN_TYPE::SHOTGUN);
 }
