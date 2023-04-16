@@ -31,6 +31,7 @@ public:
 private:
 	void			OnDamaged();
 	void			Update_Pause();
+	void			Spawn_Item();
 
 private:
 	int				m_iHp;

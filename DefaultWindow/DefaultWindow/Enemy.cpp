@@ -3,6 +3,12 @@
 #include "EventFunc.h"
 #include "GameCore.h"
 #include "Player.h"
+#include "Item_Satellite.h"
+#include "Item_Invincibility.h"
+#include "Item_Life.h"
+#include "Item_Magnetic.h"
+#include "Item_SpeedSlow.h"
+#include "Item_TimeStop.h"
 
 CEnemy::CEnemy()
 	:	CObj(OBJECT_TYPE::MONSTER)
@@ -136,7 +142,11 @@ void CEnemy::OnDamaged()
 {
 	m_iHp > 0 ? --m_iHp : 0;
 	if (m_iHp <= 0)
+	{
+		Spawn_Item();
 		DeleteObjEvt(this);
+	}
+		
 
 	m_bCollision = false;
 }
@@ -148,6 +158,30 @@ void CEnemy::Update_Pause()
 		m_bPause = false;
 		m_dwPauseTime = GetTickCount();
 	}
+}
+
+void CEnemy::Spawn_Item()
+{
+	CItem* pItem = nullptr;
+	srand((unsigned)time(NULL) * rand());
+	int iRandom = 1 + rand() % 1000;
+	
+	if (iRandom > 900)
+		pItem = new CItem_Invincibility;
+	else if (iRandom > 850)
+		pItem = new CItem_Timestop;
+	else if (iRandom > 800)
+		pItem = new CItem_Magnetic;
+	else if (iRandom > 750)
+		pItem = new CItem_Satellite;
+	else if (iRandom > 700)
+		pItem = new CItem_Life;
+	else
+		return;
+
+	pItem->Set_Pos(m_tInfo.fX, m_tInfo.fY);
+	AddObjEvt(pItem);
+
 }
 
 
