@@ -1,5 +1,6 @@
 #pragma once
 #include "Scene.h"
+class CBoss;
 class CScene_Test :
 	public CScene
 {
@@ -16,10 +17,10 @@ public:
 	virtual void Exit()				override;
 
 public:
+	void		GameClear();
 	virtual void GameOver()			override;
 
-	void Boss_Clear();
-	void Gun_Clear();
-	void Missile_Clear();
+private:
+	CBoss* m_pBoss;
 };
 

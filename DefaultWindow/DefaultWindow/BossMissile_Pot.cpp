@@ -4,7 +4,8 @@
 #include "EventFunc.h"
 
 
-CBossMissile_Pot::CBossMissile_Pot()
+CBossMissile_Pot::CBossMissile_Pot(CBoss* _pOwner)
+	: m_pOwner(_pOwner)
 {
 }
 
@@ -21,6 +22,8 @@ void CBossMissile_Pot::Initialize()
 
 	m_tInfo.fCX = 30.f;
 	m_tInfo.fCY = 30.f;
+
+	m_fSpeed = m_pOwner->GetSpeed();
 }
 
 int CBossMissile_Pot::Update()
@@ -29,11 +32,13 @@ int CBossMissile_Pot::Update()
 	
 	if (m_dwTime + 2000 <= GetTickCount())
 	{
-		AddObjEvt(Create_Missile());
+		CBossMissile* pMissile = new CBossMissile;
+		pMissile->Initialize();
+		pMissile->Set_Pos(m_tInfo.fX, m_tRect.bottom + 40);
+		AddObjEvt(pMissile);
 
 		m_dwTime = GetTickCount();
 	}
-
 
 	__super::Update_Rect();
 
@@ -59,11 +64,3 @@ void CBossMissile_Pot::OnCollision(CObj * _pObj)
 {
 }
 
-CObj* CBossMissile_Pot::Create_Missile()
-{
-	CBossMissile* pMissile = new CBossMissile;
-	pMissile->Initialize();
-	pMissile->Set_Pos(m_tInfo.fX, m_tRect.bottom + 40);
-
-	return pMissile;
-}

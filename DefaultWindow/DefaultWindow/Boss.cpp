@@ -11,6 +11,9 @@
 
 CBoss::CBoss()
 	: CObj(OBJECT_TYPE::BOSS)
+	, m_iHp(100)
+	, m_iMaxHp(100)
+	, m_iCountPart(0)
 {
 }
 
@@ -25,11 +28,10 @@ void CBoss::Initialize()
 	m_tInfo = { 400.f, 50.f, 200.f, 50.f };
 	m_fSpeed = 5.f;
 
-	AddObjEvt(Create_Head());
-	AddObjEvt(Create_Gun1());
-	AddObjEvt(Create_Gun2());
-	AddObjEvt(Create_Missile_Pot());
-
+	Create_Head();
+	Create_Gun1();
+	Create_Gun2();
+	Create_Missile_Pot();
 }
 
 int CBoss::Update()
@@ -58,50 +60,48 @@ void CBoss::Release()
 
 void CBoss::OnCollision(CObj * _pObj)
 {
+
 }
 
-void CBoss::Update_BossLocate()
-{	
-}
 
-CObj * CBoss::Create_Head()
+void CBoss::Create_Head()
 {
-	CBossHead* pBossHead = new CBossHead;
+	CBossHead* pBossHead = new CBossHead(this);
 	pBossHead->Initialize();
 	pBossHead->Set_Pos(m_tInfo.fX, m_tInfo.fY + 50);
-	pBossHead->Set_BossSpeed(m_fSpeed);
 
-	return pBossHead;
+	AddObjEvt(pBossHead);
+	m_iCountPart++;
 }
 
-CObj * CBoss::Create_Gun1()
+void CBoss::Create_Gun1()
 {
-	CBossGun* pBossGun1 = new CBossGun;
+	CBossGun* pBossGun1 = new CBossGun(this);
 	pBossGun1->Initialize();
 	pBossGun1->Set_Pos(m_tInfo.fX - 80, m_tInfo.fY + 30);
-	pBossGun1->Set_BossSpeed(m_fSpeed);
-	pBossGun1->Set_GunType(1);
+	pBossGun1->SetGunType(1);
+	AddObjEvt(pBossGun1);
 
-	return pBossGun1;
+	m_iCountPart++;
 }
 
-CObj * CBoss::Create_Gun2()
+void CBoss::Create_Gun2()
 {
-	CBossGun* pBossGun2 = new CBossGun;
+	CBossGun* pBossGun2 = new CBossGun(this);
 	pBossGun2->Initialize();
 	pBossGun2->Set_Pos(m_tInfo.fX + 80, m_tInfo.fY + 30);
-	pBossGun2->Set_BossSpeed(m_fSpeed);
-	pBossGun2->Set_GunType(2);
+	pBossGun2->SetGunType(2);
+	AddObjEvt(pBossGun2);
 
-	return pBossGun2;
+	m_iCountPart++;
 }
 
-CObj * CBoss::Create_Missile_Pot()
+void CBoss::Create_Missile_Pot()
 {
-	CBossMissile_Pot* pBossPot = new CBossMissile_Pot;
+	CBossMissile_Pot* pBossPot = new CBossMissile_Pot(this);
 	pBossPot->Initialize();
 	pBossPot->Set_Pos(m_tInfo.fX, m_tInfo.fY);
-	pBossPot->Set_BossSpeed(m_fSpeed);
 
-	return pBossPot;
+	AddObjEvt(pBossPot);
+
 }

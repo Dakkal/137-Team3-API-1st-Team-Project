@@ -22,7 +22,6 @@ void CBullet::Initialize()
 {
 	m_tInfo.fCX = 30.f;
 	m_tInfo.fCY = 30.f;
-	m_tInfo.iAttack = 1;
 
 	m_fSpeed = 5.f;
 	m_fDistance = 30.f;
@@ -43,6 +42,8 @@ void CBullet::Initialize()
 
 int CBullet::Update()
 {
+	/*if (m_tRect.left <= 0 || m_tRect.top <= 0 || m_tRect.right >= WINCX)
+		DeleteObjEvt(this);*/
 
 	CScene* pScene = CSceneMgr::GetInst()->GetCurrScene();
 	list<CObj*>& copyList = pScene->GetObjTypeList(OBJECT_TYPE::MONSTER);
@@ -59,7 +60,6 @@ int CBullet::Update()
 		FollowGun_Pattern(); 
 	}
 
-
 	__super::Update_Rect();
 
 	return 0;
@@ -67,10 +67,7 @@ int CBullet::Update()
 
 void CBullet::Late_Update()
 {
-	if (m_tRect.left <= 0 || m_tRect.top <= 0 || m_tRect.right >= WINCX)
-	{
-		DeleteObjEvt(this);
-	}
+	
 }
 
 void CBullet::Render(HDC hDC)

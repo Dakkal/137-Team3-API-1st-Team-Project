@@ -6,8 +6,4 @@ typedef struct tagInfo
 	float	fY;
 	float	fCX;
 	float	fCY;
-
-	int		iHp;
-	int		iAttack;
-
 }INFO;

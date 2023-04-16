@@ -29,7 +29,8 @@ private:
 private:
 	LONG		m_dwStartTime;
 	LONG		m_dwDeltaTime;
-	int			iPatternCount;
+
+	int			m_iPatternCount;
 	wstring		strSceneName;
 };
 

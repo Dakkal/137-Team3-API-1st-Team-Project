@@ -30,7 +30,6 @@ void CSceneMgr::ChangeScene(SCENE_TYPE _eType)
 	m_pCurrScene->Exit();
 	m_pCurrScene = m_arrScene[(int)_eType];
 	m_pCurrScene->Enter();
-	
 }
 
 
@@ -44,7 +43,7 @@ void CSceneMgr::Initialize()
 	m_arrScene[(int)SCENE_TYPE::EXIT]		= new CScene_Exit;
 	m_arrScene[(int)SCENE_TYPE::TEST]		= new CScene_Test;
 
-	m_pCurrScene = m_arrScene[(int)SCENE_TYPE::STAGE1];
+	m_pCurrScene = m_arrScene[(int)SCENE_TYPE::START];
 	m_pCurrScene->Enter();
 
 }

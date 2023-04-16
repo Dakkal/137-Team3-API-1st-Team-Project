@@ -29,6 +29,7 @@ void CEventMgr::Update()
 	}
 	m_vecDeleteObj.clear();
 
+
 	for (size_t i = 0; i < m_vecEvent.size(); ++i)
 		ExcuteEvent(m_vecEvent[i]);
 
@@ -50,14 +51,13 @@ void CEventMgr::ExcuteEvent(tagEvent& _eve)
 
 	case EVENT_TYPE::CHANGE_SCENE :
 		// lParam : SCENE_TYPE(ENUM)
-		CSceneMgr::GetInst()->ChangeScene((SCENE_TYPE)_eve.evtType);
+		CSceneMgr::GetInst()->ChangeScene((SCENE_TYPE)_eve.lParam);
 		break;
 
 	case EVENT_TYPE::DELETE_OBJ :
 		// lParam : CObj*
 	{
 		CObj* pObj = (CObj*)_eve.lParam;
-		pObj->Set_Dead(true);
 		m_vecDeleteObj.push_back(pObj);
 	}
 		break;
