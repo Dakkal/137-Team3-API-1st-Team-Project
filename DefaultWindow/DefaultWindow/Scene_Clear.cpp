@@ -1,10 +1,15 @@
 #include "stdafx.h"
 #include "Scene_Clear.h"
 #include "Player.h"
+#include "Scene.h"
+#include "EventFunc.h"
 
 CScene_Clear::CScene_Clear()
 	: CScene(SCENE_TYPE::CLEAR)
 {
+	swprintf_s(m_szTitle, L"축하합니다.");
+	swprintf_s(m_szSubTitle, L"space바를 눌러 종료");
+	wsprintfW(m_szScore, L"현재 스코어 : %d", CScene::Get_Score());
 }
 
 
@@ -20,7 +25,8 @@ void CScene_Clear::Enter()
 
 void CScene_Clear::Update()
 {
-	CScene::Update();
+	if (Input_Space())
+		ChangeSceneEvt(SCENE_TYPE::EXIT);
 }
 
 void CScene_Clear::Late_Update()
@@ -30,7 +36,31 @@ void CScene_Clear::Late_Update()
 
 void CScene_Clear::Render(HDC hDC)
 {
-	CScene::Render(hDC);
+	hTitleFont = CreateFont(120, 0, 0, 0, FW_NORMAL, FALSE, FALSE, FALSE, DEFAULT_CHARSET, OUT_OUTLINE_PRECIS, CLIP_DEFAULT_PRECIS, CLEARTYPE_QUALITY, DEFAULT_PITCH, TEXT("Arial"));
+	hOldFont = (HFONT)SelectObject(hDC, hTitleFont);
+	SetTextColor(hDC, RGB(0, 0, 0));
+	SetBkMode(hDC, TRANSPARENT);
+	TextOut(hDC, 185, 100, m_szTitle, lstrlen(m_szTitle));
+	SelectObject(CGameCore::GetInst()->GetMainDC(), hOldFont);
+	DeleteObject(hTitleFont);
+
+	hTitleFont = CreateFont(40, 0, 0, 0, FW_NORMAL, FALSE, FALSE, FALSE, DEFAULT_CHARSET, OUT_OUTLINE_PRECIS, CLIP_DEFAULT_PRECIS, CLEARTYPE_QUALITY, DEFAULT_PITCH, TEXT("Arial"));
+	hOldFont = (HFONT)SelectObject(hDC, hTitleFont);
+	SetTextColor(hDC, RGB(0, 0, 0));
+	SetBkMode(hDC, TRANSPARENT);
+	TextOut(hDC, 250, 400, m_szSubTitle, lstrlen(m_szSubTitle));
+	SelectObject(CGameCore::GetInst()->GetMainDC(), hOldFont);
+	DeleteObject(hTitleFont);
+
+	hTitleFont = CreateFont(40, 0, 0, 0, FW_NORMAL, FALSE, FALSE, FALSE, DEFAULT_CHARSET, OUT_OUTLINE_PRECIS, CLIP_DEFAULT_PRECIS, CLEARTYPE_QUALITY, DEFAULT_PITCH, TEXT("Arial"));
+	hOldFont = (HFONT)SelectObject(hDC, hTitleFont);
+	SetTextColor(hDC, RGB(0, 0, 0));
+	SetBkMode(hDC, TRANSPARENT);
+	TextOut(hDC, 220, 300, m_szScore, lstrlen(m_szScore));
+	SelectObject(CGameCore::GetInst()->GetMainDC(), hOldFont);
+	DeleteObject(hTitleFont);
+
+	
 }
 
 void CScene_Clear::Exit()
@@ -39,4 +69,12 @@ void CScene_Clear::Exit()
 
 void CScene_Clear::GameOver()
 {
+}
+
+bool CScene_Clear::Input_Space()
+{
+	if (GetAsyncKeyState(VK_SPACE))
+		return true;
+
+	return false;
 }
