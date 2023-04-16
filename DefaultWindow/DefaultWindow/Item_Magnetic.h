@@ -15,5 +15,7 @@ public:
 	virtual void Release() override;
 	virtual void OnCollision(CObj * _pObj) override;
 	virtual void Use_Item(CObj * _pObj) override;
+
+
 };
 

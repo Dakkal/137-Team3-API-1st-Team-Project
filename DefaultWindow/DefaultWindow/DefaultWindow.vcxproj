@@ -167,6 +167,7 @@
     <ClInclude Include="Item_MachineGun.h" />
     <ClInclude Include="Item_Magnetic.h" />
     <ClInclude Include="Item_NormalGun.h" />
+    <ClInclude Include="Item_SpeedSlow.h" />
     <ClInclude Include="Item_SpeedUp.h" />
     <ClInclude Include="Item_TimeStop.h" />
     <ClInclude Include="MachineGun.h" />
@@ -211,6 +212,7 @@
     <ClCompile Include="Item_MachineGun.cpp" />
     <ClCompile Include="Item_Magnetic.cpp" />
     <ClCompile Include="Item_NormalGun.cpp" />
+    <ClCompile Include="Item_SpeedSlow.cpp" />
     <ClCompile Include="Item_SpeedUp.cpp" />
     <ClCompile Include="Item_Timestop.cpp" />
     <ClCompile Include="MachineGun.cpp" />

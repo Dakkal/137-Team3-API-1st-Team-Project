@@ -125,6 +125,9 @@
     <Filter Include="03. Obj\02. Item\09.Item_Magnetic">
       <UniqueIdentifier>{1bca5a72-b42f-4ac4-8e8b-49f5c775c8bc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03. Obj\02. Item\10.SpeedSlow">
+      <UniqueIdentifier>{3b40e40d-c7da-48e6-8276-c78c92d6d17c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Obj.h">
@@ -265,6 +268,9 @@
     <ClInclude Include="Item_Magnetic.h">
       <Filter>03. Obj\02. Item\09.Item_Magnetic</Filter>
     </ClInclude>
+    <ClInclude Include="Item_SpeedSlow.h">
+      <Filter>03. Obj\02. Item\10.SpeedSlow</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Obj.cpp">
@@ -378,6 +384,9 @@
     </ClCompile>
     <ClCompile Include="Item_Magnetic.cpp">
       <Filter>03. Obj\02. Item\09.Item_Magnetic</Filter>
+    </ClCompile>
+    <ClCompile Include="Item_SpeedSlow.cpp">
+      <Filter>03. Obj\02. Item\10.SpeedSlow</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
