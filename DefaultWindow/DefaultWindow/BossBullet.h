@@ -16,31 +16,10 @@ public:
 	virtual void OnCollision(CObj * _pObj) override;
 
 public:
-	void	Fast_Pattern();
-	void	FireWork_Pattern();
-	void    Follow_Pattern();
-	void	Random_Pattern();
-	void    Rage_Pattern();
-	void	Screw_Pattern();
-
-	int		Keep_Pattern();
-
+	BOSSBULLET_TYPE		Get_BossBullet_Type() { return m_eBulletType; }
+	void				Set_BossBullet_Type(BOSSBULLET_TYPE _eType) { m_eBulletType = _eType; }
 
 private:
-	int				m_iCheckPattern;
-	bool			m_bRageCheck;
-
-	DIR_TYPE		m_eDirType;
-
-	// È¸¿À¸®ÅºÀ» À§ÇÑ ¸â¹öº¯¼ö
-	POINT			m_tCenter;
-	float			m_fBullRotAngle;
-	float			m_fBullRotSpeed;
-	bool			m_bStart;
-
-	// À¯µµÅºÀ» À§ÇÑ ¸â¹öº¯¼ö
-	float			m_fDiagonal;
-	float			m_fWidth;
-	float			m_fHeigth;
+	BOSSBULLET_TYPE		m_eBulletType;
 };
 
