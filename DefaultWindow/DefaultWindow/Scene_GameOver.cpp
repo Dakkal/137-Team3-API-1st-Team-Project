@@ -2,6 +2,7 @@
 #include "Scene_GameOver.h"
 #include "Player.h"
 #include "EventFunc.h"
+#include "Scene.h"
 
 
 
@@ -21,11 +22,13 @@ void CScene_GameOver::Enter()
 {
 	if (GetObjTypeList(OBJECT_TYPE::PLAYER).size() == 0)
 		GetObjTypeList(OBJECT_TYPE::PLAYER).push_back(CGameCore::GetInst()->GetPlayer());
+
+	m_dwTime = GetTickCount();
 }
 
 void CScene_GameOver::Update()
 {
-	if(CGameCore::GetInst()->GetPlayer()->Is_Dead())
+	if(!CGameCore::GetInst()->GetPlayer()->Is_Dead())
 		GameOver();
 
 	if (m_iCount <= 0 || Input_Space())
@@ -45,7 +48,7 @@ void CScene_GameOver::Late_Update()
 void CScene_GameOver::Render(HDC hDC)
 {
 	CScene::Render(hDC);
-	if (CGameCore::GetInst()->GetPlayer()->Is_Dead())
+	if (!CGameCore::GetInst()->GetPlayer()->Is_Dead())
 	{
 		hTitleFont = CreateFont(70, 0, 0, 0, FW_NORMAL, FALSE, FALSE, FALSE, DEFAULT_CHARSET, OUT_OUTLINE_PRECIS, CLIP_DEFAULT_PRECIS, CLEARTYPE_QUALITY, DEFAULT_PITCH, TEXT("Arial"));
 		hOldFont = (HFONT)SelectObject(hDC, hTitleFont);
@@ -63,13 +66,13 @@ void CScene_GameOver::Render(HDC hDC)
 		SelectObject(CGameCore::GetInst()->GetMainDC(), hOldFont);
 		DeleteObject(hTitleFont);
 
-		hTitleFont = CreateFont(40, 0, 0, 0, FW_NORMAL, FALSE, FALSE, FALSE, DEFAULT_CHARSET, OUT_OUTLINE_PRECIS, CLIP_DEFAULT_PRECIS, CLEARTYPE_QUALITY, DEFAULT_PITCH, TEXT("Arial"));
-		hOldFont = (HFONT)SelectObject(hDC, hTitleFont);
-		SetTextColor(hDC, RGB(0, 0, 0));
-		SetBkMode(hDC, TRANSPARENT);
-		TextOut(hDC, 240, 300, m_szScore, lstrlen(m_szScore));
-		SelectObject(CGameCore::GetInst()->GetMainDC(), hOldFont);
-		DeleteObject(hTitleFont);
+		//hTitleFont = CreateFont(40, 0, 0, 0, FW_NORMAL, FALSE, FALSE, FALSE, DEFAULT_CHARSET, OUT_OUTLINE_PRECIS, CLIP_DEFAULT_PRECIS, CLEARTYPE_QUALITY, DEFAULT_PITCH, TEXT("Arial"));
+		//hOldFont = (HFONT)SelectObject(hDC, hTitleFont);
+		//SetTextColor(hDC, RGB(0, 0, 0));
+		//SetBkMode(hDC, TRANSPARENT);
+		//TextOut(hDC, 240, 300, m_szScore, lstrlen(m_szScore));
+		//SelectObject(CGameCore::GetInst()->GetMainDC(), hOldFont);
+		//DeleteObject(hTitleFont);
 	}
 }
 
@@ -84,7 +87,7 @@ void CScene_GameOver::GameOver()
 		m_iCount--;
 		swprintf_s(m_szTitle, L"GAME OVER %d", m_iCount);
 		swprintf_s(m_szSubTitle, L"space바를 눌러 다시하기");
-		wsprintfW(m_szScore, L"현재 스코어 : %d", CScene::Get_Score());
+		//TODO : wsprintfW(m_szScore, L"현재 스코어 : %d", CScene::Get_Score());
 		m_dwTime = GetTickCount();
 	}
 }

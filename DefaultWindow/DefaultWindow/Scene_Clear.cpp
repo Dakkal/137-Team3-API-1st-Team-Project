@@ -3,13 +3,14 @@
 #include "Player.h"
 #include "Scene.h"
 #include "EventFunc.h"
+#include "Scene.h"
 
 CScene_Clear::CScene_Clear()
 	: CScene(SCENE_TYPE::CLEAR)
 {
 	swprintf_s(m_szTitle, L"축하합니다.");
 	swprintf_s(m_szSubTitle, L"space바를 눌러 종료");
-	wsprintfW(m_szScore, L"현재 스코어 : %d", CScene::Get_Score());
+	//TODO : wsprintfW(m_szScore, L"현재 스코어 : %d", CScene::Get_Score());
 }
 
 
@@ -26,7 +27,7 @@ void CScene_Clear::Enter()
 void CScene_Clear::Update()
 {
 	if (Input_Space())
-		ChangeSceneEvt(SCENE_TYPE::EXIT);
+		ChangeSceneEvt(SCENE_TYPE::START);
 }
 
 void CScene_Clear::Late_Update()
