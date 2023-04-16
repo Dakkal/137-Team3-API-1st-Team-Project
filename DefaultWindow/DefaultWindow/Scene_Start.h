@@ -15,6 +15,9 @@ public:
 	virtual void Render(HDC hDC)		override;
 	virtual void Exit()					override;
 
+public:
+	virtual void GameOver()			override;
+
 private:
 	HFONT		hTitleFont;
 	HFONT		hOldFont;

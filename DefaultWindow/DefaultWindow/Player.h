@@ -24,32 +24,36 @@ private:
 	void			Sort_Interval_Satellite();	// 플레이어 위성별 위치값 조정
 
 public:
-	CGun*		Get_Gun()					{ return m_pGun; }
+	CGun*			Get_Gun()					{ return m_pGun; }
+	void			Set_Gun(GUN_TYPE _eType)	{ m_pGun = m_pArrGun[(int)_eType]; }
+	POINT			Get_ShotPoint()				{ return m_ptShotPoint; }
+	int				Get_Hp()					{ return m_iHp; }
+	void			Set_Hp(int iHp)				{ m_iHp = iHp; }
 
-	void		Set_Gun(GUN_TYPE _eType) { m_pGun = m_pArrGun[(int)_eType]; }
-	POINT		Get_ShotPoint()			 { return m_ptShotPoint; }
 
+	void			Set_FireDelay(float _f)		{ m_lFireDelay = _f; }
+
+private:
+	void			OnDamaged();
 
 private:
 	int				m_iHp;
 	int				m_iMaxHp;
 
 	float			m_fAngle;			// 각도(Degree)
-	float			m_fAccTime;			// 흐른시간
-	float			m_fInvinTime;		// 무적시간
-	POINT			m_ptShotPoint;		// TODO :: Delete(Gun의 위치.)
 
+	POINT			m_ptShotPoint;		// Gun의 위치.
 	int				m_iSatelliteCount;	// 플레이어의 위성 개수
 
+	float			m_lFireDelay;		// 총알 발사 시간
 	LONG			m_lRecoverTime;		// 충돌 변수 m_bCollision의 복구 시간.
-	DWORD			dwTime;				// 시간 체크용 변수
+	DWORD			dwCollisionTime;	// 시간 체크용 변수
+	DWORD			dwFireTime;
+
+	bool			m_bFire;
 	
 	CGun*			m_pGun;
 	CGun*			m_pArrGun[(int)GUN_TYPE::END];
-
-
-
-	
 	
 };
 

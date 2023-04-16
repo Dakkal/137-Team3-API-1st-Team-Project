@@ -145,7 +145,15 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Boss.h" />
+    <ClInclude Include="BossBullet.h" />
+    <ClInclude Include="BossGun.h" />
+    <ClInclude Include="BossHead.h" />
+    <ClInclude Include="BossMissile.h" />
+    <ClInclude Include="BossMissile_Pot.h" />
     <ClInclude Include="Bullet.h" />
+    <ClInclude Include="Citem_ScrewGun.h" />
+    <ClInclude Include="Citem_ShotGun.h" />
     <ClInclude Include="CollisionMgr.h" />
     <ClInclude Include="CustomFunc.h" />
     <ClInclude Include="DefaultWindow.h" />
@@ -159,6 +167,21 @@
     <ClInclude Include="GameCore.h" />
     <ClInclude Include="Gun.h" />
     <ClInclude Include="Item.h" />
+    <ClInclude Include="Item_Ball.h" />
+    <ClInclude Include="Item_Bomb.h" />
+    <ClInclude Include="Item_BoundBall.h" />
+    <ClInclude Include="Item_DeleteEnermy_Projectile.h" />
+    <ClInclude Include="Item_Explosion.h" />
+    <ClInclude Include="Item_FollowGun.h" />
+    <ClInclude Include="Item_Invincibility.h" />
+    <ClInclude Include="Item_Life.h" />
+    <ClInclude Include="Item_MachineGun.h" />
+    <ClInclude Include="Item_Magnetic.h" />
+    <ClInclude Include="Item_NormalGun.h" />
+    <ClInclude Include="Item_RemainBullet.h" />
+    <ClInclude Include="Item_Satellite.h" />
+    <ClInclude Include="Item_SpeedSlow.h" />
+    <ClInclude Include="Item_SpeedUp.h" />
     <ClInclude Include="Item_TimeStop.h" />
     <ClInclude Include="MachineGun.h" />
     <ClInclude Include="NormalGun.h" />
@@ -184,7 +207,15 @@
     <ClInclude Include="Template.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Boss.cpp" />
+    <ClCompile Include="BossBullet.cpp" />
+    <ClCompile Include="BossGun.cpp" />
+    <ClCompile Include="BossHead.cpp" />
+    <ClCompile Include="BossMissile.cpp" />
+    <ClCompile Include="BossMissile_Pot.cpp" />
     <ClCompile Include="Bullet.cpp" />
+    <ClCompile Include="Citem_ScrewGun.cpp" />
+    <ClCompile Include="Citem_ShotGun.cpp" />
     <ClCompile Include="CollisonMgr.cpp" />
     <ClCompile Include="DefaultWindow.cpp" />
     <ClCompile Include="Enemy.cpp" />
@@ -194,6 +225,21 @@
     <ClCompile Include="GameCore.cpp" />
     <ClCompile Include="Gun.cpp" />
     <ClCompile Include="Item.cpp" />
+    <ClCompile Include="Item_Ball.cpp" />
+    <ClCompile Include="Item_Bomb.cpp" />
+    <ClCompile Include="Item_BoundBall.cpp" />
+    <ClCompile Include="Item_DeleteEnermy_Projectile.cpp" />
+    <ClCompile Include="Item_Explosion.cpp" />
+    <ClCompile Include="Item_FollowGun.cpp" />
+    <ClCompile Include="Item_Invincibility.cpp" />
+    <ClCompile Include="Item_Life.cpp" />
+    <ClCompile Include="Item_MachineGun.cpp" />
+    <ClCompile Include="Item_Magnetic.cpp" />
+    <ClCompile Include="Item_NormalGun.cpp" />
+    <ClCompile Include="Item_RemainBullet.cpp" />
+    <ClCompile Include="Item_Satellite.cpp" />
+    <ClCompile Include="Item_SpeedSlow.cpp" />
+    <ClCompile Include="Item_SpeedUp.cpp" />
     <ClCompile Include="Item_Timestop.cpp" />
     <ClCompile Include="MachineGun.cpp" />
     <ClCompile Include="NormalGun.cpp" />

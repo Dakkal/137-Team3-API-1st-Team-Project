@@ -20,28 +20,58 @@ CItem_Timestop::~CItem_Timestop()
 
 void CItem_Timestop::Initialize()
 {
-	m_tInfo = { 400.f, 100.f, 50.f, 50.f };
-	m_bCollision = true;
+	m_tInfo.fCX = 30.f;
+	m_tInfo.fCY = 30.f;
 
+	m_fSpeed = 5.f;
+
+	m_pTarget = CGameCore::GetInst()->GetPlayer();
 }
 
 int CItem_Timestop::Update()
 {
-	m_tInfo.fY += 3;
+	m_fWidth = m_pTarget->Get_Info().fX - m_tInfo.fX;
+	m_fHeight = m_pTarget->Get_Info().fY - m_tInfo.fY;
 
-	__super::Update_Rect();
-	return 0;
+	m_fDiagonal = sqrtf(pow(m_fWidth,2) + pow(m_fHeight,2));
+	m_fRadian = acosf(m_fWidth / m_fDiagonal);
+
+	m_fAngle = m_fRadian * 180.f / PI;
+
+	switch (m_bMagnetic)
+	{
+	case true:
+
+		if (m_pTarget->Get_Info().fY > m_tInfo.fY)
+			m_fAngle *= -1.f;
+
+		m_tInfo.fX += m_fSpeed * cosf(m_fAngle * PI / 180.f);
+		m_tInfo.fY -= m_fSpeed * sinf(m_fAngle * PI / 180.f);
+
+		break;
+
+	case false:
+		m_tInfo.fY += m_fSpeed;
+
+		break;
+	}
+
+	__super ::Update_Rect();
+	return OBJ_NOEVENT;
 }
 
 void CItem_Timestop::Late_Update()
 {
-
 }
 
 void CItem_Timestop::Render(HDC hDC)
 {
 	SelectGDI g(hDC, BRUSH_TYPE::BLACK);
 	Rectangle(hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom);
+	
+	TCHAR szName[32] = L"시간정지";
+	TextOut(hDC, m_tInfo.fX-30.f, m_tInfo.fY + 20.f, szName,lstrlen(szName));
+
 }
 
 void CItem_Timestop::Release()
@@ -60,7 +90,11 @@ void CItem_Timestop::OnCollision(CObj * _pObj)
 
 void CItem_Timestop::Use_Item(CObj * _pObj)
 {
-	// 아이템 효과를 구현.
+	if (_pObj->GetObjType() == OBJECT_TYPE::PLAYER)
+		// 아이템 효과를 구현.
+	{
+
+	}
 	list<CObj*>& objList = CSceneMgr::GetInst()->GetCurrScene()->GetObjTypeList(OBJECT_TYPE::MONSTER);
-	
+	//TODO : 시간정지 아이템 : 몬스터만 시간이 멈춰야함. 
 }
