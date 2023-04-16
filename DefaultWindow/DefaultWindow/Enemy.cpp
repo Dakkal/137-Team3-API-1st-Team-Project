@@ -65,7 +65,7 @@ int CEnemy::Update()
 
 	__super::Update_Rect();
 
-	return OBJ_NOEVENT;
+	return 0;
 	
 }
 

@@ -17,5 +17,20 @@ public:
 
 public:
 	virtual void GameOver()			override;
+
+private:
+	void		StartWait();
+	void		ExcutePattern();
+	void		Pattern_1();
+	void		Pattern_2();
+	void		Pattern_3();
+	void		ClearWait();
+
+private:
+	LONG		m_dwStartTime;
+	LONG		m_dwDeltaTime;
+
+	int			m_iPatternCount;
+	wstring		strSceneName;
 };
 

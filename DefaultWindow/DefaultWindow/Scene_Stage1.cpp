@@ -13,7 +13,7 @@
 
 CScene_Stage1::CScene_Stage1()
 	:	CScene(SCENE_TYPE::STAGE1)
-	,	iPatternCount(1)
+	,	m_iPatternCount(1)
 	,	strSceneName(L"Stage 1")
 {
 }
@@ -32,6 +32,8 @@ void CScene_Stage1::Enter()
 	if (GetObjTypeList(OBJECT_TYPE::PLAYER).size() <= 0)
 		GetObjTypeList(OBJECT_TYPE::PLAYER).push_back(CGameCore::GetInst()->GetPlayer());
 
+	m_iPatternCount = 1;
+
 
 }
 void CScene_Stage1::Update()
@@ -40,7 +42,6 @@ void CScene_Stage1::Update()
 	m_dwDeltaTime = GetTickCount() - m_dwStartTime;
 
 	ExcutePattern();
-
 }
 
 void CScene_Stage1::Late_Update()
@@ -71,7 +72,7 @@ void CScene_Stage1::Exit()
 
 void CScene_Stage1::GameOver()
 {
-	Exit();
+	
 }
 
 void CScene_Stage1::StartWait()
@@ -89,19 +90,20 @@ void CScene_Stage1::StartWait()
 
 void CScene_Stage1::ExcutePattern()
 {
-	if (GetObjTypeList(OBJECT_TYPE::MONSTER).size() != 0 || iPatternCount > 4)
+	int iSize = GetObjTypeList(OBJECT_TYPE::MONSTER).size() != 0;
+	if (iSize > 0 || m_iPatternCount > 4)
 		return;
 
-	if (iPatternCount == 1)
+	if (m_iPatternCount == 1)
 		Pattern_1();
-	if (iPatternCount == 2)
+	if (m_iPatternCount == 2)
 		Pattern_2();
-	if (iPatternCount == 3)
+	if (m_iPatternCount == 3)
 		Pattern_3();
-	if (iPatternCount >= 4)
+	if (m_iPatternCount >= 4)
 		ChangeSceneEvt(SCENE_TYPE::STAGE2);
 
-	iPatternCount++;
+	m_iPatternCount++;
 }
 
 void CScene_Stage1::Pattern_1()

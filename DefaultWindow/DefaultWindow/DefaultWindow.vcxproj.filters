@@ -505,6 +505,9 @@
     <ClCompile Include="BossMissile_Pot.cpp">
       <Filter>03. Obj\06. Boss\02. Boss_MissilePot</Filter>
     </ClCompile>
+    <ClCompile Include="CustomFunc.cpp">
+      <Filter>99.Define</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="DefaultWindow.rc">

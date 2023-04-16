@@ -20,10 +20,6 @@ public:
 public:
 	virtual void	OnCollision(CObj* _pObj)	override;
 
-private:
-	void			Key_Input();				// 키보드 입력
-	void			Sort_Interval_Satellite();	// 플레이어 위성별 위치값 조정
-
 public:
 	CGun*			Get_Gun()					{ return m_pGun; }
 	void			Set_Gun(GUN_TYPE _eType)	{ m_pGun = m_pArrGun[(int)_eType]; }
@@ -34,8 +30,13 @@ public:
 
 	void			Set_FireDelay(float _f)		{ m_lFireDelay = _f; }
 
+public:
+	void			Revive();
+
 private:
 	void			OnDamaged();
+	void			Key_Input();				// 키보드 입력
+	void			Sort_Interval_Satellite();	// 플레이어 위성별 위치값 조정
 
 private:
 	int				m_iHp;
@@ -55,6 +56,8 @@ private:
 	
 	CGun*			m_pGun;
 	CGun*			m_pArrGun[(int)GUN_TYPE::END];
+
+	bool			m_bMovable;
 	
 };
 

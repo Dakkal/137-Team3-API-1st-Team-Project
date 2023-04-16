@@ -5,7 +5,10 @@
 #include "GameCore.h"
 #include "Player.h"
 
-CBossGun::CBossGun()
+CBossGun::CBossGun(CBoss* _pOwner)
+	: m_pOwner(_pOwner)
+	, dwCollisionTime(GetTickCount())
+	, m_lRecoverTime(100)
 {
 }
 
@@ -22,12 +25,33 @@ void CBossGun::Initialize()
 
 	m_tInfo.fCX = 20.f;
 	m_tInfo.fCY = 20.f;
-	m_tInfo.iHp = 30;
+
+	m_iHp		= 1;
+	m_iMaxHp	= 20;
+
+	m_fSpeed = m_pOwner->GetSpeed();
 
 }
 
 int CBossGun::Update()
 {
+
+	m_fSpeed = m_pOwner->GetSpeed();
+	if (m_iHp <= 0)
+	{
+		m_pOwner->Destroy_Child();
+		DeleteObjEvt(this);
+	}
+		
+	if (!m_bCollision)
+	{
+		if (dwCollisionTime + m_lRecoverTime < GetTickCount())
+		{
+			m_bCollision = true;
+			dwCollisionTime = GetTickCount();
+		}
+	}
+
 	m_tInfo.fX += m_fSpeed;
 
 	if (m_dwTime + 1400 <= GetTickCount())
@@ -42,7 +66,6 @@ int CBossGun::Update()
 	}
 
 	__super::Update_Rect();
-
 	return 0;
 }
 
@@ -60,13 +83,37 @@ void CBossGun::Late_Update()
 			m_fSpeed *= -1.f;
 	}
 	
-	if (m_tInfo.iHp <= 0)
-		DeleteObjEvt(this);
+
 }
 
 void CBossGun::Render(HDC hDC)
 {
-	Rectangle(hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom + 40);
+	if (!m_bCollision)
+	{
+		SelectGDI g(hDC, BRUSH_TYPE::RED);
+		SelectGDI pen(hDC, PEN_TYPE::BLUE);
+		Rectangle(hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom + 40);
+	}
+	else
+	{
+		SelectGDI pen(hDC, PEN_TYPE::BLUE);
+		Rectangle(hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom + 40);
+	}
+
+	for (int i = 0; i < m_iMaxHp; ++i)
+	{
+		RECT rect = GetRectWithXY((int)m_tInfo.fX, (int)m_tInfo.fY, -40, -1 * (10 * (i + 1)), 10);
+		if (m_iHp >= i + 1)
+		{
+			SelectGDI g(hDC, BRUSH_TYPE::RED);
+			Rectangle(hDC, rect.left, rect.top, rect.right, rect.bottom);
+		}
+		else
+		{
+			SelectGDI g(hDC, BRUSH_TYPE::HOLLOW);
+			Rectangle(hDC, rect.left, rect.top, rect.right, rect.bottom);
+		}
+	}
 }
 
 void CBossGun::Release()
@@ -81,7 +128,7 @@ void CBossGun::OnCollision(CObj * _pObj)
 	switch (_pObj->GetObjType())
 	{
 	case OBJECT_TYPE::PLAYER_PROJECTILE:
-		m_tInfo.iHp -= _pObj->Get_Info().iAttack;
+		m_iHp--;
 		break;
 	}
 	m_bCollision = false;

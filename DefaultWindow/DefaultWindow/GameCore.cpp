@@ -113,7 +113,7 @@ void CGameCore::CreateBrusnAndPen()
 	m_arrBrush[(UINT)BRUSH_TYPE::RED]		= CreateSolidBrush(RGB(255, 0, 0));
 	m_arrBrush[(UINT)BRUSH_TYPE::GREEN]		= CreateSolidBrush(RGB(0, 255, 0));
 	m_arrBrush[(UINT)BRUSH_TYPE::BLUE]		= CreateSolidBrush(RGB(0, 0, 255));
-
+	m_arrBrush[(UINT)BRUSH_TYPE::ORANGE]	= CreateSolidBrush(RGB(242, 146, 29));
 
 	m_arrPen[(UINT)PEN_TYPE::RED]			= CreatePen(PS_SOLID, 1, RGB(255, 0, 0));
 	m_arrPen[(UINT)PEN_TYPE::GREEN]			= CreatePen(PS_SOLID, 1, RGB(0, 255, 0));

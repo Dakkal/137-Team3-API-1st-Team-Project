@@ -4,33 +4,37 @@ class CBoss :
 	public CObj
 {
 public:
-	CBoss();
+	explicit CBoss();
 	virtual ~CBoss();
 
+public:
 	// Inherited via CObj
-	virtual void Initialize() override;
-	virtual int Update() override;
-	virtual void Late_Update() override;
-	virtual void Render(HDC hDC) override;
-	virtual void Release() override;
-	virtual void OnCollision(CObj * _pObj) override;
+	virtual void	Initialize() override;
+	virtual int		Update() override;
+	virtual void	Late_Update() override;
+	virtual void	Render(HDC hDC) override;
+	virtual void	Release() override;
+	virtual void	OnCollision(CObj * _pObj) override;
 
 public:
-	virtual	BOSS_PART Get_BossPart() { return m_eBossPart; }
-	virtual	int Get_GunType() { return m_iGunType; }
+	float	GetSpeed() { return m_fSpeed; }
+	void	Destroy_Child() { --m_iCountPart; }
+	int		IsDestroy() { return m_iCountPart <= 0; }
 
-	virtual void Set_BossSpeed(float _fSpeed) { m_fSpeed = _fSpeed; }
-	virtual void Set_BossPosX(float _fX) { m_tInfo.fX = _fX; }
-	virtual void Set_GunType(int _iType) { m_iGunType = _iType; }
 private:
-	void	Update_BossLocate();
-	CObj*	Create_Head();
-	CObj*	Create_Gun1();
-	CObj*	Create_Gun2();
-	CObj*	Create_Missile_Pot();
+	void	Create_Head();
+	void	Create_Gun1();
+	void	Create_Gun2();
+	void	Create_Missile_Pot();
 
 protected:
 	BOSS_PART	m_eBossPart;
 	int			m_iGunType;
+
+	int			m_iHp;
+	int			m_iMaxHp;
+
+	int			m_iCountPart;
+
 };
 

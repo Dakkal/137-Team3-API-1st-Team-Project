@@ -30,9 +30,5 @@ private:
 	float	m_fRotateSpeed;
 	float	m_fDist;
 
-	LONG	m_lShotDelayTime;
-	LONG	m_lStartTime;
-	LONG	m_lCurTime;
-
 };
 

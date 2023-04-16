@@ -19,7 +19,7 @@ CPlayer::CPlayer()
 	,	m_fAngle(0.f)
 	,	m_ptShotPoint{0, 0}
 	,	m_iSatelliteCount(0)
-	,	m_lRecoverTime(1000.f)
+	,	m_lRecoverTime(500.f)
 	,	m_lFireDelay(100.f)
 	,	dwCollisionTime(0)
 	,	m_pGun(nullptr)
@@ -55,6 +55,8 @@ void CPlayer::Initialize(void)
 
 int CPlayer::Update(void)
 {
+	m_iHp <= 0 ? m_bMovable = false : m_bMovable = true;
+
 	m_pGun->Update();
 	Key_Input();
 	Sort_Interval_Satellite();
@@ -137,6 +139,7 @@ void CPlayer::Render(HDC hDC)
 	
 	
 	
+	
 
 	//UI_RENDER
 	// 1. HP Bar
@@ -158,7 +161,7 @@ void CPlayer::Render(HDC hDC)
 	// 2. SP(ÃÑ¾Ë) Bar
 	for (int i = 0; i < m_pGun->GetMaxBullet(); ++i)
 	{
-		RECT rect = GetRectWithXY((int)10, (int)10, (10 * (i + 1)), 0, 10);
+		RECT rect = GetRectWithXY((int)10, (int)30, (10 * (i + 1)), 0, 10);
 		if (m_pGun->GetRemainBullet() >= i + 1)
 		{
 			SelectGDI g(hDC, BRUSH_TYPE::GREEN);
@@ -221,6 +224,9 @@ void CPlayer::OnCollision(CObj * _pObj)
 
 void CPlayer::Key_Input(void)
 {	
+	if (!m_bMovable)
+		return;
+
 	if (GetAsyncKeyState('A'))
 	{
 		if (m_tRect.left <= 0)
@@ -284,6 +290,12 @@ void CPlayer::Key_Input(void)
 		CSatellite* pBarrior = new CSatellite(this);
 		AddObjEvt(pBarrior);
 	} 
+
+	if (GetAsyncKeyState(VK_TAB) & 0x0001)
+	{
+		m_iMaxHp = 100;
+		m_iHp = 100;
+	}
 }
 
 void CPlayer::Sort_Interval_Satellite()
@@ -300,6 +312,22 @@ void CPlayer::Sort_Interval_Satellite()
 	for (int i = 0; iter != copyList.end(); ++iter, ++i)
 		(*iter)->SetAngle((float)(360 / copyList.size()) * (i + 1));
 	
+}
+
+void CPlayer::Revive()
+{
+	for (int i = 0; i < (int)GUN_TYPE::END; ++i)
+		m_pArrGun[i]->Initialize();
+
+	m_pGun = m_pArrGun[(int)GUN_TYPE::NORMALGUN];
+
+	dwCollisionTime = GetTickCount();
+	dwFireTime = GetTickCount();
+
+	m_iHp = 3;
+	m_iMaxHp = 3;
+
+	m_bMovable = true;
 }
 
 void CPlayer::OnDamaged()

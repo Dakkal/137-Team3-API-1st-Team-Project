@@ -6,9 +6,9 @@
 void AddObjEvt(CObj* _pObj)
 {
 	tagEvent eve;
+	_pObj->Initialize();
 	eve.lParam = (DWORD_PTR)_pObj;
 	eve.evtType = EVENT_TYPE::ADD_OBJ;
-
 	CEventMgr::GetInst()->AddEvent(eve);
 }
 
@@ -24,6 +24,7 @@ void ChangeSceneEvt(SCENE_TYPE _eType)
 void DeleteObjEvt(CObj* _pObj)
 {
 	tagEvent eve;
+	_pObj->Set_Dead(true);
 	eve.lParam = (DWORD_PTR)_pObj;
 	eve.evtType = EVENT_TYPE::DELETE_OBJ;
 

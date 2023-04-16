@@ -23,30 +23,34 @@ void CBossMissile::Initialize()
 	m_tInfo.fCY = 10.f;
 
 	m_fSpeed = 3.f;
-	m_tInfo.iHp = 1;
+	m_iHp = 1;
+	m_iMaxHp = 1;
 }
 
 int CBossMissile::Update()
 {
-	m_tInfo.fY += m_fSpeed;
-
-	__super::Update_Rect();
-
 
 	if (m_tInfo.fY >= 400.f)
 	{
 		const float fInterval = 360.f / 12.f;
 		for (int i = 0; i < 12; ++i)
 		{
-			AddObjEvt(Create_Missile_Bullet());
+			CBossBullet* pBossBullet = new CBossBullet;
+			pBossBullet->Initialize();
+			pBossBullet->Set_Pos(m_tInfo.fX, m_tInfo.fY);
+			pBossBullet->Set_Angle(m_fAngle);
+			pBossBullet->Set_BossBullet_Type(BOSSBULLET_TYPE::FIREWORK);
+			AddObjEvt(pBossBullet);
+
 			m_fAngle += fInterval;
 		}
 		m_fAngle = 0.f;
 		DeleteObjEvt(this);
 	}
 
-	
+	m_tInfo.fY += m_fSpeed;
 
+	__super::Update_Rect();
 	return 0;
 }
 
@@ -66,7 +70,7 @@ void CBossMissile::Release()
 
 void CBossMissile::OnCollision(CObj * _pObj)
 {
-	if (!m_bCollision)
+	if (!m_bCollision && m_bDead)
 		return;
 
 	switch (_pObj->GetObjType())
@@ -76,15 +80,4 @@ void CBossMissile::OnCollision(CObj * _pObj)
 		break;
 	}
 	m_bCollision = false;
-}
-
-CObj* CBossMissile::Create_Missile_Bullet()
-{
-	CBossBullet* pBossBullet = new CBossBullet;
-	pBossBullet->Initialize();
-	pBossBullet->Set_Pos(m_tInfo.fX, m_tInfo.fY);
-	pBossBullet->Set_Angle(m_fAngle);
-	pBossBullet->Set_BossBullet_Type(BOSSBULLET_TYPE::FIREWORK);
-
-	return pBossBullet;
 }

@@ -4,7 +4,11 @@
 #include "GameCore.h"
 #include "Player.h"
 
-CBossHead::CBossHead()
+
+CBossHead::CBossHead(CBoss* _pOwner)
+	: m_pOwner(_pOwner)
+	, m_lRecoverTime(100)
+	, dwCollisionTime(GetTickCount())
 {
 }
 
@@ -16,15 +20,32 @@ CBossHead::~CBossHead()
 
 void CBossHead::Initialize()
 {
-	m_eBossPart = BOSS_PART::HEAD;
-
 	m_tInfo.fCX = 50.f;
 	m_tInfo.fCY = 50.f;
-	m_tInfo.iHp = 1;
+	m_iHp = 1;
+	m_iMaxHp = 30;
+
+	m_fSpeed = m_pOwner->GetSpeed();
 }
 
 int CBossHead::Update()
 {
+	if (m_iHp <= 0)
+	{
+		m_pOwner->Destroy_Child();
+		DeleteObjEvt(this);
+	}
+		
+
+	if (!m_bCollision)
+	{
+		if (dwCollisionTime + m_lRecoverTime < GetTickCount())
+		{
+			m_bCollision = true;
+			dwCollisionTime = GetTickCount();
+		}
+	}
+
 	m_tInfo.fX += m_fSpeed;
 
 	__super::Update_Rect();
@@ -37,14 +58,37 @@ void CBossHead::Late_Update()
 	if (m_tRect.left <= 0 + 75.f || m_tRect.right >= WINCX - 75.f)
 		m_fSpeed *= -1.f;
 
-
-	if (m_tInfo.iHp <= 0)
-		DeleteObjEvt(this);
 }
 
 void CBossHead::Render(HDC hDC)
 {
-	Ellipse(hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom);
+
+	if (!m_bCollision)
+	{
+		SelectGDI g(hDC, BRUSH_TYPE::RED);
+		Ellipse(hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom + 40);
+	}
+	else
+	{
+		SelectGDI brush(hDC, BRUSH_TYPE::ORANGE);
+		Ellipse(hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom + 40);
+	}
+
+	//HP_BAR
+	for (int i = 0; i < m_iMaxHp; ++i)
+	{
+		RECT rect = GetRectWithXY((int)m_tInfo.fX, (int)m_tInfo.fY, -40, -1 * (10 * (i + 1)), 10);
+		if (m_iHp >= (i + 1) * 2)
+		{
+			SelectGDI g(hDC, BRUSH_TYPE::RED);
+			Rectangle(hDC, rect.left, rect.top, rect.right, rect.bottom);
+		}
+		else
+		{
+			SelectGDI g(hDC, BRUSH_TYPE::HOLLOW);
+			Rectangle(hDC, rect.left, rect.top, rect.right, rect.bottom);
+		}
+	}
 }
 
 void CBossHead::Release()
@@ -59,7 +103,7 @@ void CBossHead::OnCollision(CObj * _pObj)
 	switch (_pObj->GetObjType())
 	{
 	case OBJECT_TYPE::PLAYER_PROJECTILE:
-		m_tInfo.iHp -= _pObj->Get_Info().iAttack;
+		m_iHp--;
 		break;
 	}
 	m_bCollision = false;

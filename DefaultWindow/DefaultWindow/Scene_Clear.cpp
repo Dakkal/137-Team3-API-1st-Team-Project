@@ -14,6 +14,7 @@ CScene_Clear::~CScene_Clear()
 
 void CScene_Clear::Enter()
 {
+	int i = 0;
 	if (GetObjTypeList(OBJECT_TYPE::PLAYER).size() == 0)
 		GetObjTypeList(OBJECT_TYPE::PLAYER).push_back(CGameCore::GetInst()->GetPlayer());
 }
@@ -39,4 +40,5 @@ void CScene_Clear::Exit()
 
 void CScene_Clear::GameOver()
 {
+
 }

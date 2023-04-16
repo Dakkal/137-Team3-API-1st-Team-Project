@@ -10,8 +10,6 @@ CSatellite::CSatellite(CObj* _pPlayer)
 	, m_pOwner(_pPlayer)
 	, m_fRotateSpeed(5.f)
 	, m_fDist(100.f)
-	, m_lShotDelayTime(3000.f)
-	, m_lCurTime(0.f)
 {
 	m_tInfo = INFO{ m_pOwner->Get_Info().fX, m_pOwner->Get_Info().fY, SATELLITE_SIZE, SATELLITE_SIZE };
 	m_fAngle = 0.f;
@@ -23,12 +21,12 @@ CSatellite::~CSatellite()
 
 void CSatellite::Initialize()
 {
-	m_lCurTime = GetTickCount();
-	m_lStartTime = GetTickCount();
+
 }
 
 int CSatellite::Update()
 {
+
 	m_fAngle += m_fRotateSpeed;
 
 	if (m_fAngle >= 360.f)
@@ -41,12 +39,7 @@ int CSatellite::Update()
 
 	__super::Update_Rect();
 
-	m_lCurTime = GetTickCount();
-	if (m_lCurTime - m_lStartTime >= m_lShotDelayTime)
-	{
-		Shoot();
-		m_lStartTime = GetTickCount();
-	}
+
 
 	return 0;
 }
@@ -80,7 +73,6 @@ void CSatellite::OnCollision(CObj * _pObj)
 		}
 		m_bCollision = false;
 	}
-	
 }
 
 void CSatellite::Shoot()

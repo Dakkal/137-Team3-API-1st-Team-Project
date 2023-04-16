@@ -62,6 +62,11 @@ void CShotGun::Render(HDC hDC)
 {
 	MoveToEx(hDC, m_tInfo.fX, m_tInfo.fY, nullptr);
 	LineTo(hDC, m_tPosin.x, m_tPosin.y);
+
+	if (m_iRemainBullet <= 0)
+	{
+		TextOut(hDC, m_tPosin.x, m_tPosin.y, L"총알이 부족합니다.", wcslen(L"총알이 부족합니다."));
+	}
 }
 
 void CShotGun::Release()

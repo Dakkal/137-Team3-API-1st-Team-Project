@@ -62,7 +62,7 @@ void CScene_Start::GameOver()
 
 bool CScene_Start::Input_Space()
 {
-	if (GetAsyncKeyState(VK_SPACE))
+	if (GetAsyncKeyState(VK_RETURN))
 		return true;
 
 	return false;
