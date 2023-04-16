@@ -56,3 +56,7 @@ void CScene_Test::Render(HDC _dc)
 void CScene_Test::Exit()
 {
 }
+
+void CScene_Test::GameOver()
+{
+}

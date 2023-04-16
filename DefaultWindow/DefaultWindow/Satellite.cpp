@@ -81,5 +81,4 @@ void CSatellite::Shoot()
 	CBullet* pBullet = new CBullet;
 	pBullet->Set_Pos(m_tInfo.fX, m_tInfo.fY);
 	AddObjEvt(pBullet);
-
 }

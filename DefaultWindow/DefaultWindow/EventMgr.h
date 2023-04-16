@@ -21,6 +21,7 @@ class CEventMgr
 public:
 	void Update();
 	void AddEvent(tagEvent& _eve) { m_vecEvent.push_back(_eve); }
+	void Release();
 	
 private:
 	void ExcuteEvent(tagEvent& _eve);
@@ -28,6 +29,7 @@ private:
 private: 
 	vector<tagEvent>	m_vecEvent;
 	vector<CObj*>		m_vecDeleteObj;
+
 
 };
 

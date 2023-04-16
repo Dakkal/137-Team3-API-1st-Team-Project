@@ -48,7 +48,7 @@ int CScrewGun::Update()
 
 void CScrewGun::Late_Update()
 {
-	Reload();
+
 }
 
 void CScrewGun::Render(HDC hDC)

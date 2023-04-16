@@ -47,7 +47,7 @@ int CFollowGun::Update()
 
 void CFollowGun::Late_Update()
 {
-	Reload();
+
 }
 
 void CFollowGun::Render(HDC hDC)
