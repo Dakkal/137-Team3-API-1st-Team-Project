@@ -24,7 +24,7 @@ void CScene_Stage2::Enter()
 	if (GetObjTypeList(OBJECT_TYPE::PLAYER).size() == 0)
 		GetObjTypeList(OBJECT_TYPE::PLAYER).push_back(CGameCore::GetInst()->GetPlayer());
 
-	m_iPatternCount = 1;
+	
 }
 
 void CScene_Stage2::Update()

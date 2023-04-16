@@ -196,6 +196,7 @@
     <ClInclude Include="Scene_GameOver.h" />
     <ClInclude Include="Scene_Stage1.h" />
     <ClInclude Include="Scene_Stage2.h" />
+    <ClInclude Include="Scene_Stage3.h" />
     <ClInclude Include="Scene_Start.h" />
     <ClInclude Include="Scene_Test.h" />
     <ClInclude Include="ScrewGun.h" />
@@ -254,6 +255,7 @@
     <ClCompile Include="Scene_GameOver.cpp" />
     <ClCompile Include="Scene_Stage1.cpp" />
     <ClCompile Include="Scene_Stage2.cpp" />
+    <ClCompile Include="Scene_Stage3.cpp" />
     <ClCompile Include="Scene_Start.cpp" />
     <ClCompile Include="Scene_Test.cpp" />
     <ClCompile Include="ScrewGun.cpp" />

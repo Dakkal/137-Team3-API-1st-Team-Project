@@ -44,15 +44,6 @@
     <Filter Include="02. Scene\02. Scene_Stage2">
       <UniqueIdentifier>{739c2dcc-5df5-41d7-845f-29124cc54f90}</UniqueIdentifier>
     </Filter>
-    <Filter Include="02. Scene\03. Scene_GameOver">
-      <UniqueIdentifier>{d6b44d28-96d2-4ea5-a28c-54b3768bd51e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02. Scene\04. Scene_Clear">
-      <UniqueIdentifier>{1ad118bc-a5df-4f56-9bf8-3079f9b67b08}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02. Scene\05. Scene_Exit">
-      <UniqueIdentifier>{04d76f2e-9bae-4a1f-8013-9cfdcc0622f0}</UniqueIdentifier>
-    </Filter>
     <Filter Include="99.Define">
       <UniqueIdentifier>{f85cc603-b8b4-4822-8b98-c2bb5ffc1553}</UniqueIdentifier>
     </Filter>
@@ -167,6 +158,18 @@
     <Filter Include="03. Obj\06. Boss\03. Boss_Missile">
       <UniqueIdentifier>{c5f0b896-5759-49b4-aee8-6a0d84b9dbb5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="02. Scene\03. Scene_Stage3">
+      <UniqueIdentifier>{9c6d1475-1d42-4e9d-b535-acd5167da336}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. Scene\98. Scene_Exit">
+      <UniqueIdentifier>{04d76f2e-9bae-4a1f-8013-9cfdcc0622f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. Scene\97. Scene_GameOver">
+      <UniqueIdentifier>{d6b44d28-96d2-4ea5-a28c-54b3768bd51e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. Scene\096. Scene_Clear">
+      <UniqueIdentifier>{1ad118bc-a5df-4f56-9bf8-3079f9b67b08}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Obj.h">
@@ -194,16 +197,16 @@
       <Filter>02. Scene\01. Scene_Stage1</Filter>
     </ClInclude>
     <ClInclude Include="Scene_Clear.h">
-      <Filter>02. Scene\04. Scene_Clear</Filter>
+      <Filter>02. Scene\096. Scene_Clear</Filter>
     </ClInclude>
     <ClInclude Include="Scene_Stage2.h">
       <Filter>02. Scene\02. Scene_Stage2</Filter>
     </ClInclude>
     <ClInclude Include="Scene_Exit.h">
-      <Filter>02. Scene\05. Scene_Exit</Filter>
+      <Filter>02. Scene\98. Scene_Exit</Filter>
     </ClInclude>
     <ClInclude Include="Scene_GameOver.h">
-      <Filter>02. Scene\03. Scene_GameOver</Filter>
+      <Filter>02. Scene\97. Scene_GameOver</Filter>
     </ClInclude>
     <ClInclude Include="Define.h">
       <Filter>99.Define</Filter>
@@ -349,6 +352,9 @@
     <ClInclude Include="BossMissile_Pot.h">
       <Filter>03. Obj\06. Boss\02. Boss_MissilePot</Filter>
     </ClInclude>
+    <ClInclude Include="Scene_Stage3.h">
+      <Filter>02. Scene\03. Scene_Stage3</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Obj.cpp">
@@ -376,16 +382,16 @@
       <Filter>02. Scene\01. Scene_Stage1</Filter>
     </ClCompile>
     <ClCompile Include="Scene_Clear.cpp">
-      <Filter>02. Scene\04. Scene_Clear</Filter>
+      <Filter>02. Scene\096. Scene_Clear</Filter>
     </ClCompile>
     <ClCompile Include="Scene_Stage2.cpp">
       <Filter>02. Scene\02. Scene_Stage2</Filter>
     </ClCompile>
     <ClCompile Include="Scene_Exit.cpp">
-      <Filter>02. Scene\05. Scene_Exit</Filter>
+      <Filter>02. Scene\98. Scene_Exit</Filter>
     </ClCompile>
     <ClCompile Include="Scene_GameOver.cpp">
-      <Filter>02. Scene\03. Scene_GameOver</Filter>
+      <Filter>02. Scene\97. Scene_GameOver</Filter>
     </ClCompile>
     <ClCompile Include="DefaultWindow.cpp" />
     <ClCompile Include="stdafx.cpp">
@@ -507,6 +513,9 @@
     </ClCompile>
     <ClCompile Include="CustomFunc.cpp">
       <Filter>99.Define</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene_Stage3.cpp">
+      <Filter>02. Scene\03. Scene_Stage3</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

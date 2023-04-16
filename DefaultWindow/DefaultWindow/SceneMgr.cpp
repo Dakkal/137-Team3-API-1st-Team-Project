@@ -4,6 +4,7 @@
 #include "Scene_Start.h"
 #include "Scene_Stage1.h"
 #include "Scene_Stage2.h"
+#include "Scene_Stage3.h"
 #include "Scene_GameOver.h"
 #include "Scene_Clear.h"
 #include "Scene_Exit.h"
@@ -38,6 +39,7 @@ void CSceneMgr::Initialize()
 	m_arrScene[(int)SCENE_TYPE::START]		= new CScene_Start;
 	m_arrScene[(int)SCENE_TYPE::STAGE1]		= new CScene_Stage1;
 	m_arrScene[(int)SCENE_TYPE::STAGE2]		= new CScene_Stage2;
+	m_arrScene[(int)SCENE_TYPE::STAGE3]		= new CScene_Stage3;
 	m_arrScene[(int)SCENE_TYPE::GAMEOVER]	= new CScene_GameOver;
 	m_arrScene[(int)SCENE_TYPE::CLEAR]		= new CScene_Clear;
 	m_arrScene[(int)SCENE_TYPE::EXIT]		= new CScene_Exit;
