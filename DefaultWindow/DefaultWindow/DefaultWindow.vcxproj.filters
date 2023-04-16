@@ -98,6 +98,24 @@
     <Filter Include="03. Obj\02. Item\00.TimeStop">
       <UniqueIdentifier>{b15523a3-3251-49bc-94ec-ad431173f8ea}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03. Obj\06. Boss">
+      <UniqueIdentifier>{ab3e38f5-dcd5-4d49-91b2-22af4ed2893d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Obj\07. Boss_Bullet">
+      <UniqueIdentifier>{3b5d1ba9-81a0-4f76-87c2-f90a57a9961b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Obj\06. Boss\00. Boss_Head">
+      <UniqueIdentifier>{80822848-ca6b-447d-90db-810b86238e20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Obj\06. Boss\01. Boss_Gun">
+      <UniqueIdentifier>{0b20b287-c985-4ab7-93f3-7f77f6e3ea14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Obj\06. Boss\02. Boss_Missile_Pot">
+      <UniqueIdentifier>{600509d4-0051-4bf2-85d1-f68d8081adce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Obj\06. Boss\03. Boss_Missile">
+      <UniqueIdentifier>{cb22b1c4-67a0-4205-841f-d44994a50750}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Obj.h">
@@ -211,6 +229,24 @@
     <ClInclude Include="Item_TimeStop.h">
       <Filter>03. Obj\02. Item\00.TimeStop</Filter>
     </ClInclude>
+    <ClInclude Include="Boss.h">
+      <Filter>03. Obj\06. Boss</Filter>
+    </ClInclude>
+    <ClInclude Include="BossBullet.h">
+      <Filter>03. Obj\07. Boss_Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="BossHead.h">
+      <Filter>03. Obj\06. Boss\00. Boss_Head</Filter>
+    </ClInclude>
+    <ClInclude Include="BossGun.h">
+      <Filter>03. Obj\06. Boss\01. Boss_Gun</Filter>
+    </ClInclude>
+    <ClInclude Include="BossMissile_Pot.h">
+      <Filter>03. Obj\06. Boss\02. Boss_Missile_Pot</Filter>
+    </ClInclude>
+    <ClInclude Include="BossMissile.h">
+      <Filter>03. Obj\06. Boss\03. Boss_Missile</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Obj.cpp">
@@ -227,9 +263,6 @@
     </ClCompile>
     <ClCompile Include="Item.cpp">
       <Filter>03. Obj\02. Item</Filter>
-    </ClCompile>
-    <ClCompile Include="Bullet.cpp">
-      <Filter>03. Obj\03. Bullet</Filter>
     </ClCompile>
     <ClCompile Include="Scene_Start.cpp">
       <Filter>02. Scene\00. Scene_Start</Filter>
@@ -297,6 +330,27 @@
     </ClCompile>
     <ClCompile Include="Item_Timestop.cpp">
       <Filter>03. Obj\02. Item\00.TimeStop</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>03. Obj\03. Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="Boss.cpp">
+      <Filter>03. Obj\06. Boss</Filter>
+    </ClCompile>
+    <ClCompile Include="BossBullet.cpp">
+      <Filter>03. Obj\07. Boss_Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="BossHead.cpp">
+      <Filter>03. Obj\06. Boss\00. Boss_Head</Filter>
+    </ClCompile>
+    <ClCompile Include="BossGun.cpp">
+      <Filter>03. Obj\06. Boss\01. Boss_Gun</Filter>
+    </ClCompile>
+    <ClCompile Include="BossMissile_Pot.cpp">
+      <Filter>03. Obj\06. Boss\02. Boss_Missile_Pot</Filter>
+    </ClCompile>
+    <ClCompile Include="BossMissile.cpp">
+      <Filter>03. Obj\06. Boss\03. Boss_Missile</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -145,6 +145,12 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Boss.h" />
+    <ClInclude Include="BossBullet.h" />
+    <ClInclude Include="BossGun.h" />
+    <ClInclude Include="BossHead.h" />
+    <ClInclude Include="BossMissile.h" />
+    <ClInclude Include="BossMissile_Pot.h" />
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="CollisionMgr.h" />
     <ClInclude Include="CustomFunc.h" />
@@ -184,6 +190,12 @@
     <ClInclude Include="Template.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Boss.cpp" />
+    <ClCompile Include="BossBullet.cpp" />
+    <ClCompile Include="BossGun.cpp" />
+    <ClCompile Include="BossHead.cpp" />
+    <ClCompile Include="BossMissile.cpp" />
+    <ClCompile Include="BossMissile_Pot.cpp" />
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="CollisonMgr.cpp" />
     <ClCompile Include="DefaultWindow.cpp" />

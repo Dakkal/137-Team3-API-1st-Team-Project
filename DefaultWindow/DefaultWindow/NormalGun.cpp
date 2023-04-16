@@ -19,6 +19,7 @@ CNormalGun::~CNormalGun()
 
 void CNormalGun::Initialize()
 {
+	m_dwTime = GetTickCount();
 	m_eGunType = GUN_TYPE::NORMALGUN;
 	m_fDistance = 30.f;
 
