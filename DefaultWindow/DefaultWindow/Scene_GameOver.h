@@ -18,5 +18,19 @@ public:
 public:
 	virtual void GameOver()				override;
 
+private:
+	bool		Input_Space();
+
+	DWORD m_dwTime;
+
+	TCHAR		m_szTitle[32];
+	TCHAR		m_szSubTitle[32];
+	TCHAR		m_szScore[32];
+
+	HFONT		hTitleFont;
+	HFONT		hOldFont;
+
+	int m_iCount;
+
 };
 
