@@ -1,4 +1,4 @@
-﻿  Player.cpp
-c:\users\xodnj\desktop\lecture3_teamassignment_1\defaultwindow\defaultwindow\player.cpp(27): warning C4244: '초기화 중': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+﻿  Enemy.cpp
+c:\users\xodnj\desktop\lecture3_teamassignment_1\defaultwindow\defaultwindow\enemy.cpp(51): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
   DefaultWindow.vcxproj -> C:\Users\xodnj\Desktop\Lecture3_TeamAssignment_1\DefaultWindow\Debug\DefaultWindow.exe
   DefaultWindow.vcxproj -> C:\Users\xodnj\Desktop\Lecture3_TeamAssignment_1\DefaultWindow\Debug\DefaultWindow.pdb (Full PDB)

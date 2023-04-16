@@ -42,7 +42,10 @@ private:
 	LONG			m_dwCollisionTime;
 
 	bool			m_bPause;
-	LONG			m_dwPauseTime;
+	DWORD			m_dwPauseTime;
 	LONG			m_lPauseTime;
+
+	DWORD			m_dwShotTime;
+	LONG			m_lShotTime;
 };
 
