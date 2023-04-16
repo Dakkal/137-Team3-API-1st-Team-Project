@@ -98,23 +98,56 @@
     <Filter Include="03. Obj\02. Item\00.TimeStop">
       <UniqueIdentifier>{b15523a3-3251-49bc-94ec-ad431173f8ea}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Obj\06. Boss">
-      <UniqueIdentifier>{ab3e38f5-dcd5-4d49-91b2-22af4ed2893d}</UniqueIdentifier>
+    <Filter Include="03. Obj\02. Item\01.Item_Life">
+      <UniqueIdentifier>{d4a6acfc-0cc6-4935-98fc-37f79bc1ffc1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Obj\07. Boss_Bullet">
-      <UniqueIdentifier>{3b5d1ba9-81a0-4f76-87c2-f90a57a9961b}</UniqueIdentifier>
+    <Filter Include="03. Obj\02. Item\02.Item_SpeedUp">
+      <UniqueIdentifier>{367930af-637b-4e2f-9bd2-aa531c7cd4b0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Obj\06. Boss\00. Boss_Head">
-      <UniqueIdentifier>{80822848-ca6b-447d-90db-810b86238e20}</UniqueIdentifier>
+    <Filter Include="03. Obj\02. Item\03.Item_NormalGun">
+      <UniqueIdentifier>{7b434e17-6618-4231-80f4-de9b9f898c5a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Obj\06. Boss\01. Boss_Gun">
-      <UniqueIdentifier>{0b20b287-c985-4ab7-93f3-7f77f6e3ea14}</UniqueIdentifier>
+    <Filter Include="03. Obj\02. Item\04.Item_MachineGun">
+      <UniqueIdentifier>{7a20edfd-10cf-4259-bb41-bb1c161168e5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Obj\06. Boss\02. Boss_Missile_Pot">
-      <UniqueIdentifier>{600509d4-0051-4bf2-85d1-f68d8081adce}</UniqueIdentifier>
+    <Filter Include="03. Obj\02. Item\05.Item_FollowGun">
+      <UniqueIdentifier>{4b28cdc5-7a16-44a8-ba32-a7c76f835104}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Obj\06. Boss\03. Boss_Missile">
-      <UniqueIdentifier>{cb22b1c4-67a0-4205-841f-d44994a50750}</UniqueIdentifier>
+    <Filter Include="03. Obj\02. Item\06.Item_ScrewGun">
+      <UniqueIdentifier>{f684e251-0b7a-4a42-8089-385825d8f495}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Obj\02. Item\07.Item_ShotGun">
+      <UniqueIdentifier>{c63e9d49-bdf4-482b-bdd4-41950b1d3e29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Obj\02. Item\08.Item_DeleteEnemy_Projectile">
+      <UniqueIdentifier>{ce7f575f-a006-4d30-944d-e88579c78cc6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Obj\02. Item\09.Item_Magnetic">
+      <UniqueIdentifier>{1bca5a72-b42f-4ac4-8e8b-49f5c775c8bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Obj\02. Item\10.Item_SpeedSlow">
+      <UniqueIdentifier>{3b40e40d-c7da-48e6-8276-c78c92d6d17c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Obj\02. Item\11.Item_Bomb">
+      <UniqueIdentifier>{36bb7961-8850-4c77-84ca-c77de7379873}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Obj\02. Item\12.Item_Explosion">
+      <UniqueIdentifier>{aab620bd-ef82-4f0d-9513-2f005519d719}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Obj\02. Item\13.Item_Satellite">
+      <UniqueIdentifier>{04ac768a-209a-4f70-9bea-8b4f12adb4ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Obj\02. Item\14.Item_Invincibility">
+      <UniqueIdentifier>{66836cf1-dad0-4eca-b9ae-899dd56afca1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Obj\02. Item\15.Item_RemainBullet">
+      <UniqueIdentifier>{3c550751-a364-47d9-a1f5-c3d9673554e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Obj\02. Item\16.Item_BoundBall">
+      <UniqueIdentifier>{15a30133-190d-46f5-936b-6c4846a8f63b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Obj\02. Item\16.Item_BoundBall\Item_Ball">
+      <UniqueIdentifier>{ec26e9c7-de01-4784-a183-da9a8c70a9ca}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -229,23 +262,56 @@
     <ClInclude Include="Item_TimeStop.h">
       <Filter>03. Obj\02. Item\00.TimeStop</Filter>
     </ClInclude>
-    <ClInclude Include="Boss.h">
-      <Filter>03. Obj\06. Boss</Filter>
+    <ClInclude Include="Item_Life.h">
+      <Filter>03. Obj\02. Item\01.Item_Life</Filter>
     </ClInclude>
-    <ClInclude Include="BossBullet.h">
-      <Filter>03. Obj\07. Boss_Bullet</Filter>
+    <ClInclude Include="Item_SpeedUp.h">
+      <Filter>03. Obj\02. Item\02.Item_SpeedUp</Filter>
     </ClInclude>
-    <ClInclude Include="BossHead.h">
-      <Filter>03. Obj\06. Boss\00. Boss_Head</Filter>
+    <ClInclude Include="Item_NormalGun.h">
+      <Filter>03. Obj\02. Item\03.Item_NormalGun</Filter>
     </ClInclude>
-    <ClInclude Include="BossGun.h">
-      <Filter>03. Obj\06. Boss\01. Boss_Gun</Filter>
+    <ClInclude Include="Item_MachineGun.h">
+      <Filter>03. Obj\02. Item\04.Item_MachineGun</Filter>
     </ClInclude>
-    <ClInclude Include="BossMissile_Pot.h">
-      <Filter>03. Obj\06. Boss\02. Boss_Missile_Pot</Filter>
+    <ClInclude Include="Item_FollowGun.h">
+      <Filter>03. Obj\02. Item\05.Item_FollowGun</Filter>
     </ClInclude>
-    <ClInclude Include="BossMissile.h">
-      <Filter>03. Obj\06. Boss\03. Boss_Missile</Filter>
+    <ClInclude Include="Citem_ScrewGun.h">
+      <Filter>03. Obj\02. Item\06.Item_ScrewGun</Filter>
+    </ClInclude>
+    <ClInclude Include="Citem_ShotGun.h">
+      <Filter>03. Obj\02. Item\07.Item_ShotGun</Filter>
+    </ClInclude>
+    <ClInclude Include="Item_DeleteEnermy_Projectile.h">
+      <Filter>03. Obj\02. Item\08.Item_DeleteEnemy_Projectile</Filter>
+    </ClInclude>
+    <ClInclude Include="Item_Magnetic.h">
+      <Filter>03. Obj\02. Item\09.Item_Magnetic</Filter>
+    </ClInclude>
+    <ClInclude Include="Item_SpeedSlow.h">
+      <Filter>03. Obj\02. Item\10.Item_SpeedSlow</Filter>
+    </ClInclude>
+    <ClInclude Include="Item_Bomb.h">
+      <Filter>03. Obj\02. Item\11.Item_Bomb</Filter>
+    </ClInclude>
+    <ClInclude Include="Item_Explosion.h">
+      <Filter>03. Obj\02. Item\12.Item_Explosion</Filter>
+    </ClInclude>
+    <ClInclude Include="Item_Satellite.h">
+      <Filter>03. Obj\02. Item\13.Item_Satellite</Filter>
+    </ClInclude>
+    <ClInclude Include="Item_Invincibility.h">
+      <Filter>03. Obj\02. Item\14.Item_Invincibility</Filter>
+    </ClInclude>
+    <ClInclude Include="Item_RemainBullet.h">
+      <Filter>03. Obj\02. Item\15.Item_RemainBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="Item_BoundBall.h">
+      <Filter>03. Obj\02. Item\16.Item_BoundBall</Filter>
+    </ClInclude>
+    <ClInclude Include="Item_Ball.h">
+      <Filter>03. Obj\02. Item\16.Item_BoundBall\Item_Ball</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -263,6 +329,9 @@
     </ClCompile>
     <ClCompile Include="Item.cpp">
       <Filter>03. Obj\02. Item</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>03. Obj\03. Bullet</Filter>
     </ClCompile>
     <ClCompile Include="Scene_Start.cpp">
       <Filter>02. Scene\00. Scene_Start</Filter>
@@ -331,26 +400,56 @@
     <ClCompile Include="Item_Timestop.cpp">
       <Filter>03. Obj\02. Item\00.TimeStop</Filter>
     </ClCompile>
-    <ClCompile Include="Bullet.cpp">
-      <Filter>03. Obj\03. Bullet</Filter>
+    <ClCompile Include="Item_Life.cpp">
+      <Filter>03. Obj\02. Item\01.Item_Life</Filter>
     </ClCompile>
-    <ClCompile Include="Boss.cpp">
-      <Filter>03. Obj\06. Boss</Filter>
+    <ClCompile Include="Item_SpeedUp.cpp">
+      <Filter>03. Obj\02. Item\02.Item_SpeedUp</Filter>
     </ClCompile>
-    <ClCompile Include="BossBullet.cpp">
-      <Filter>03. Obj\07. Boss_Bullet</Filter>
+    <ClCompile Include="Item_NormalGun.cpp">
+      <Filter>03. Obj\02. Item\03.Item_NormalGun</Filter>
     </ClCompile>
-    <ClCompile Include="BossHead.cpp">
-      <Filter>03. Obj\06. Boss\00. Boss_Head</Filter>
+    <ClCompile Include="Item_MachineGun.cpp">
+      <Filter>03. Obj\02. Item\04.Item_MachineGun</Filter>
     </ClCompile>
-    <ClCompile Include="BossGun.cpp">
-      <Filter>03. Obj\06. Boss\01. Boss_Gun</Filter>
+    <ClCompile Include="Item_FollowGun.cpp">
+      <Filter>03. Obj\02. Item\05.Item_FollowGun</Filter>
     </ClCompile>
-    <ClCompile Include="BossMissile_Pot.cpp">
-      <Filter>03. Obj\06. Boss\02. Boss_Missile_Pot</Filter>
+    <ClCompile Include="Citem_ScrewGun.cpp">
+      <Filter>03. Obj\02. Item\06.Item_ScrewGun</Filter>
     </ClCompile>
-    <ClCompile Include="BossMissile.cpp">
-      <Filter>03. Obj\06. Boss\03. Boss_Missile</Filter>
+    <ClCompile Include="Citem_ShotGun.cpp">
+      <Filter>03. Obj\02. Item\07.Item_ShotGun</Filter>
+    </ClCompile>
+    <ClCompile Include="Item_DeleteEnermy_Projectile.cpp">
+      <Filter>03. Obj\02. Item\08.Item_DeleteEnemy_Projectile</Filter>
+    </ClCompile>
+    <ClCompile Include="Item_Magnetic.cpp">
+      <Filter>03. Obj\02. Item\09.Item_Magnetic</Filter>
+    </ClCompile>
+    <ClCompile Include="Item_SpeedSlow.cpp">
+      <Filter>03. Obj\02. Item\10.Item_SpeedSlow</Filter>
+    </ClCompile>
+    <ClCompile Include="Item_Bomb.cpp">
+      <Filter>03. Obj\02. Item\11.Item_Bomb</Filter>
+    </ClCompile>
+    <ClCompile Include="Item_Explosion.cpp">
+      <Filter>03. Obj\02. Item\12.Item_Explosion</Filter>
+    </ClCompile>
+    <ClCompile Include="Item_Satellite.cpp">
+      <Filter>03. Obj\02. Item\13.Item_Satellite</Filter>
+    </ClCompile>
+    <ClCompile Include="Item_Invincibility.cpp">
+      <Filter>03. Obj\02. Item\14.Item_Invincibility</Filter>
+    </ClCompile>
+    <ClCompile Include="Item_RemainBullet.cpp">
+      <Filter>03. Obj\02. Item\15.Item_RemainBullet</Filter>
+    </ClCompile>
+    <ClCompile Include="Item_BoundBall.cpp">
+      <Filter>03. Obj\02. Item\16.Item_BoundBall</Filter>
+    </ClCompile>
+    <ClCompile Include="Item_Ball.cpp">
+      <Filter>03. Obj\02. Item\16.Item_BoundBall\Item_Ball</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

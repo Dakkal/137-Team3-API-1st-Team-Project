@@ -7,6 +7,8 @@
 #include "Item_Timestop.h"
 #include "Enemy.h"
 #include "CollisionMgr.h"
+#include "Item_Bomb.h"
+#include "Citem_ScrewGun.h"
 
 CScene_Test::CScene_Test()
 	:CScene(SCENE_TYPE::TEST)
@@ -29,7 +31,7 @@ void CScene_Test::Enter()
 	pItem->Set_Pos(WINCX / 2, 0);
 
 	AddObjEvt(pItem);
-
+	
 	for (int i = 0; i < 10; ++i)
 	{
 		CEnemy* pEnemy = new CEnemy;
