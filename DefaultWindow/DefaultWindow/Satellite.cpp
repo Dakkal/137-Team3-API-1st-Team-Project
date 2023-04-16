@@ -75,6 +75,7 @@ void CSatellite::OnCollision(CObj * _pObj)
 			DeleteObjEvt(this);
 			break;
 		case OBJECT_TYPE::ENEMY_PROJECTILE:
+			DeleteObjEvt(this);
 			break;
 		}
 		m_bCollision = false;
