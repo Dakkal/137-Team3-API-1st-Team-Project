@@ -16,5 +16,22 @@ public:
 	virtual void	Release()		override;
 
 	virtual void	OnCollision(CObj* _pObj)	override;
+
+public :
+
+	void Update_Rect2();
+	void Update_Rect3();
+	CObj* Enemy();
+
+private:
+	INFO			m_tInfo2;
+	RECT			m_tRect2;
+
+	INFO			m_tInfo3;
+	RECT			m_tRect3;
+
+	CObj* EnemyCpy;
+	list<CObj*> EnemyCopy;
+	DWORD time;
 };
 
