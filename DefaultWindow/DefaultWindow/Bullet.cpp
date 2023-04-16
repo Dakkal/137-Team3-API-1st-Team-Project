@@ -92,18 +92,17 @@ void CBullet::Release()
 
 void CBullet::OnCollision(CObj * _pObj)
 {
+	if (!m_bCollision)
+		return;
 
-	if (m_bCollision)
+	switch (_pObj->GetObjType())
 	{
-		switch (_pObj->GetObjType())
-		{
-		case OBJECT_TYPE::MONSTER :
-		case OBJECT_TYPE::BOSS:
-			DeleteObjEvt(this);
-			m_bCollision = false;
-			break;
-		}
-
+	case OBJECT_TYPE::MONSTER:
+		DeleteObjEvt(this);
+		break;
+	case OBJECT_TYPE::BOSS:
+		DeleteObjEvt(this);
+		break;
 	}
 	m_bCollision = false;
 

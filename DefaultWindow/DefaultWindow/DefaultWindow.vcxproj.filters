@@ -150,7 +150,22 @@
       <UniqueIdentifier>{ec26e9c7-de01-4784-a183-da9a8c70a9ca}</UniqueIdentifier>
     </Filter>
     <Filter Include="03. Obj\06. Boss">
-      <UniqueIdentifier>{bc85e7c4-85f9-41a7-b2a1-42cdf25201ce}</UniqueIdentifier>
+      <UniqueIdentifier>{0fd78e09-e678-4cce-b208-b41bb116fde6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Obj\07. Boss_Bullet">
+      <UniqueIdentifier>{48603fd5-9fe7-430d-aefb-eda9979a796b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Obj\06. Boss\00. Boss_Head">
+      <UniqueIdentifier>{78f74fc4-c0be-43e8-92d4-d9384992a62e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Obj\06. Boss\01. Boss_Gun">
+      <UniqueIdentifier>{a20d5677-37a6-48b2-b9c6-ae0974139d40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Obj\06. Boss\02. Boss_MissilePot">
+      <UniqueIdentifier>{c1467817-887a-4a9a-9187-ef42109d3f3c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Obj\06. Boss\03. Boss_Missile">
+      <UniqueIdentifier>{c5f0b896-5759-49b4-aee8-6a0d84b9dbb5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -320,19 +335,19 @@
       <Filter>03. Obj\06. Boss</Filter>
     </ClInclude>
     <ClInclude Include="BossBullet.h">
-      <Filter>03. Obj\06. Boss</Filter>
+      <Filter>03. Obj\07. Boss_Bullet</Filter>
     </ClInclude>
     <ClInclude Include="BossGun.h">
-      <Filter>03. Obj\06. Boss</Filter>
+      <Filter>03. Obj\06. Boss\01. Boss_Gun</Filter>
     </ClInclude>
     <ClInclude Include="BossHead.h">
-      <Filter>03. Obj\06. Boss</Filter>
+      <Filter>03. Obj\06. Boss\00. Boss_Head</Filter>
     </ClInclude>
     <ClInclude Include="BossMissile.h">
-      <Filter>03. Obj\06. Boss</Filter>
+      <Filter>03. Obj\06. Boss\03. Boss_Missile</Filter>
     </ClInclude>
     <ClInclude Include="BossMissile_Pot.h">
-      <Filter>03. Obj\06. Boss</Filter>
+      <Filter>03. Obj\06. Boss\02. Boss_MissilePot</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -476,22 +491,19 @@
       <Filter>03. Obj\06. Boss</Filter>
     </ClCompile>
     <ClCompile Include="BossBullet.cpp">
-      <Filter>03. Obj\06. Boss</Filter>
+      <Filter>03. Obj\07. Boss_Bullet</Filter>
     </ClCompile>
     <ClCompile Include="BossGun.cpp">
-      <Filter>03. Obj\06. Boss</Filter>
+      <Filter>03. Obj\06. Boss\01. Boss_Gun</Filter>
     </ClCompile>
     <ClCompile Include="BossHead.cpp">
-      <Filter>03. Obj\06. Boss</Filter>
+      <Filter>03. Obj\06. Boss\00. Boss_Head</Filter>
     </ClCompile>
     <ClCompile Include="BossMissile.cpp">
-      <Filter>03. Obj\06. Boss</Filter>
+      <Filter>03. Obj\06. Boss\03. Boss_Missile</Filter>
     </ClCompile>
     <ClCompile Include="BossMissile_Pot.cpp">
-      <Filter>03. Obj\06. Boss</Filter>
-    </ClCompile>
-    <ClCompile Include="CustomFunc.cpp">
-      <Filter>99.Define</Filter>
+      <Filter>03. Obj\06. Boss\02. Boss_MissilePot</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
