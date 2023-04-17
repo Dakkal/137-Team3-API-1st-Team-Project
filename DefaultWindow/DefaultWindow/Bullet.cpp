@@ -47,6 +47,8 @@ int CBullet::Update()
 
 	CScene* pScene = CSceneMgr::GetInst()->GetCurrScene();
 	list<CObj*>& copyList = pScene->GetObjTypeList(OBJECT_TYPE::MONSTER);
+	CScene* pBossScene = CSceneMgr::GetInst()->GetCurrScene();
+	list<CObj*>& copyBossList = pBossScene->GetObjTypeList(OBJECT_TYPE::BOSS);
 
 	if (GUN_TYPE::NORMALGUN == m_eGunType)	{ Normal_Pattern(); }
 	if (GUN_TYPE::SHOTGUN == m_eGunType)	{ ShotGun_Pattern(); }
@@ -55,6 +57,8 @@ int CBullet::Update()
 	if (GUN_TYPE::FOLLOWGUN == m_eGunType) 
 	{ 
 		for (auto iter : copyList)
+			Find_Follow_Distance(iter);
+		for (auto iter : copyBossList)
 			Find_Follow_Distance(iter);
 
 		FollowGun_Pattern(); 
