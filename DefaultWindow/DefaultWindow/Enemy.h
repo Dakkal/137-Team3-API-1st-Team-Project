@@ -17,11 +17,11 @@ public:
 
 	virtual void	OnCollision(CObj* _pObj)	override;
 
-public :
 
+public :
 	void Update_Rect2();
 	void Update_Rect3();
-	CObj* Enemy();
+	CObj* Create_Bullet();
 
 private:
 	INFO			m_tInfo2;
@@ -29,9 +29,5 @@ private:
 
 	INFO			m_tInfo3;
 	RECT			m_tRect3;
-
-	CObj* EnemyCpy;
-	list<CObj*> EnemyCopy;
-	DWORD time;
 };
 

@@ -17,5 +17,8 @@ public:
 
 public:
 	virtual void GameOver()			override;
+
+private:
+	DWORD MonsterTime;
 };
 

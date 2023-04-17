@@ -11,7 +11,7 @@
 #include "Citem_ScrewGun.h"
 
 CScene_Test::CScene_Test()
-	:CScene(SCENE_TYPE::TEST)
+	:CScene(SCENE_TYPE::TEST),MonsterTime(GetTickCount())
 {
 }
 
@@ -42,6 +42,15 @@ void CScene_Test::Enter()
 void CScene_Test::Update()
 {
 	CScene::Update();
+
+	if (MonsterTime + 1004 < GetTickCount()) {
+		for (int i = 0; i < 4; ++i)
+		{
+			CEnemy* pEnemy = new CEnemy;
+			AddObjEvt(pEnemy);
+		}
+		MonsterTime = GetTickCount();
+	}
 }
 
 void CScene_Test::Late_Update()
